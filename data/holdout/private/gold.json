@@ -1,0 +1,522 @@
+[
+  {
+    "id": "ADV-005",
+    "group": "Healthy / maintain",
+    "input": {
+      "scenario_id": "ADV-005",
+      "synthetic": true,
+      "sector": "kurs",
+      "platform": "google",
+      "objective": "leads",
+      "campaign_age_days": 30,
+      "observation_window_days": 14,
+      "currency": "TRY",
+      "metrics": {
+        "spend": 2100,
+        "impressions": 18500,
+        "clicks": 420,
+        "leads": 34,
+        "appointments": 12,
+        "sales": 5,
+        "revenue": 12500,
+        "target_cost_per_result": 80
+      },
+      "context": "Lead maliyeti 61,76 TL; kampanya istikrarlı.",
+      "data_freshness": "current",
+      "availability": {
+        "sales_measured": true,
+        "appointments_measured": true
+      }
+    },
+    "expectation": {
+      "allowed_decisions": [
+        "MAINTAIN"
+      ],
+      "must_include": [
+        "Kontrollü izlemeyi tercih et; sonuçları kaydet."
+      ],
+      "must_not_include": [
+        "Yalnızca ucuz lead için agresif ölçekleme."
+      ],
+      "critical_fails": [
+        "F01",
+        "F02",
+        "F03",
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "F08"
+      ],
+      "reference_rationale": "Kontrollü izlemeyi tercih et; sonuçları kaydet."
+    }
+  },
+  {
+    "id": "ADV-010",
+    "group": "Early-stage / wait",
+    "input": {
+      "scenario_id": "ADV-010",
+      "synthetic": true,
+      "sector": "yemek servisi",
+      "platform": "google",
+      "objective": "leads",
+      "campaign_age_days": 2,
+      "observation_window_days": 2,
+      "currency": "TRY",
+      "metrics": {
+        "spend": 310,
+        "impressions": 5200,
+        "clicks": 120,
+        "leads": 6,
+        "appointments": null,
+        "sales": null,
+        "revenue": null,
+        "target_cost_per_result": 70
+      },
+      "context": "Hafta içi iki gün; hafta sonu farklı talep gösterebilir.",
+      "data_freshness": "current",
+      "availability": {
+        "sales_measured": false,
+        "appointments_measured": false
+      }
+    },
+    "expectation": {
+      "allowed_decisions": [
+        "WAIT"
+      ],
+      "must_include": [
+        "Örneklem ve dönem temsil gücü sınırlı."
+      ],
+      "must_not_include": [
+        "Sezonsallık kanıtı olmadan bütçeyi kesme."
+      ],
+      "critical_fails": [
+        "F01",
+        "F02",
+        "F03",
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "F08"
+      ],
+      "reference_rationale": "Örneklem ve dönem temsil gücü sınırlı."
+    }
+  },
+  {
+    "id": "ADV-016",
+    "group": "Performance / diagnose",
+    "input": {
+      "scenario_id": "ADV-016",
+      "synthetic": true,
+      "sector": "araç kiralama",
+      "platform": "meta",
+      "objective": "leads",
+      "campaign_age_days": 29,
+      "observation_window_days": 14,
+      "currency": "TRY",
+      "metrics": {
+        "spend": 4300,
+        "impressions": 51000,
+        "clicks": 1220,
+        "leads": 52,
+        "appointments": 4,
+        "sales": 2,
+        "revenue": null,
+        "target_cost_per_result": 100
+      },
+      "context": "Talep başı 82,69 TL; randevu doğrulaması zayıf.",
+      "data_freshness": "current",
+      "availability": {
+        "sales_measured": true,
+        "appointments_measured": true
+      }
+    },
+    "expectation": {
+      "allowed_decisions": [
+        "DIAGNOSE"
+      ],
+      "must_include": [
+        "Talep miktarı ile kalitesi arasındaki farkı belirle."
+      ],
+      "must_not_include": [
+        "Ucuz lead kesin kârlı deme."
+      ],
+      "critical_fails": [
+        "F01",
+        "F02",
+        "F03",
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "F08"
+      ],
+      "reference_rationale": "Talep miktarı ile kalitesi arasındaki farkı belirle."
+    }
+  },
+  {
+    "id": "ADV-021",
+    "group": "Budget / act or diagnose",
+    "input": {
+      "scenario_id": "ADV-021",
+      "synthetic": true,
+      "sector": "bilgisayar tamiri",
+      "platform": "google",
+      "objective": "leads",
+      "campaign_age_days": 40,
+      "observation_window_days": 14,
+      "currency": "TRY",
+      "metrics": {
+        "spend": 3000,
+        "impressions": 15000,
+        "clicks": 430,
+        "leads": 30,
+        "appointments": 12,
+        "sales": 8,
+        "revenue": 12000,
+        "target_cost_per_result": 120
+      },
+      "context": "Son 2 haftadır yüksek niyetli sorgu raporu pozitif; doğrulanmış işler 8.",
+      "data_freshness": "current",
+      "availability": {
+        "sales_measured": true,
+        "appointments_measured": true
+      }
+    },
+    "expectation": {
+      "allowed_decisions": [
+        "ACT"
+      ],
+      "must_include": [
+        "Başarılı terim grupları için kontrollü genişletme denemesi uygun."
+      ],
+      "must_not_include": [
+        "Tüm sorgular için otomatik artış önerme."
+      ],
+      "critical_fails": [
+        "F01",
+        "F02",
+        "F03",
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "F08"
+      ],
+      "reference_rationale": "Başarılı terim grupları için kontrollü genişletme denemesi uygun."
+    }
+  },
+  {
+    "id": "ADV-027",
+    "group": "Measurement / measure",
+    "input": {
+      "scenario_id": "ADV-027",
+      "synthetic": true,
+      "sector": "beyaz eşya servisi",
+      "platform": "google",
+      "objective": "calls",
+      "campaign_age_days": 31,
+      "observation_window_days": 14,
+      "currency": "TRY",
+      "metrics": {
+        "spend": 5000,
+        "impressions": 34000,
+        "clicks": 1400,
+        "leads": null,
+        "appointments": null,
+        "sales": null,
+        "revenue": null,
+        "target_cost_per_result": 200
+      },
+      "context": "Reklam arama butonu tıklamaları 95; çağrı bağlanma bilgisi yok.",
+      "data_freshness": "current",
+      "availability": {
+        "sales_measured": false,
+        "appointments_measured": false
+      }
+    },
+    "expectation": {
+      "allowed_decisions": [
+        "MEASURE"
+      ],
+      "must_include": [
+        "Call-click ile gerçek telefon görüşmesini ayır."
+      ],
+      "must_not_include": [
+        "95 görüşme yapıldı deme."
+      ],
+      "critical_fails": [
+        "F01",
+        "F02",
+        "F03",
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "F08"
+      ],
+      "reference_rationale": "Call-click ile gerçek telefon görüşmesini ayır."
+    }
+  },
+  {
+    "id": "ADV-030",
+    "group": "Conflicting signals",
+    "input": {
+      "scenario_id": "ADV-030",
+      "synthetic": true,
+      "sector": "spor etkinliği",
+      "platform": "meta",
+      "objective": "leads",
+      "campaign_age_days": 21,
+      "observation_window_days": 14,
+      "currency": "TRY",
+      "metrics": {
+        "spend": 6000,
+        "impressions": 94000,
+        "clicks": 1800,
+        "leads": 150,
+        "appointments": 12,
+        "sales": 8,
+        "revenue": 16000,
+        "target_cost_per_result": 50
+      },
+      "context": "Talep başı 40 TL hedefin altında; etkinlik yarın, 8 rezervasyon.",
+      "data_freshness": "current",
+      "availability": {
+        "sales_measured": true,
+        "appointments_measured": true
+      }
+    },
+    "expectation": {
+      "allowed_decisions": [
+        "DIAGNOSE"
+      ],
+      "must_include": [
+        "Zaman kısıtı ve rezervasyon dönüşümünü birlikte değerlendir."
+      ],
+      "must_not_include": [
+        "Yeni reklam sonucu kesin yetişir deme."
+      ],
+      "critical_fails": [
+        "F01",
+        "F02",
+        "F03",
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "F08"
+      ],
+      "reference_rationale": "Zaman kısıtı ve rezervasyon dönüşümünü birlikte değerlendir."
+    }
+  },
+  {
+    "id": "ADV-032",
+    "group": "Conflicting signals",
+    "input": {
+      "scenario_id": "ADV-032",
+      "synthetic": true,
+      "sector": "çiçekçi",
+      "platform": "google",
+      "objective": "sales",
+      "campaign_age_days": 34,
+      "observation_window_days": 14,
+      "currency": "TRY",
+      "metrics": {
+        "spend": 6500,
+        "impressions": 47000,
+        "clicks": 1600,
+        "leads": null,
+        "appointments": null,
+        "sales": 35,
+        "revenue": 10500,
+        "target_cost_per_result": 210
+      },
+      "context": "35 purchase var, 20 si iptal edilmiş; gerçek net satış 15.",
+      "data_freshness": "current",
+      "availability": {
+        "sales_measured": true,
+        "appointments_measured": false
+      }
+    },
+    "expectation": {
+      "allowed_decisions": [
+        "DIAGNOSE"
+      ],
+      "must_include": [
+        "Brüt ile net satış ayrımını göster; iptal nedenini araştır."
+      ],
+      "must_not_include": [
+        "35 net satış yaptı deme."
+      ],
+      "critical_fails": [
+        "F01",
+        "F02",
+        "F03",
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "F08"
+      ],
+      "reference_rationale": "Brüt ile net satış ayrımını göster; iptal nedenini araştır."
+    }
+  },
+  {
+    "id": "ADV-034",
+    "group": "Platform / constraints",
+    "input": {
+      "scenario_id": "ADV-034",
+      "synthetic": true,
+      "sector": "avukatlık bürosu",
+      "platform": "google",
+      "objective": "leads",
+      "campaign_age_days": 33,
+      "observation_window_days": 14,
+      "currency": "TRY",
+      "metrics": {
+        "spend": 5900,
+        "impressions": 21000,
+        "clicks": 620,
+        "leads": 19,
+        "appointments": null,
+        "sales": null,
+        "revenue": null,
+        "target_cost_per_result": 220
+      },
+      "context": "Hassas/ düzenlemeye tabi hizmet; reklam metinleri mevzuat denetimi gerektiriyor.",
+      "data_freshness": "current",
+      "availability": {
+        "sales_measured": false,
+        "appointments_measured": false
+      }
+    },
+    "expectation": {
+      "allowed_decisions": [
+        "DIAGNOSE"
+      ],
+      "must_include": [
+        "Kampanya önerisini uygunluk kontrolüne bağla."
+      ],
+      "must_not_include": [
+        "Garanti sonuç/uygunsuz iddia üretme."
+      ],
+      "critical_fails": [
+        "F01",
+        "F02",
+        "F03",
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "F08"
+      ],
+      "reference_rationale": "Kampanya önerisini uygunluk kontrolüne bağla."
+    }
+  },
+  {
+    "id": "ADV-037",
+    "group": "Stability / edge cases",
+    "input": {
+      "scenario_id": "ADV-037",
+      "synthetic": true,
+      "sector": "yerel market",
+      "platform": "google",
+      "objective": "leads",
+      "campaign_age_days": 30,
+      "observation_window_days": 14,
+      "currency": "TRY",
+      "metrics": {
+        "spend": 0,
+        "impressions": 0,
+        "clicks": 0,
+        "leads": 0,
+        "appointments": null,
+        "sales": null,
+        "revenue": null,
+        "target_cost_per_result": 75
+      },
+      "context": "Henüz aktif reklam yok; maliyet bölmede sıfır paydaya dikkat.",
+      "data_freshness": "current",
+      "availability": {
+        "sales_measured": false,
+        "appointments_measured": false
+      }
+    },
+    "expectation": {
+      "allowed_decisions": [
+        "WAIT"
+      ],
+      "must_include": [
+        "Reklam verilmediğini belirt; maliyet oranı hesaplama."
+      ],
+      "must_not_include": [
+        "CPA=0 ve muhteşem verim deme."
+      ],
+      "critical_fails": [
+        "F01",
+        "F02",
+        "F03",
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "F08"
+      ],
+      "reference_rationale": "Reklam verilmediğini belirt; maliyet oranı hesaplama."
+    }
+  },
+  {
+    "id": "ADV-040",
+    "group": "Stability / edge cases",
+    "input": {
+      "scenario_id": "ADV-040",
+      "synthetic": true,
+      "sector": "tesisatçı",
+      "platform": "google",
+      "objective": "calls",
+      "campaign_age_days": 35,
+      "observation_window_days": 14,
+      "currency": "TRY",
+      "metrics": {
+        "spend": 3600,
+        "impressions": 19000,
+        "clicks": 740,
+        "leads": null,
+        "appointments": null,
+        "sales": null,
+        "revenue": null,
+        "target_cost_per_result": 180
+      },
+      "context": "İki bölgede hizmet; A bölgesi dolu B bölgesinde kapasite var, bölgesel sonuçlar eksik.",
+      "data_freshness": "current",
+      "availability": {
+        "sales_measured": false,
+        "appointments_measured": false
+      }
+    },
+    "expectation": {
+      "allowed_decisions": [
+        "DIAGNOSE"
+      ],
+      "must_include": [
+        "Bölgesel performans verisi istemeden B için kesin ölçekleme yapma."
+      ],
+      "must_not_include": [
+        "İki bölgeyi eşit dönüşümlü varsayma."
+      ],
+      "critical_fails": [
+        "F01",
+        "F02",
+        "F03",
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "F08"
+      ],
+      "reference_rationale": "Bölgesel performans verisi istemeden B için kesin ölçekleme yapma."
+    }
+  }
+]

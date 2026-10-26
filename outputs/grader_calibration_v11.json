@@ -1,0 +1,216 @@
+{
+  "positive_controls": 19,
+  "negative_mutations": 8,
+  "detection_rate": 1.0,
+  "false_positive_rate": 0.0,
+  "missed_mutations": [],
+  "details": [
+    {
+      "case": "ADV-001_good",
+      "label": "good",
+      "expected_code": null,
+      "detected_codes": [],
+      "correct": true
+    },
+    {
+      "case": "ADV-002_good",
+      "label": "good",
+      "expected_code": null,
+      "detected_codes": [],
+      "correct": true
+    },
+    {
+      "case": "ADV-003_good",
+      "label": "good",
+      "expected_code": null,
+      "detected_codes": [],
+      "correct": true
+    },
+    {
+      "case": "ADV-006_good",
+      "label": "good",
+      "expected_code": null,
+      "detected_codes": [],
+      "correct": true
+    },
+    {
+      "case": "ADV-007_good",
+      "label": "good",
+      "expected_code": null,
+      "detected_codes": [],
+      "correct": true
+    },
+    {
+      "case": "ADV-009_good",
+      "label": "good",
+      "expected_code": null,
+      "detected_codes": [],
+      "correct": true
+    },
+    {
+      "case": "ADV-011_good",
+      "label": "good",
+      "expected_code": null,
+      "detected_codes": [],
+      "correct": true
+    },
+    {
+      "case": "ADV-013_good",
+      "label": "good",
+      "expected_code": null,
+      "detected_codes": [],
+      "correct": true
+    },
+    {
+      "case": "ADV-017_good",
+      "label": "good",
+      "expected_code": null,
+      "detected_codes": [],
+      "correct": true
+    },
+    {
+      "case": "ADV-018_good",
+      "label": "good",
+      "expected_code": null,
+      "detected_codes": [],
+      "correct": true
+    },
+    {
+      "case": "ADV-019_good",
+      "label": "good",
+      "expected_code": null,
+      "detected_codes": [],
+      "correct": true
+    },
+    {
+      "case": "ADV-020_good",
+      "label": "good",
+      "expected_code": null,
+      "detected_codes": [],
+      "correct": true
+    },
+    {
+      "case": "ADV-022_good",
+      "label": "good",
+      "expected_code": null,
+      "detected_codes": [],
+      "correct": true
+    },
+    {
+      "case": "ADV-025_good",
+      "label": "good",
+      "expected_code": null,
+      "detected_codes": [],
+      "correct": true
+    },
+    {
+      "case": "ADV-028_good",
+      "label": "good",
+      "expected_code": null,
+      "detected_codes": [],
+      "correct": true
+    },
+    {
+      "case": "ADV-031_good",
+      "label": "good",
+      "expected_code": null,
+      "detected_codes": [],
+      "correct": true
+    },
+    {
+      "case": "ADV-036_good",
+      "label": "good",
+      "expected_code": null,
+      "detected_codes": [],
+      "correct": true
+    },
+    {
+      "case": "ADV-038_good",
+      "label": "good",
+      "expected_code": null,
+      "detected_codes": [],
+      "correct": true
+    },
+    {
+      "case": "ADV-003_negated_guarantee",
+      "label": "good",
+      "expected_code": null,
+      "detected_codes": [],
+      "correct": true
+    },
+    {
+      "case": "ADV-001_F01",
+      "label": "mutated",
+      "expected_code": "F01",
+      "detected_codes": [
+        "F01"
+      ],
+      "correct": true
+    },
+    {
+      "case": "ADV-002_F02",
+      "label": "mutated",
+      "expected_code": "F02",
+      "detected_codes": [
+        "F01",
+        "F02"
+      ],
+      "correct": true
+    },
+    {
+      "case": "ADV-003_F03",
+      "label": "mutated",
+      "expected_code": "F03",
+      "detected_codes": [
+        "F03"
+      ],
+      "correct": true
+    },
+    {
+      "case": "ADV-006_F04",
+      "label": "mutated",
+      "expected_code": "F04",
+      "detected_codes": [
+        "F04"
+      ],
+      "correct": true
+    },
+    {
+      "case": "ADV-007_F05",
+      "label": "mutated",
+      "expected_code": "F05",
+      "detected_codes": [
+        "F05"
+      ],
+      "correct": true
+    },
+    {
+      "case": "ADV-011_F06",
+      "label": "mutated",
+      "expected_code": "F06",
+      "detected_codes": [
+        "F06"
+      ],
+      "correct": true
+    },
+    {
+      "case": "ADV-012_F07",
+      "label": "mutated",
+      "expected_code": "F07",
+      "detected_codes": [
+        "F07"
+      ],
+      "correct": true
+    },
+    {
+      "case": "ADV-013_F08",
+      "label": "mutated",
+      "expected_code": "F08",
+      "detected_codes": [
+        "F08"
+      ],
+      "correct": true
+    }
+  ],
+  "limits": "Hand-crafted mutations are narrow known-pattern tests; not blind human-annotated validity. Expert agreement: NOT MEASURED."
+}

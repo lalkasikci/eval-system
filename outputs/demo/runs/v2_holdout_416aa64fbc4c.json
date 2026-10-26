@@ -1,0 +1,1741 @@
+{
+  "metadata": {
+    "run_id": "416aa64fbc4c",
+    "created_utc": "2026-10-24T12:48:05.464138+00:00",
+    "model": "v2",
+    "model_identifier": "rule-baseline-2",
+    "model_version": "rule-baseline-2",
+    "rules_version": "rules-v2",
+    "grader_version": "offline-heuristic-1.0",
+    "rubric_version": "1.0-provisional",
+    "prompt_version": "none-offline",
+    "split": "holdout",
+    "trials_per_case": 3,
+    "scenario_version": "1.0",
+    "adapter": null,
+    "estimated_cost_usd": 0,
+    "evaluation_mode": "deterministic+heuristic (not expert-certified)",
+    "holdout_policy": "scoring only; do not tune candidates from holdout feedback"
+  },
+  "results": [
+    {
+      "scenario_id": "ADV-005",
+      "trial": 1,
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 2100
+          },
+          {
+            "key": "clicks",
+            "value": 420
+          }
+        ],
+        "claims": {
+          "spend": 2100,
+          "clicks": 420
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.035,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "grade": {
+        "decision_correct": true,
+        "expected_decisions": [
+          "MAINTAIN"
+        ],
+        "score": 92.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 4,
+          "evidence_uncertainty": 4,
+          "strategy": 4,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": true,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-005",
+      "trial": 2,
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 2100
+          },
+          {
+            "key": "clicks",
+            "value": 420
+          }
+        ],
+        "claims": {
+          "spend": 2100,
+          "clicks": 420
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.023,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "grade": {
+        "decision_correct": true,
+        "expected_decisions": [
+          "MAINTAIN"
+        ],
+        "score": 92.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 4,
+          "evidence_uncertainty": 4,
+          "strategy": 4,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": true,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-005",
+      "trial": 3,
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 2100
+          },
+          {
+            "key": "clicks",
+            "value": 420
+          }
+        ],
+        "claims": {
+          "spend": 2100,
+          "clicks": 420
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.019,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "grade": {
+        "decision_correct": true,
+        "expected_decisions": [
+          "MAINTAIN"
+        ],
+        "score": 92.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 4,
+          "evidence_uncertainty": 4,
+          "strategy": 4,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": true,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-010",
+      "trial": 1,
+      "output": {
+        "decision": "WAIT",
+        "recommendation": "Bu reklama hemen müdahale etmeyin.",
+        "rationale": "Kampanya yeni, kıyas için erken.",
+        "next_step": "Birkaç gün sonra tekrar ölçün.",
+        "uncertainty": "Düşük örneklem karar için yeterli değil.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 310
+          },
+          {
+            "key": "clicks",
+            "value": 120
+          }
+        ],
+        "claims": {
+          "spend": 310,
+          "clicks": 120
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.021,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "grade": {
+        "decision_correct": true,
+        "expected_decisions": [
+          "WAIT"
+        ],
+        "score": 92.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 4,
+          "evidence_uncertainty": 4,
+          "strategy": 4,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": true,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-010",
+      "trial": 2,
+      "output": {
+        "decision": "WAIT",
+        "recommendation": "Bu reklama hemen müdahale etmeyin.",
+        "rationale": "Kampanya yeni, kıyas için erken.",
+        "next_step": "Birkaç gün sonra tekrar ölçün.",
+        "uncertainty": "Düşük örneklem karar için yeterli değil.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 310
+          },
+          {
+            "key": "clicks",
+            "value": 120
+          }
+        ],
+        "claims": {
+          "spend": 310,
+          "clicks": 120
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.041,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "grade": {
+        "decision_correct": true,
+        "expected_decisions": [
+          "WAIT"
+        ],
+        "score": 92.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 4,
+          "evidence_uncertainty": 4,
+          "strategy": 4,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": true,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-010",
+      "trial": 3,
+      "output": {
+        "decision": "WAIT",
+        "recommendation": "Bu reklama hemen müdahale etmeyin.",
+        "rationale": "Kampanya yeni, kıyas için erken.",
+        "next_step": "Birkaç gün sonra tekrar ölçün.",
+        "uncertainty": "Düşük örneklem karar için yeterli değil.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 310
+          },
+          {
+            "key": "clicks",
+            "value": 120
+          }
+        ],
+        "claims": {
+          "spend": 310,
+          "clicks": 120
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.017,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "grade": {
+        "decision_correct": true,
+        "expected_decisions": [
+          "WAIT"
+        ],
+        "score": 92.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 4,
+          "evidence_uncertainty": 4,
+          "strategy": 4,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": true,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-016",
+      "trial": 1,
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 4300
+          },
+          {
+            "key": "clicks",
+            "value": 1220
+          }
+        ],
+        "claims": {
+          "spend": 4300,
+          "clicks": 1220
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.02,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "DIAGNOSE"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-016",
+      "trial": 2,
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 4300
+          },
+          {
+            "key": "clicks",
+            "value": 1220
+          }
+        ],
+        "claims": {
+          "spend": 4300,
+          "clicks": 1220
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.018,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "DIAGNOSE"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-016",
+      "trial": 3,
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 4300
+          },
+          {
+            "key": "clicks",
+            "value": 1220
+          }
+        ],
+        "claims": {
+          "spend": 4300,
+          "clicks": 1220
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.018,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "DIAGNOSE"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-021",
+      "trial": 1,
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 3000
+          },
+          {
+            "key": "clicks",
+            "value": 430
+          }
+        ],
+        "claims": {
+          "spend": 3000,
+          "clicks": 430
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.018,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "ACT"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-021",
+      "trial": 2,
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 3000
+          },
+          {
+            "key": "clicks",
+            "value": 430
+          }
+        ],
+        "claims": {
+          "spend": 3000,
+          "clicks": 430
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.018,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "ACT"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-021",
+      "trial": 3,
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 3000
+          },
+          {
+            "key": "clicks",
+            "value": 430
+          }
+        ],
+        "claims": {
+          "spend": 3000,
+          "clicks": 430
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.018,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "ACT"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-027",
+      "trial": 1,
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 5000
+          },
+          {
+            "key": "clicks",
+            "value": 1400
+          }
+        ],
+        "claims": {
+          "spend": 5000,
+          "clicks": 1400
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.019,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "MEASURE"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-027",
+      "trial": 2,
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 5000
+          },
+          {
+            "key": "clicks",
+            "value": 1400
+          }
+        ],
+        "claims": {
+          "spend": 5000,
+          "clicks": 1400
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.018,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "MEASURE"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-027",
+      "trial": 3,
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 5000
+          },
+          {
+            "key": "clicks",
+            "value": 1400
+          }
+        ],
+        "claims": {
+          "spend": 5000,
+          "clicks": 1400
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.017,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "MEASURE"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-030",
+      "trial": 1,
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 6000
+          },
+          {
+            "key": "clicks",
+            "value": 1800
+          }
+        ],
+        "claims": {
+          "spend": 6000,
+          "clicks": 1800
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.019,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "DIAGNOSE"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-030",
+      "trial": 2,
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 6000
+          },
+          {
+            "key": "clicks",
+            "value": 1800
+          }
+        ],
+        "claims": {
+          "spend": 6000,
+          "clicks": 1800
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.018,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "DIAGNOSE"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-030",
+      "trial": 3,
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 6000
+          },
+          {
+            "key": "clicks",
+            "value": 1800
+          }
+        ],
+        "claims": {
+          "spend": 6000,
+          "clicks": 1800
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.018,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "DIAGNOSE"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-032",
+      "trial": 1,
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 6500
+          },
+          {
+            "key": "clicks",
+            "value": 1600
+          }
+        ],
+        "claims": {
+          "spend": 6500,
+          "clicks": 1600
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.018,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "DIAGNOSE"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-032",
+      "trial": 2,
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 6500
+          },
+          {
+            "key": "clicks",
+            "value": 1600
+          }
+        ],
+        "claims": {
+          "spend": 6500,
+          "clicks": 1600
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.016,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "DIAGNOSE"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-032",
+      "trial": 3,
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 6500
+          },
+          {
+            "key": "clicks",
+            "value": 1600
+          }
+        ],
+        "claims": {
+          "spend": 6500,
+          "clicks": 1600
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.017,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "DIAGNOSE"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-034",
+      "trial": 1,
+      "output": {
+        "decision": "DIAGNOSE",
+        "recommendation": "Sonuç başı maliyet hedefin üzerinde.",
+        "rationale": "Maliyet farkının nedenini araştırın.",
+        "next_step": "Dönüşüm adımlarını inceleyin.",
+        "uncertainty": "Kesin neden henüz doğrulanmadı.",
+        "risk": "Bütçe artışını erteleyin.",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 5900
+          },
+          {
+            "key": "clicks",
+            "value": 620
+          },
+          {
+            "key": "cpl",
+            "value": 310.53
+          }
+        ],
+        "claims": {
+          "spend": 5900,
+          "clicks": 620,
+          "cpl": 310.53
+        },
+        "action": {
+          "type": "audit_funnel"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.023,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "grade": {
+        "decision_correct": true,
+        "expected_decisions": [
+          "DIAGNOSE"
+        ],
+        "score": 100.0,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 4,
+          "evidence_uncertainty": 4,
+          "strategy": 4,
+          "economics_risk": 4,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": true,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-034",
+      "trial": 2,
+      "output": {
+        "decision": "DIAGNOSE",
+        "recommendation": "Sonuç başı maliyet hedefin üzerinde.",
+        "rationale": "Maliyet farkının nedenini araştırın.",
+        "next_step": "Dönüşüm adımlarını inceleyin.",
+        "uncertainty": "Kesin neden henüz doğrulanmadı.",
+        "risk": "Bütçe artışını erteleyin.",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 5900
+          },
+          {
+            "key": "clicks",
+            "value": 620
+          },
+          {
+            "key": "cpl",
+            "value": 310.53
+          }
+        ],
+        "claims": {
+          "spend": 5900,
+          "clicks": 620,
+          "cpl": 310.53
+        },
+        "action": {
+          "type": "audit_funnel"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.02,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "grade": {
+        "decision_correct": true,
+        "expected_decisions": [
+          "DIAGNOSE"
+        ],
+        "score": 100.0,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 4,
+          "evidence_uncertainty": 4,
+          "strategy": 4,
+          "economics_risk": 4,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": true,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-034",
+      "trial": 3,
+      "output": {
+        "decision": "DIAGNOSE",
+        "recommendation": "Sonuç başı maliyet hedefin üzerinde.",
+        "rationale": "Maliyet farkının nedenini araştırın.",
+        "next_step": "Dönüşüm adımlarını inceleyin.",
+        "uncertainty": "Kesin neden henüz doğrulanmadı.",
+        "risk": "Bütçe artışını erteleyin.",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 5900
+          },
+          {
+            "key": "clicks",
+            "value": 620
+          },
+          {
+            "key": "cpl",
+            "value": 310.53
+          }
+        ],
+        "claims": {
+          "spend": 5900,
+          "clicks": 620,
+          "cpl": 310.53
+        },
+        "action": {
+          "type": "audit_funnel"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.019,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "grade": {
+        "decision_correct": true,
+        "expected_decisions": [
+          "DIAGNOSE"
+        ],
+        "score": 100.0,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 4,
+          "evidence_uncertainty": 4,
+          "strategy": 4,
+          "economics_risk": 4,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": true,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-037",
+      "trial": 1,
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 0
+          },
+          {
+            "key": "clicks",
+            "value": 0
+          }
+        ],
+        "claims": {
+          "spend": 0,
+          "clicks": 0
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.018,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "WAIT"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-037",
+      "trial": 2,
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 0
+          },
+          {
+            "key": "clicks",
+            "value": 0
+          }
+        ],
+        "claims": {
+          "spend": 0,
+          "clicks": 0
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.016,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "WAIT"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-037",
+      "trial": 3,
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 0
+          },
+          {
+            "key": "clicks",
+            "value": 0
+          }
+        ],
+        "claims": {
+          "spend": 0,
+          "clicks": 0
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.015,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "WAIT"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-040",
+      "trial": 1,
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 3600
+          },
+          {
+            "key": "clicks",
+            "value": 740
+          }
+        ],
+        "claims": {
+          "spend": 3600,
+          "clicks": 740
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.027,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "DIAGNOSE"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-040",
+      "trial": 2,
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 3600
+          },
+          {
+            "key": "clicks",
+            "value": 740
+          }
+        ],
+        "claims": {
+          "spend": 3600,
+          "clicks": 740
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.017,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "DIAGNOSE"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-040",
+      "trial": 3,
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 3600
+          },
+          {
+            "key": "clicks",
+            "value": 740
+          }
+        ],
+        "claims": {
+          "spend": 3600,
+          "clicks": 740
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.016,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "DIAGNOSE"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "trials": 30,
+    "passed": 9,
+    "pass_rate": 0.3,
+    "decision_accuracy": 0.3,
+    "critical_failure_rate": 0.0,
+    "avg_score": 68.75,
+    "median_score": 57.5,
+    "avg_latency_ms": 0.02,
+    "observed_pass_at_k": 0.3,
+    "observed_pass_pow_k": 0.3,
+    "scenario_pass_all_trials": 0.3,
+    "error_code_counts": {
+      "F01": 0,
+      "F02": 0,
+      "F03": 0,
+      "F04": 0,
+      "F05": 0,
+      "F06": 0,
+      "F07": 0,
+      "F08": 0,
+      "FMT": 0
+    }
+  }
+}

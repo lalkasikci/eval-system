@@ -1,0 +1,8 @@
+{
+  "valid": true,
+  "errors": [],
+  "dev": 30,
+  "holdout": 10,
+  "total": 40,
+  "holdout_rate": 0.25
+}

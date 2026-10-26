@@ -1,0 +1,31 @@
+﻿run_id,model,split,scenario_id,trial,decision,accepted,score,pass,critical_codes,latency_ms,recommendation
+96cee1b9b357,v1,holdout,ADV-005,1,MAINTAIN,MAINTAIN,63.75,False,,0.163,Reklamınız iyi gidiyor.
+96cee1b9b357,v1,holdout,ADV-005,2,MAINTAIN,MAINTAIN,63.75,False,,0.119,Reklamınız iyi gidiyor.
+96cee1b9b357,v1,holdout,ADV-005,3,MAINTAIN,MAINTAIN,63.75,False,,0.107,Reklamınız iyi gidiyor.
+96cee1b9b357,v1,holdout,ADV-010,1,MAINTAIN,WAIT,50.0,False,,0.106,Reklamınız iyi gidiyor.
+96cee1b9b357,v1,holdout,ADV-010,2,MAINTAIN,WAIT,50.0,False,,0.101,Reklamınız iyi gidiyor.
+96cee1b9b357,v1,holdout,ADV-010,3,MAINTAIN,WAIT,50.0,False,,0.097,Reklamınız iyi gidiyor.
+96cee1b9b357,v1,holdout,ADV-016,1,ACT,DIAGNOSE,42.5,False,"F05,F05",0.138,Tıklamalar var; bütçeyi artırın.
+96cee1b9b357,v1,holdout,ADV-016,2,ACT,DIAGNOSE,42.5,False,"F05,F05",0.11,Tıklamalar var; bütçeyi artırın.
+96cee1b9b357,v1,holdout,ADV-016,3,ACT,DIAGNOSE,42.5,False,"F05,F05",0.148,Tıklamalar var; bütçeyi artırın.
+96cee1b9b357,v1,holdout,ADV-021,1,MAINTAIN,ACT,50.0,False,,0.104,Reklamınız iyi gidiyor.
+96cee1b9b357,v1,holdout,ADV-021,2,MAINTAIN,ACT,50.0,False,,0.099,Reklamınız iyi gidiyor.
+96cee1b9b357,v1,holdout,ADV-021,3,MAINTAIN,ACT,50.0,False,,0.099,Reklamınız iyi gidiyor.
+96cee1b9b357,v1,holdout,ADV-027,1,ACT,MEASURE,42.5,False,F05,0.103,Tıklamalar var; bütçeyi artırın.
+96cee1b9b357,v1,holdout,ADV-027,2,ACT,MEASURE,42.5,False,F05,0.097,Tıklamalar var; bütçeyi artırın.
+96cee1b9b357,v1,holdout,ADV-027,3,ACT,MEASURE,42.5,False,F05,0.097,Tıklamalar var; bütçeyi artırın.
+96cee1b9b357,v1,holdout,ADV-030,1,ACT,DIAGNOSE,42.5,False,"F05,F05",0.102,Tıklamalar var; bütçeyi artırın.
+96cee1b9b357,v1,holdout,ADV-030,2,ACT,DIAGNOSE,42.5,False,"F05,F05",0.101,Tıklamalar var; bütçeyi artırın.
+96cee1b9b357,v1,holdout,ADV-030,3,ACT,DIAGNOSE,42.5,False,"F05,F05",0.112,Tıklamalar var; bütçeyi artırın.
+96cee1b9b357,v1,holdout,ADV-032,1,ACT,DIAGNOSE,42.5,False,"F05,F05",0.148,Tıklamalar var; bütçeyi artırın.
+96cee1b9b357,v1,holdout,ADV-032,2,ACT,DIAGNOSE,42.5,False,"F05,F05",0.145,Tıklamalar var; bütçeyi artırın.
+96cee1b9b357,v1,holdout,ADV-032,3,ACT,DIAGNOSE,42.5,False,"F05,F05",0.144,Tıklamalar var; bütçeyi artırın.
+96cee1b9b357,v1,holdout,ADV-034,1,ACT,DIAGNOSE,42.5,False,"F05,F05",0.105,Tıklamalar var; bütçeyi artırın.
+96cee1b9b357,v1,holdout,ADV-034,2,ACT,DIAGNOSE,42.5,False,"F05,F05",0.096,Tıklamalar var; bütçeyi artırın.
+96cee1b9b357,v1,holdout,ADV-034,3,ACT,DIAGNOSE,42.5,False,"F05,F05",0.15,Tıklamalar var; bütçeyi artırın.
+96cee1b9b357,v1,holdout,ADV-037,1,MAINTAIN,WAIT,50.0,False,,0.106,Reklamınız iyi gidiyor.
+96cee1b9b357,v1,holdout,ADV-037,2,MAINTAIN,WAIT,50.0,False,,0.163,Reklamınız iyi gidiyor.
+96cee1b9b357,v1,holdout,ADV-037,3,MAINTAIN,WAIT,50.0,False,,0.171,Reklamınız iyi gidiyor.
+96cee1b9b357,v1,holdout,ADV-040,1,ACT,DIAGNOSE,42.5,False,F05,0.186,Tıklamalar var; bütçeyi artırın.
+96cee1b9b357,v1,holdout,ADV-040,2,ACT,DIAGNOSE,42.5,False,F05,0.151,Tıklamalar var; bütçeyi artırın.
+96cee1b9b357,v1,holdout,ADV-040,3,ACT,DIAGNOSE,42.5,False,F05,0.122,Tıklamalar var; bütçeyi artırın.

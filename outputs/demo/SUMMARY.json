@@ -1,0 +1,1261 @@
+{
+  "summaries": {
+    "dev": {
+      "v1": {
+        "trials": 90,
+        "passed": 0,
+        "pass_rate": 0.0,
+        "decision_accuracy": 0.1333,
+        "critical_failure_rate": 0.7667,
+        "avg_score": 46.08,
+        "median_score": 42.5,
+        "avg_latency_ms": 0.049,
+        "observed_pass_at_k": 0.0,
+        "observed_pass_pow_k": 0.0,
+        "scenario_pass_all_trials": 0.0,
+        "error_code_counts": {
+          "F01": 0,
+          "F02": 0,
+          "F03": 0,
+          "F04": 0,
+          "F05": 69,
+          "F06": 0,
+          "F07": 0,
+          "F08": 0,
+          "FMT": 0
+        }
+      },
+      "v2": {
+        "trials": 90,
+        "passed": 15,
+        "pass_rate": 0.1667,
+        "decision_accuracy": 0.6333,
+        "critical_failure_rate": 0.0,
+        "avg_score": 71.0,
+        "median_score": 71.25,
+        "avg_latency_ms": 0.065,
+        "observed_pass_at_k": 0.1667,
+        "observed_pass_pow_k": 0.1667,
+        "scenario_pass_all_trials": 0.1667,
+        "error_code_counts": {
+          "F01": 0,
+          "F02": 0,
+          "F03": 0,
+          "F04": 0,
+          "F05": 0,
+          "F06": 0,
+          "F07": 0,
+          "F08": 0,
+          "FMT": 0
+        }
+      },
+      "v3": {
+        "trials": 90,
+        "passed": 90,
+        "pass_rate": 1.0,
+        "decision_accuracy": 1.0,
+        "critical_failure_rate": 0.0,
+        "avg_score": 100.0,
+        "median_score": 100.0,
+        "avg_latency_ms": 0.091,
+        "observed_pass_at_k": 1.0,
+        "observed_pass_pow_k": 1.0,
+        "scenario_pass_all_trials": 1.0,
+        "error_code_counts": {
+          "F01": 0,
+          "F02": 0,
+          "F03": 0,
+          "F04": 0,
+          "F05": 0,
+          "F06": 0,
+          "F07": 0,
+          "F08": 0,
+          "FMT": 0
+        }
+      }
+    },
+    "holdout": {
+      "v1": {
+        "trials": 30,
+        "passed": 0,
+        "pass_rate": 0.0,
+        "decision_accuracy": 0.1,
+        "critical_failure_rate": 0.6,
+        "avg_score": 46.88,
+        "median_score": 42.5,
+        "avg_latency_ms": 0.052,
+        "observed_pass_at_k": 0.0,
+        "observed_pass_pow_k": 0.0,
+        "scenario_pass_all_trials": 0.0,
+        "error_code_counts": {
+          "F01": 0,
+          "F02": 0,
+          "F03": 0,
+          "F04": 0,
+          "F05": 18,
+          "F06": 0,
+          "F07": 0,
+          "F08": 0,
+          "FMT": 0
+        }
+      },
+      "v2": {
+        "trials": 30,
+        "passed": 0,
+        "pass_rate": 0.0,
+        "decision_accuracy": 0.3,
+        "critical_failure_rate": 0.0,
+        "avg_score": 62.38,
+        "median_score": 57.5,
+        "avg_latency_ms": 0.056,
+        "observed_pass_at_k": 0.0,
+        "observed_pass_pow_k": 0.0,
+        "scenario_pass_all_trials": 0.0,
+        "error_code_counts": {
+          "F01": 0,
+          "F02": 0,
+          "F03": 0,
+          "F04": 0,
+          "F05": 0,
+          "F06": 0,
+          "F07": 0,
+          "F08": 0,
+          "FMT": 0
+        }
+      },
+      "v3": {
+        "trials": 30,
+        "passed": 24,
+        "pass_rate": 0.8,
+        "decision_accuracy": 0.9,
+        "critical_failure_rate": 0.0,
+        "avg_score": 94.38,
+        "median_score": 100.0,
+        "avg_latency_ms": 0.069,
+        "observed_pass_at_k": 0.8,
+        "observed_pass_pow_k": 0.8,
+        "scenario_pass_all_trials": 0.8,
+        "error_code_counts": {
+          "F01": 0,
+          "F02": 0,
+          "F03": 0,
+          "F04": 0,
+          "F05": 0,
+          "F06": 0,
+          "F07": 0,
+          "F08": 0,
+          "FMT": 0
+        }
+      }
+    }
+  },
+  "comparisons": [
+    {
+      "split": "dev",
+      "from": "v1",
+      "to": "v2",
+      "from_pass": 0.0,
+      "to_pass": 0.1667,
+      "pass_delta": 0.1667,
+      "from_avg_score": 46.08,
+      "to_avg_score": 71.0,
+      "regressions": [],
+      "improvements": [
+        "ADV-006",
+        "ADV-009",
+        "ADV-014",
+        "ADV-022",
+        "ADV-033"
+      ],
+      "scenario_deltas": [
+        {
+          "scenario_id": "ADV-001",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-002",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-003",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-004",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-006",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-007",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-008",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-009",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-011",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-012",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-013",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-014",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-015",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-017",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-018",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-019",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-020",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-022",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-023",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-024",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-025",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-026",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-028",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-029",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-031",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-033",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-035",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-036",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-038",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-039",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        }
+      ],
+      "note": "Paired comparison uses each scenario's pass rate across all supplied trials."
+    },
+    {
+      "split": "dev",
+      "from": "v2",
+      "to": "v3",
+      "from_pass": 0.1667,
+      "to_pass": 1.0,
+      "pass_delta": 0.8333,
+      "from_avg_score": 71.0,
+      "to_avg_score": 100.0,
+      "regressions": [],
+      "improvements": [
+        "ADV-001",
+        "ADV-002",
+        "ADV-003",
+        "ADV-004",
+        "ADV-007",
+        "ADV-008",
+        "ADV-011",
+        "ADV-012",
+        "ADV-013",
+        "ADV-015",
+        "ADV-017",
+        "ADV-018",
+        "ADV-019",
+        "ADV-020",
+        "ADV-023",
+        "ADV-024",
+        "ADV-025",
+        "ADV-026",
+        "ADV-028",
+        "ADV-029",
+        "ADV-031",
+        "ADV-035",
+        "ADV-036",
+        "ADV-038",
+        "ADV-039"
+      ],
+      "scenario_deltas": [
+        {
+          "scenario_id": "ADV-001",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-002",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-003",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-004",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-006",
+          "from_pass_rate": 1.0,
+          "to_pass_rate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-007",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-008",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-009",
+          "from_pass_rate": 1.0,
+          "to_pass_rate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-011",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-012",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-013",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-014",
+          "from_pass_rate": 1.0,
+          "to_pass_rate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-015",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-017",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-018",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-019",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-020",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-022",
+          "from_pass_rate": 1.0,
+          "to_pass_rate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-023",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-024",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-025",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-026",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-028",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-029",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-031",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-033",
+          "from_pass_rate": 1.0,
+          "to_pass_rate": 1.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-035",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-036",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-038",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-039",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        }
+      ],
+      "note": "Paired comparison uses each scenario's pass rate across all supplied trials."
+    },
+    {
+      "split": "dev",
+      "from": "v1",
+      "to": "v3",
+      "from_pass": 0.0,
+      "to_pass": 1.0,
+      "pass_delta": 1.0,
+      "from_avg_score": 46.08,
+      "to_avg_score": 100.0,
+      "regressions": [],
+      "improvements": [
+        "ADV-001",
+        "ADV-002",
+        "ADV-003",
+        "ADV-004",
+        "ADV-006",
+        "ADV-007",
+        "ADV-008",
+        "ADV-009",
+        "ADV-011",
+        "ADV-012",
+        "ADV-013",
+        "ADV-014",
+        "ADV-015",
+        "ADV-017",
+        "ADV-018",
+        "ADV-019",
+        "ADV-020",
+        "ADV-022",
+        "ADV-023",
+        "ADV-024",
+        "ADV-025",
+        "ADV-026",
+        "ADV-028",
+        "ADV-029",
+        "ADV-031",
+        "ADV-033",
+        "ADV-035",
+        "ADV-036",
+        "ADV-038",
+        "ADV-039"
+      ],
+      "scenario_deltas": [
+        {
+          "scenario_id": "ADV-001",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-002",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-003",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-004",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-006",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-007",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-008",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-009",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-011",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-012",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-013",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-014",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-015",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-017",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-018",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-019",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-020",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-022",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-023",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-024",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-025",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-026",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-028",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-029",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-031",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-033",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-035",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-036",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-038",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-039",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        }
+      ],
+      "note": "Paired comparison uses each scenario's pass rate across all supplied trials."
+    },
+    {
+      "split": "holdout",
+      "from": "v1",
+      "to": "v2",
+      "from_pass": 0.0,
+      "to_pass": 0.0,
+      "pass_delta": 0.0,
+      "from_avg_score": 46.88,
+      "to_avg_score": 62.38,
+      "regressions": [],
+      "improvements": [],
+      "scenario_deltas": [
+        {
+          "scenario_id": "ADV-005",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-010",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-016",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-021",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-027",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-030",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-032",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-034",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-037",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-040",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        }
+      ],
+      "note": "Paired comparison uses each scenario's pass rate across all supplied trials."
+    },
+    {
+      "split": "holdout",
+      "from": "v2",
+      "to": "v3",
+      "from_pass": 0.0,
+      "to_pass": 0.8,
+      "pass_delta": 0.8,
+      "from_avg_score": 62.38,
+      "to_avg_score": 94.38,
+      "regressions": [],
+      "improvements": [
+        "ADV-010",
+        "ADV-016",
+        "ADV-021",
+        "ADV-027",
+        "ADV-030",
+        "ADV-032",
+        "ADV-034",
+        "ADV-037"
+      ],
+      "scenario_deltas": [
+        {
+          "scenario_id": "ADV-005",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-010",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-016",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-021",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-027",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-030",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-032",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-034",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-037",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-040",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        }
+      ],
+      "note": "Paired comparison uses each scenario's pass rate across all supplied trials."
+    },
+    {
+      "split": "holdout",
+      "from": "v1",
+      "to": "v3",
+      "from_pass": 0.0,
+      "to_pass": 0.8,
+      "pass_delta": 0.8,
+      "from_avg_score": 46.88,
+      "to_avg_score": 94.38,
+      "regressions": [],
+      "improvements": [
+        "ADV-010",
+        "ADV-016",
+        "ADV-021",
+        "ADV-027",
+        "ADV-030",
+        "ADV-032",
+        "ADV-034",
+        "ADV-037"
+      ],
+      "scenario_deltas": [
+        {
+          "scenario_id": "ADV-005",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        },
+        {
+          "scenario_id": "ADV-010",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-016",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-021",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-027",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-030",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-032",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-034",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-037",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 1.0,
+          "delta": 1.0
+        },
+        {
+          "scenario_id": "ADV-040",
+          "from_pass_rate": 0.0,
+          "to_pass_rate": 0.0,
+          "delta": 0.0
+        }
+      ],
+      "note": "Paired comparison uses each scenario's pass rate across all supplied trials."
+    }
+  ],
+  "calibration": {
+    "positive_controls": 19,
+    "negative_mutations": 8,
+    "detection_rate": 1.0,
+    "false_positive_rate": 0.0,
+    "missed_mutations": [],
+    "details": [
+      {
+        "case": "ADV-001_good",
+        "label": "good",
+        "expected_code": null,
+        "detected_codes": [],
+        "correct": true
+      },
+      {
+        "case": "ADV-002_good",
+        "label": "good",
+        "expected_code": null,
+        "detected_codes": [],
+        "correct": true
+      },
+      {
+        "case": "ADV-003_good",
+        "label": "good",
+        "expected_code": null,
+        "detected_codes": [],
+        "correct": true
+      },
+      {
+        "case": "ADV-006_good",
+        "label": "good",
+        "expected_code": null,
+        "detected_codes": [],
+        "correct": true
+      },
+      {
+        "case": "ADV-007_good",
+        "label": "good",
+        "expected_code": null,
+        "detected_codes": [],
+        "correct": true
+      },
+      {
+        "case": "ADV-009_good",
+        "label": "good",
+        "expected_code": null,
+        "detected_codes": [],
+        "correct": true
+      },
+      {
+        "case": "ADV-011_good",
+        "label": "good",
+        "expected_code": null,
+        "detected_codes": [],
+        "correct": true
+      },
+      {
+        "case": "ADV-013_good",
+        "label": "good",
+        "expected_code": null,
+        "detected_codes": [],
+        "correct": true
+      },
+      {
+        "case": "ADV-017_good",
+        "label": "good",
+        "expected_code": null,
+        "detected_codes": [],
+        "correct": true
+      },
+      {
+        "case": "ADV-018_good",
+        "label": "good",
+        "expected_code": null,
+        "detected_codes": [],
+        "correct": true
+      },
+      {
+        "case": "ADV-019_good",
+        "label": "good",
+        "expected_code": null,
+        "detected_codes": [],
+        "correct": true
+      },
+      {
+        "case": "ADV-020_good",
+        "label": "good",
+        "expected_code": null,
+        "detected_codes": [],
+        "correct": true
+      },
+      {
+        "case": "ADV-022_good",
+        "label": "good",
+        "expected_code": null,
+        "detected_codes": [],
+        "correct": true
+      },
+      {
+        "case": "ADV-025_good",
+        "label": "good",
+        "expected_code": null,
+        "detected_codes": [],
+        "correct": true
+      },
+      {
+        "case": "ADV-028_good",
+        "label": "good",
+        "expected_code": null,
+        "detected_codes": [],
+        "correct": true
+      },
+      {
+        "case": "ADV-031_good",
+        "label": "good",
+        "expected_code": null,
+        "detected_codes": [],
+        "correct": true
+      },
+      {
+        "case": "ADV-036_good",
+        "label": "good",
+        "expected_code": null,
+        "detected_codes": [],
+        "correct": true
+      },
+      {
+        "case": "ADV-038_good",
+        "label": "good",
+        "expected_code": null,
+        "detected_codes": [],
+        "correct": true
+      },
+      {
+        "case": "ADV-003_negated_guarantee",
+        "label": "good",
+        "expected_code": null,
+        "detected_codes": [],
+        "correct": true
+      },
+      {
+        "case": "ADV-001_F01",
+        "label": "mutated",
+        "expected_code": "F01",
+        "detected_codes": [
+          "F01"
+        ],
+        "correct": true
+      },
+      {
+        "case": "ADV-002_F02",
+        "label": "mutated",
+        "expected_code": "F02",
+        "detected_codes": [
+          "F01",
+          "F02"
+        ],
+        "correct": true
+      },
+      {
+        "case": "ADV-003_F03",
+        "label": "mutated",
+        "expected_code": "F03",
+        "detected_codes": [
+          "F03"
+        ],
+        "correct": true
+      },
+      {
+        "case": "ADV-006_F04",
+        "label": "mutated",
+        "expected_code": "F04",
+        "detected_codes": [
+          "F04"
+        ],
+        "correct": true
+      },
+      {
+        "case": "ADV-007_F05",
+        "label": "mutated",
+        "expected_code": "F05",
+        "detected_codes": [
+          "F05"
+        ],
+        "correct": true
+      },
+      {
+        "case": "ADV-011_F06",
+        "label": "mutated",
+        "expected_code": "F06",
+        "detected_codes": [
+          "F06"
+        ],
+        "correct": true
+      },
+      {
+        "case": "ADV-012_F07",
+        "label": "mutated",
+        "expected_code": "F07",
+        "detected_codes": [
+          "F07"
+        ],
+        "correct": true
+      },
+      {
+        "case": "ADV-013_F08",
+        "label": "mutated",
+        "expected_code": "F08",
+        "detected_codes": [
+          "F08"
+        ],
+        "correct": true
+      }
+    ],
+    "limits": "Hand-crafted mutations are narrow known-pattern tests; not blind human-annotated validity. Expert agreement: NOT MEASURED."
+  }
+}

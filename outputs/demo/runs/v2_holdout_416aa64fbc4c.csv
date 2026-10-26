@@ -1,0 +1,31 @@
+﻿run_id,model,split,scenario_id,trial,decision,accepted,score,pass,critical_codes,latency_ms,recommendation
+416aa64fbc4c,v2,holdout,ADV-005,1,MAINTAIN,MAINTAIN,92.5,True,,0.035,Mevcut ayarları koruyun.
+416aa64fbc4c,v2,holdout,ADV-005,2,MAINTAIN,MAINTAIN,92.5,True,,0.023,Mevcut ayarları koruyun.
+416aa64fbc4c,v2,holdout,ADV-005,3,MAINTAIN,MAINTAIN,92.5,True,,0.019,Mevcut ayarları koruyun.
+416aa64fbc4c,v2,holdout,ADV-010,1,WAIT,WAIT,92.5,True,,0.021,Bu reklama hemen müdahale etmeyin.
+416aa64fbc4c,v2,holdout,ADV-010,2,WAIT,WAIT,92.5,True,,0.041,Bu reklama hemen müdahale etmeyin.
+416aa64fbc4c,v2,holdout,ADV-010,3,WAIT,WAIT,92.5,True,,0.017,Bu reklama hemen müdahale etmeyin.
+416aa64fbc4c,v2,holdout,ADV-016,1,MAINTAIN,DIAGNOSE,57.5,False,,0.02,Mevcut ayarları koruyun.
+416aa64fbc4c,v2,holdout,ADV-016,2,MAINTAIN,DIAGNOSE,57.5,False,,0.018,Mevcut ayarları koruyun.
+416aa64fbc4c,v2,holdout,ADV-016,3,MAINTAIN,DIAGNOSE,57.5,False,,0.018,Mevcut ayarları koruyun.
+416aa64fbc4c,v2,holdout,ADV-021,1,MAINTAIN,ACT,57.5,False,,0.018,Mevcut ayarları koruyun.
+416aa64fbc4c,v2,holdout,ADV-021,2,MAINTAIN,ACT,57.5,False,,0.018,Mevcut ayarları koruyun.
+416aa64fbc4c,v2,holdout,ADV-021,3,MAINTAIN,ACT,57.5,False,,0.018,Mevcut ayarları koruyun.
+416aa64fbc4c,v2,holdout,ADV-027,1,MAINTAIN,MEASURE,57.5,False,,0.019,Mevcut ayarları koruyun.
+416aa64fbc4c,v2,holdout,ADV-027,2,MAINTAIN,MEASURE,57.5,False,,0.018,Mevcut ayarları koruyun.
+416aa64fbc4c,v2,holdout,ADV-027,3,MAINTAIN,MEASURE,57.5,False,,0.017,Mevcut ayarları koruyun.
+416aa64fbc4c,v2,holdout,ADV-030,1,MAINTAIN,DIAGNOSE,57.5,False,,0.019,Mevcut ayarları koruyun.
+416aa64fbc4c,v2,holdout,ADV-030,2,MAINTAIN,DIAGNOSE,57.5,False,,0.018,Mevcut ayarları koruyun.
+416aa64fbc4c,v2,holdout,ADV-030,3,MAINTAIN,DIAGNOSE,57.5,False,,0.018,Mevcut ayarları koruyun.
+416aa64fbc4c,v2,holdout,ADV-032,1,MAINTAIN,DIAGNOSE,57.5,False,,0.018,Mevcut ayarları koruyun.
+416aa64fbc4c,v2,holdout,ADV-032,2,MAINTAIN,DIAGNOSE,57.5,False,,0.016,Mevcut ayarları koruyun.
+416aa64fbc4c,v2,holdout,ADV-032,3,MAINTAIN,DIAGNOSE,57.5,False,,0.017,Mevcut ayarları koruyun.
+416aa64fbc4c,v2,holdout,ADV-034,1,DIAGNOSE,DIAGNOSE,100.0,True,,0.023,Sonuç başı maliyet hedefin üzerinde.
+416aa64fbc4c,v2,holdout,ADV-034,2,DIAGNOSE,DIAGNOSE,100.0,True,,0.02,Sonuç başı maliyet hedefin üzerinde.
+416aa64fbc4c,v2,holdout,ADV-034,3,DIAGNOSE,DIAGNOSE,100.0,True,,0.019,Sonuç başı maliyet hedefin üzerinde.
+416aa64fbc4c,v2,holdout,ADV-037,1,MAINTAIN,WAIT,57.5,False,,0.018,Mevcut ayarları koruyun.
+416aa64fbc4c,v2,holdout,ADV-037,2,MAINTAIN,WAIT,57.5,False,,0.016,Mevcut ayarları koruyun.
+416aa64fbc4c,v2,holdout,ADV-037,3,MAINTAIN,WAIT,57.5,False,,0.015,Mevcut ayarları koruyun.
+416aa64fbc4c,v2,holdout,ADV-040,1,MAINTAIN,DIAGNOSE,57.5,False,,0.027,Mevcut ayarları koruyun.
+416aa64fbc4c,v2,holdout,ADV-040,2,MAINTAIN,DIAGNOSE,57.5,False,,0.017,Mevcut ayarları koruyun.
+416aa64fbc4c,v2,holdout,ADV-040,3,MAINTAIN,DIAGNOSE,57.5,False,,0.016,Mevcut ayarları koruyun.

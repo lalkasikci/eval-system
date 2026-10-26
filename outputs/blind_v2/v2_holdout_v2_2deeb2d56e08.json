@@ -1,0 +1,3547 @@
+{
+  "metadata": {
+    "run_id": "2deeb2d56e08",
+    "created_utc": "2026-10-26T08:45:29.526883+00:00",
+    "model": "v2",
+    "model_identifier": "rule-baseline-2",
+    "model_version": "rule-baseline-2",
+    "rules_version": "rules-v2",
+    "grader_version": "offline-heuristic-1.0",
+    "rubric_version": "1.0-provisional",
+    "prompt_version": "none-offline",
+    "split": "holdout_v2",
+    "trials_per_case": 3,
+    "scenario_version": "1.0",
+    "adapter": null,
+    "estimated_cost_usd": 0,
+    "adapter_prompt_versions": [],
+    "input_tokens": null,
+    "output_tokens": null,
+    "evaluation_mode": "deterministic+semantic-heuristic (not expert-certified)",
+    "holdout_policy": "scoring only; do not tune candidates from holdout feedback"
+  },
+  "results": [
+    {
+      "scenario_id": "ADV-041",
+      "trial": 1,
+      "input": {
+        "synthetic": true,
+        "sector": "veteriner kliniği",
+        "platform": "meta",
+        "objective": "leads",
+        "campaign_age_days": 2,
+        "observation_window_days": 2,
+        "currency": "TRY",
+        "metrics": {
+          "spend": 780,
+          "impressions": 11500,
+          "clicks": 210,
+          "leads": 5,
+          "appointments": 1,
+          "sales": null,
+          "revenue": null,
+          "target_cost_per_result": 140
+        },
+        "context": "Yeni kampanya; hafta sonu açıldı ve randevu geri dönüşleri ertesi iş günü işleniyor.",
+        "data_freshness": "current",
+        "availability": {
+          "sales_measured": false,
+          "appointments_measured": true
+        }
+      },
+      "output": {
+        "decision": "WAIT",
+        "recommendation": "Bu reklama hemen müdahale etmeyin.",
+        "rationale": "Kampanya yeni, kıyas için erken.",
+        "next_step": "Birkaç gün sonra tekrar ölçün.",
+        "uncertainty": "Düşük örneklem karar için yeterli değil.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 780
+          },
+          {
+            "key": "clicks",
+            "value": 210
+          }
+        ],
+        "claims": {
+          "spend": 780,
+          "clicks": 210
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.165,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "adapter_metadata": {},
+      "grade": {
+        "decision_correct": true,
+        "expected_decisions": [
+          "WAIT"
+        ],
+        "score": 71.25,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 2,
+          "evidence_uncertainty": 4,
+          "strategy": 1,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "semantic": {
+          "required_concepts": [
+            "time_sample",
+            "booking_crm"
+          ],
+          "matched_concepts": [
+            "time_sample"
+          ],
+          "missing_concepts": [
+            "booking_crm"
+          ],
+          "coverage": 0.5,
+          "decision_protocol_ok": true,
+          "grounded_evidence": true
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-041",
+      "trial": 2,
+      "input": {
+        "synthetic": true,
+        "sector": "veteriner kliniği",
+        "platform": "meta",
+        "objective": "leads",
+        "campaign_age_days": 2,
+        "observation_window_days": 2,
+        "currency": "TRY",
+        "metrics": {
+          "spend": 780,
+          "impressions": 11500,
+          "clicks": 210,
+          "leads": 5,
+          "appointments": 1,
+          "sales": null,
+          "revenue": null,
+          "target_cost_per_result": 140
+        },
+        "context": "Yeni kampanya; hafta sonu açıldı ve randevu geri dönüşleri ertesi iş günü işleniyor.",
+        "data_freshness": "current",
+        "availability": {
+          "sales_measured": false,
+          "appointments_measured": true
+        }
+      },
+      "output": {
+        "decision": "WAIT",
+        "recommendation": "Bu reklama hemen müdahale etmeyin.",
+        "rationale": "Kampanya yeni, kıyas için erken.",
+        "next_step": "Birkaç gün sonra tekrar ölçün.",
+        "uncertainty": "Düşük örneklem karar için yeterli değil.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 780
+          },
+          {
+            "key": "clicks",
+            "value": 210
+          }
+        ],
+        "claims": {
+          "spend": 780,
+          "clicks": 210
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.116,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "adapter_metadata": {},
+      "grade": {
+        "decision_correct": true,
+        "expected_decisions": [
+          "WAIT"
+        ],
+        "score": 71.25,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 2,
+          "evidence_uncertainty": 4,
+          "strategy": 1,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "semantic": {
+          "required_concepts": [
+            "time_sample",
+            "booking_crm"
+          ],
+          "matched_concepts": [
+            "time_sample"
+          ],
+          "missing_concepts": [
+            "booking_crm"
+          ],
+          "coverage": 0.5,
+          "decision_protocol_ok": true,
+          "grounded_evidence": true
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-041",
+      "trial": 3,
+      "input": {
+        "synthetic": true,
+        "sector": "veteriner kliniği",
+        "platform": "meta",
+        "objective": "leads",
+        "campaign_age_days": 2,
+        "observation_window_days": 2,
+        "currency": "TRY",
+        "metrics": {
+          "spend": 780,
+          "impressions": 11500,
+          "clicks": 210,
+          "leads": 5,
+          "appointments": 1,
+          "sales": null,
+          "revenue": null,
+          "target_cost_per_result": 140
+        },
+        "context": "Yeni kampanya; hafta sonu açıldı ve randevu geri dönüşleri ertesi iş günü işleniyor.",
+        "data_freshness": "current",
+        "availability": {
+          "sales_measured": false,
+          "appointments_measured": true
+        }
+      },
+      "output": {
+        "decision": "WAIT",
+        "recommendation": "Bu reklama hemen müdahale etmeyin.",
+        "rationale": "Kampanya yeni, kıyas için erken.",
+        "next_step": "Birkaç gün sonra tekrar ölçün.",
+        "uncertainty": "Düşük örneklem karar için yeterli değil.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 780
+          },
+          {
+            "key": "clicks",
+            "value": 210
+          }
+        ],
+        "claims": {
+          "spend": 780,
+          "clicks": 210
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.108,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "adapter_metadata": {},
+      "grade": {
+        "decision_correct": true,
+        "expected_decisions": [
+          "WAIT"
+        ],
+        "score": 71.25,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 2,
+          "evidence_uncertainty": 4,
+          "strategy": 1,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "semantic": {
+          "required_concepts": [
+            "time_sample",
+            "booking_crm"
+          ],
+          "matched_concepts": [
+            "time_sample"
+          ],
+          "missing_concepts": [
+            "booking_crm"
+          ],
+          "coverage": 0.5,
+          "decision_protocol_ok": true,
+          "grounded_evidence": true
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-042",
+      "trial": 1,
+      "input": {
+        "synthetic": true,
+        "sector": "online eğitim",
+        "platform": "google",
+        "objective": "sales",
+        "campaign_age_days": 24,
+        "observation_window_days": 14,
+        "currency": "TRY",
+        "metrics": {
+          "spend": 8400,
+          "impressions": 46000,
+          "clicks": 1320,
+          "leads": 96,
+          "appointments": null,
+          "sales": null,
+          "revenue": null,
+          "target_cost_per_result": 420
+        },
+        "context": "Ödeme başarı sayfasındaki Purchase etiketi son site güncellemesinden sonra gönderilmiyor.",
+        "data_freshness": "current",
+        "availability": {
+          "sales_measured": false,
+          "appointments_measured": false
+        }
+      },
+      "output": {
+        "decision": "MEASURE",
+        "recommendation": "Önce sonuç takibini doğrulayın.",
+        "rationale": "Ölçümleme eksik veya güvenilir değil.",
+        "next_step": "Veri kaynağını kontrol edin.",
+        "uncertainty": "Satış sonucunu bu veriden bilemeyiz.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 8400
+          },
+          {
+            "key": "clicks",
+            "value": 1320
+          }
+        ],
+        "claims": {
+          "spend": 8400,
+          "clicks": 1320
+        },
+        "action": {
+          "type": "audit_tracking"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.129,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "adapter_metadata": {},
+      "grade": {
+        "decision_correct": true,
+        "expected_decisions": [
+          "MEASURE"
+        ],
+        "score": 71.25,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 2,
+          "evidence_uncertainty": 4,
+          "strategy": 1,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "semantic": {
+          "required_concepts": [
+            "tracking",
+            "integration_limit",
+            "zero_null"
+          ],
+          "matched_concepts": [
+            "tracking"
+          ],
+          "missing_concepts": [
+            "integration_limit",
+            "zero_null"
+          ],
+          "coverage": 0.3333,
+          "decision_protocol_ok": true,
+          "grounded_evidence": true
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-042",
+      "trial": 2,
+      "input": {
+        "synthetic": true,
+        "sector": "online eğitim",
+        "platform": "google",
+        "objective": "sales",
+        "campaign_age_days": 24,
+        "observation_window_days": 14,
+        "currency": "TRY",
+        "metrics": {
+          "spend": 8400,
+          "impressions": 46000,
+          "clicks": 1320,
+          "leads": 96,
+          "appointments": null,
+          "sales": null,
+          "revenue": null,
+          "target_cost_per_result": 420
+        },
+        "context": "Ödeme başarı sayfasındaki Purchase etiketi son site güncellemesinden sonra gönderilmiyor.",
+        "data_freshness": "current",
+        "availability": {
+          "sales_measured": false,
+          "appointments_measured": false
+        }
+      },
+      "output": {
+        "decision": "MEASURE",
+        "recommendation": "Önce sonuç takibini doğrulayın.",
+        "rationale": "Ölçümleme eksik veya güvenilir değil.",
+        "next_step": "Veri kaynağını kontrol edin.",
+        "uncertainty": "Satış sonucunu bu veriden bilemeyiz.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 8400
+          },
+          {
+            "key": "clicks",
+            "value": 1320
+          }
+        ],
+        "claims": {
+          "spend": 8400,
+          "clicks": 1320
+        },
+        "action": {
+          "type": "audit_tracking"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.13,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "adapter_metadata": {},
+      "grade": {
+        "decision_correct": true,
+        "expected_decisions": [
+          "MEASURE"
+        ],
+        "score": 71.25,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 2,
+          "evidence_uncertainty": 4,
+          "strategy": 1,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "semantic": {
+          "required_concepts": [
+            "tracking",
+            "integration_limit",
+            "zero_null"
+          ],
+          "matched_concepts": [
+            "tracking"
+          ],
+          "missing_concepts": [
+            "integration_limit",
+            "zero_null"
+          ],
+          "coverage": 0.3333,
+          "decision_protocol_ok": true,
+          "grounded_evidence": true
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-042",
+      "trial": 3,
+      "input": {
+        "synthetic": true,
+        "sector": "online eğitim",
+        "platform": "google",
+        "objective": "sales",
+        "campaign_age_days": 24,
+        "observation_window_days": 14,
+        "currency": "TRY",
+        "metrics": {
+          "spend": 8400,
+          "impressions": 46000,
+          "clicks": 1320,
+          "leads": 96,
+          "appointments": null,
+          "sales": null,
+          "revenue": null,
+          "target_cost_per_result": 420
+        },
+        "context": "Ödeme başarı sayfasındaki Purchase etiketi son site güncellemesinden sonra gönderilmiyor.",
+        "data_freshness": "current",
+        "availability": {
+          "sales_measured": false,
+          "appointments_measured": false
+        }
+      },
+      "output": {
+        "decision": "MEASURE",
+        "recommendation": "Önce sonuç takibini doğrulayın.",
+        "rationale": "Ölçümleme eksik veya güvenilir değil.",
+        "next_step": "Veri kaynağını kontrol edin.",
+        "uncertainty": "Satış sonucunu bu veriden bilemeyiz.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 8400
+          },
+          {
+            "key": "clicks",
+            "value": 1320
+          }
+        ],
+        "claims": {
+          "spend": 8400,
+          "clicks": 1320
+        },
+        "action": {
+          "type": "audit_tracking"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.141,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "adapter_metadata": {},
+      "grade": {
+        "decision_correct": true,
+        "expected_decisions": [
+          "MEASURE"
+        ],
+        "score": 71.25,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 2,
+          "evidence_uncertainty": 4,
+          "strategy": 1,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "semantic": {
+          "required_concepts": [
+            "tracking",
+            "integration_limit",
+            "zero_null"
+          ],
+          "matched_concepts": [
+            "tracking"
+          ],
+          "missing_concepts": [
+            "integration_limit",
+            "zero_null"
+          ],
+          "coverage": 0.3333,
+          "decision_protocol_ok": true,
+          "grounded_evidence": true
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-043",
+      "trial": 1,
+      "input": {
+        "synthetic": true,
+        "sector": "fizyoterapi merkezi",
+        "platform": "meta",
+        "objective": "leads",
+        "campaign_age_days": 42,
+        "observation_window_days": 14,
+        "currency": "TRY",
+        "metrics": {
+          "spend": 7200,
+          "impressions": 68000,
+          "clicks": 1540,
+          "leads": 88,
+          "appointments": 6,
+          "sales": null,
+          "revenue": null,
+          "target_cost_per_result": 95
+        },
+        "context": "Form talepleri ucuzladı ancak çağrı ekibi nitelikli randevuya dönüşümün düştüğünü bildiriyor.",
+        "data_freshness": "current",
+        "availability": {
+          "sales_measured": false,
+          "appointments_measured": true
+        }
+      },
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 7200
+          },
+          {
+            "key": "clicks",
+            "value": 1540
+          }
+        ],
+        "claims": {
+          "spend": 7200,
+          "clicks": 1540
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.13,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "adapter_metadata": {},
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "DIAGNOSE"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "semantic": {
+          "required_concepts": [
+            "call_quality",
+            "booking_crm"
+          ],
+          "matched_concepts": [],
+          "missing_concepts": [
+            "call_quality",
+            "booking_crm"
+          ],
+          "coverage": 0.0,
+          "decision_protocol_ok": true,
+          "grounded_evidence": true
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-043",
+      "trial": 2,
+      "input": {
+        "synthetic": true,
+        "sector": "fizyoterapi merkezi",
+        "platform": "meta",
+        "objective": "leads",
+        "campaign_age_days": 42,
+        "observation_window_days": 14,
+        "currency": "TRY",
+        "metrics": {
+          "spend": 7200,
+          "impressions": 68000,
+          "clicks": 1540,
+          "leads": 88,
+          "appointments": 6,
+          "sales": null,
+          "revenue": null,
+          "target_cost_per_result": 95
+        },
+        "context": "Form talepleri ucuzladı ancak çağrı ekibi nitelikli randevuya dönüşümün düştüğünü bildiriyor.",
+        "data_freshness": "current",
+        "availability": {
+          "sales_measured": false,
+          "appointments_measured": true
+        }
+      },
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 7200
+          },
+          {
+            "key": "clicks",
+            "value": 1540
+          }
+        ],
+        "claims": {
+          "spend": 7200,
+          "clicks": 1540
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.089,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "adapter_metadata": {},
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "DIAGNOSE"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "semantic": {
+          "required_concepts": [
+            "call_quality",
+            "booking_crm"
+          ],
+          "matched_concepts": [],
+          "missing_concepts": [
+            "call_quality",
+            "booking_crm"
+          ],
+          "coverage": 0.0,
+          "decision_protocol_ok": true,
+          "grounded_evidence": true
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-043",
+      "trial": 3,
+      "input": {
+        "synthetic": true,
+        "sector": "fizyoterapi merkezi",
+        "platform": "meta",
+        "objective": "leads",
+        "campaign_age_days": 42,
+        "observation_window_days": 14,
+        "currency": "TRY",
+        "metrics": {
+          "spend": 7200,
+          "impressions": 68000,
+          "clicks": 1540,
+          "leads": 88,
+          "appointments": 6,
+          "sales": null,
+          "revenue": null,
+          "target_cost_per_result": 95
+        },
+        "context": "Form talepleri ucuzladı ancak çağrı ekibi nitelikli randevuya dönüşümün düştüğünü bildiriyor.",
+        "data_freshness": "current",
+        "availability": {
+          "sales_measured": false,
+          "appointments_measured": true
+        }
+      },
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 7200
+          },
+          {
+            "key": "clicks",
+            "value": 1540
+          }
+        ],
+        "claims": {
+          "spend": 7200,
+          "clicks": 1540
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.076,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "adapter_metadata": {},
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "DIAGNOSE"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "semantic": {
+          "required_concepts": [
+            "call_quality",
+            "booking_crm"
+          ],
+          "matched_concepts": [],
+          "missing_concepts": [
+            "call_quality",
+            "booking_crm"
+          ],
+          "coverage": 0.0,
+          "decision_protocol_ok": true,
+          "grounded_evidence": true
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-044",
+      "trial": 1,
+      "input": {
+        "synthetic": true,
+        "sector": "evcil hayvan ürünleri",
+        "platform": "google",
+        "objective": "sales",
+        "campaign_age_days": 50,
+        "observation_window_days": 21,
+        "currency": "TRY",
+        "metrics": {
+          "spend": 9600,
+          "impressions": 54000,
+          "clicks": 1680,
+          "leads": null,
+          "appointments": null,
+          "sales": 48,
+          "revenue": 38400,
+          "target_cost_per_result": 230
+        },
+        "context": "Satın alma takibi doğrulanmış; ürün marjı ve iadelerin nihai maliyeti bu görünümde yok.",
+        "data_freshness": "current",
+        "availability": {
+          "sales_measured": true,
+          "appointments_measured": false
+        }
+      },
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 9600
+          },
+          {
+            "key": "clicks",
+            "value": 1680
+          }
+        ],
+        "claims": {
+          "spend": 9600,
+          "clicks": 1680
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.1,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "adapter_metadata": {},
+      "grade": {
+        "decision_correct": true,
+        "expected_decisions": [
+          "MAINTAIN"
+        ],
+        "score": 71.25,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 2,
+          "evidence_uncertainty": 4,
+          "strategy": 1,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "semantic": {
+          "required_concepts": [
+            "target_cost",
+            "cpa_sale",
+            "profit_caution"
+          ],
+          "matched_concepts": [
+            "profit_caution"
+          ],
+          "missing_concepts": [
+            "target_cost",
+            "cpa_sale"
+          ],
+          "coverage": 0.3333,
+          "decision_protocol_ok": true,
+          "grounded_evidence": true
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-044",
+      "trial": 2,
+      "input": {
+        "synthetic": true,
+        "sector": "evcil hayvan ürünleri",
+        "platform": "google",
+        "objective": "sales",
+        "campaign_age_days": 50,
+        "observation_window_days": 21,
+        "currency": "TRY",
+        "metrics": {
+          "spend": 9600,
+          "impressions": 54000,
+          "clicks": 1680,
+          "leads": null,
+          "appointments": null,
+          "sales": 48,
+          "revenue": 38400,
+          "target_cost_per_result": 230
+        },
+        "context": "Satın alma takibi doğrulanmış; ürün marjı ve iadelerin nihai maliyeti bu görünümde yok.",
+        "data_freshness": "current",
+        "availability": {
+          "sales_measured": true,
+          "appointments_measured": false
+        }
+      },
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 9600
+          },
+          {
+            "key": "clicks",
+            "value": 1680
+          }
+        ],
+        "claims": {
+          "spend": 9600,
+          "clicks": 1680
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.082,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "adapter_metadata": {},
+      "grade": {
+        "decision_correct": true,
+        "expected_decisions": [
+          "MAINTAIN"
+        ],
+        "score": 71.25,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 2,
+          "evidence_uncertainty": 4,
+          "strategy": 1,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "semantic": {
+          "required_concepts": [
+            "target_cost",
+            "cpa_sale",
+            "profit_caution"
+          ],
+          "matched_concepts": [
+            "profit_caution"
+          ],
+          "missing_concepts": [
+            "target_cost",
+            "cpa_sale"
+          ],
+          "coverage": 0.3333,
+          "decision_protocol_ok": true,
+          "grounded_evidence": true
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-044",
+      "trial": 3,
+      "input": {
+        "synthetic": true,
+        "sector": "evcil hayvan ürünleri",
+        "platform": "google",
+        "objective": "sales",
+        "campaign_age_days": 50,
+        "observation_window_days": 21,
+        "currency": "TRY",
+        "metrics": {
+          "spend": 9600,
+          "impressions": 54000,
+          "clicks": 1680,
+          "leads": null,
+          "appointments": null,
+          "sales": 48,
+          "revenue": 38400,
+          "target_cost_per_result": 230
+        },
+        "context": "Satın alma takibi doğrulanmış; ürün marjı ve iadelerin nihai maliyeti bu görünümde yok.",
+        "data_freshness": "current",
+        "availability": {
+          "sales_measured": true,
+          "appointments_measured": false
+        }
+      },
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 9600
+          },
+          {
+            "key": "clicks",
+            "value": 1680
+          }
+        ],
+        "claims": {
+          "spend": 9600,
+          "clicks": 1680
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.077,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "adapter_metadata": {},
+      "grade": {
+        "decision_correct": true,
+        "expected_decisions": [
+          "MAINTAIN"
+        ],
+        "score": 71.25,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 2,
+          "evidence_uncertainty": 4,
+          "strategy": 1,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "semantic": {
+          "required_concepts": [
+            "target_cost",
+            "cpa_sale",
+            "profit_caution"
+          ],
+          "matched_concepts": [
+            "profit_caution"
+          ],
+          "missing_concepts": [
+            "target_cost",
+            "cpa_sale"
+          ],
+          "coverage": 0.3333,
+          "decision_protocol_ok": true,
+          "grounded_evidence": true
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-045",
+      "trial": 1,
+      "input": {
+        "synthetic": true,
+        "sector": "acil tesisat servisi",
+        "platform": "google",
+        "objective": "calls",
+        "campaign_age_days": 60,
+        "observation_window_days": 21,
+        "currency": "TRY",
+        "metrics": {
+          "spend": 6300,
+          "impressions": 29000,
+          "clicks": 940,
+          "leads": null,
+          "appointments": null,
+          "sales": null,
+          "revenue": null,
+          "target_cost_per_result": 180
+        },
+        "context": "Çağrı izleme doğrulanmış; akşam saatlerinde yüksek niyetli aramalar geliyor ve ekip ek talebi karşılayabilir.",
+        "data_freshness": "current",
+        "availability": {
+          "sales_measured": false,
+          "appointments_measured": false
+        }
+      },
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 6300
+          },
+          {
+            "key": "clicks",
+            "value": 940
+          }
+        ],
+        "claims": {
+          "spend": 6300,
+          "clicks": 940
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.076,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "adapter_metadata": {},
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "ACT"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "semantic": {
+          "required_concepts": [
+            "call_quality",
+            "search_terms",
+            "controlled_test",
+            "tracking"
+          ],
+          "matched_concepts": [],
+          "missing_concepts": [
+            "call_quality",
+            "search_terms",
+            "controlled_test",
+            "tracking"
+          ],
+          "coverage": 0.0,
+          "decision_protocol_ok": true,
+          "grounded_evidence": true
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-045",
+      "trial": 2,
+      "input": {
+        "synthetic": true,
+        "sector": "acil tesisat servisi",
+        "platform": "google",
+        "objective": "calls",
+        "campaign_age_days": 60,
+        "observation_window_days": 21,
+        "currency": "TRY",
+        "metrics": {
+          "spend": 6300,
+          "impressions": 29000,
+          "clicks": 940,
+          "leads": null,
+          "appointments": null,
+          "sales": null,
+          "revenue": null,
+          "target_cost_per_result": 180
+        },
+        "context": "Çağrı izleme doğrulanmış; akşam saatlerinde yüksek niyetli aramalar geliyor ve ekip ek talebi karşılayabilir.",
+        "data_freshness": "current",
+        "availability": {
+          "sales_measured": false,
+          "appointments_measured": false
+        }
+      },
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 6300
+          },
+          {
+            "key": "clicks",
+            "value": 940
+          }
+        ],
+        "claims": {
+          "spend": 6300,
+          "clicks": 940
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.115,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "adapter_metadata": {},
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "ACT"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "semantic": {
+          "required_concepts": [
+            "call_quality",
+            "search_terms",
+            "controlled_test",
+            "tracking"
+          ],
+          "matched_concepts": [],
+          "missing_concepts": [
+            "call_quality",
+            "search_terms",
+            "controlled_test",
+            "tracking"
+          ],
+          "coverage": 0.0,
+          "decision_protocol_ok": true,
+          "grounded_evidence": true
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-045",
+      "trial": 3,
+      "input": {
+        "synthetic": true,
+        "sector": "acil tesisat servisi",
+        "platform": "google",
+        "objective": "calls",
+        "campaign_age_days": 60,
+        "observation_window_days": 21,
+        "currency": "TRY",
+        "metrics": {
+          "spend": 6300,
+          "impressions": 29000,
+          "clicks": 940,
+          "leads": null,
+          "appointments": null,
+          "sales": null,
+          "revenue": null,
+          "target_cost_per_result": 180
+        },
+        "context": "Çağrı izleme doğrulanmış; akşam saatlerinde yüksek niyetli aramalar geliyor ve ekip ek talebi karşılayabilir.",
+        "data_freshness": "current",
+        "availability": {
+          "sales_measured": false,
+          "appointments_measured": false
+        }
+      },
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 6300
+          },
+          {
+            "key": "clicks",
+            "value": 940
+          }
+        ],
+        "claims": {
+          "spend": 6300,
+          "clicks": 940
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.158,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "adapter_metadata": {},
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "ACT"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "semantic": {
+          "required_concepts": [
+            "call_quality",
+            "search_terms",
+            "controlled_test",
+            "tracking"
+          ],
+          "matched_concepts": [],
+          "missing_concepts": [
+            "call_quality",
+            "search_terms",
+            "controlled_test",
+            "tracking"
+          ],
+          "coverage": 0.0,
+          "decision_protocol_ok": true,
+          "grounded_evidence": true
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-046",
+      "trial": 1,
+      "input": {
+        "synthetic": true,
+        "sector": "özel klinik",
+        "platform": "meta",
+        "objective": "leads",
+        "campaign_age_days": 31,
+        "observation_window_days": 14,
+        "currency": "TRY",
+        "metrics": {
+          "spend": 5100,
+          "impressions": 52000,
+          "clicks": 1210,
+          "leads": 73,
+          "appointments": null,
+          "sales": null,
+          "revenue": null,
+          "target_cost_per_result": 85
+        },
+        "context": "CRM webhooku üç gündür çalışmıyor; randevu alanı null ve son kayıtlar senkron değil.",
+        "data_freshness": "current",
+        "availability": {
+          "sales_measured": false,
+          "appointments_measured": false
+        }
+      },
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 5100
+          },
+          {
+            "key": "clicks",
+            "value": 1210
+          }
+        ],
+        "claims": {
+          "spend": 5100,
+          "clicks": 1210
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.109,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "adapter_metadata": {},
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "MEASURE"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "semantic": {
+          "required_concepts": [
+            "booking_crm",
+            "zero_null"
+          ],
+          "matched_concepts": [],
+          "missing_concepts": [
+            "booking_crm",
+            "zero_null"
+          ],
+          "coverage": 0.0,
+          "decision_protocol_ok": true,
+          "grounded_evidence": true
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-046",
+      "trial": 2,
+      "input": {
+        "synthetic": true,
+        "sector": "özel klinik",
+        "platform": "meta",
+        "objective": "leads",
+        "campaign_age_days": 31,
+        "observation_window_days": 14,
+        "currency": "TRY",
+        "metrics": {
+          "spend": 5100,
+          "impressions": 52000,
+          "clicks": 1210,
+          "leads": 73,
+          "appointments": null,
+          "sales": null,
+          "revenue": null,
+          "target_cost_per_result": 85
+        },
+        "context": "CRM webhooku üç gündür çalışmıyor; randevu alanı null ve son kayıtlar senkron değil.",
+        "data_freshness": "current",
+        "availability": {
+          "sales_measured": false,
+          "appointments_measured": false
+        }
+      },
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 5100
+          },
+          {
+            "key": "clicks",
+            "value": 1210
+          }
+        ],
+        "claims": {
+          "spend": 5100,
+          "clicks": 1210
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.229,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "adapter_metadata": {},
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "MEASURE"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "semantic": {
+          "required_concepts": [
+            "booking_crm",
+            "zero_null"
+          ],
+          "matched_concepts": [],
+          "missing_concepts": [
+            "booking_crm",
+            "zero_null"
+          ],
+          "coverage": 0.0,
+          "decision_protocol_ok": true,
+          "grounded_evidence": true
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-046",
+      "trial": 3,
+      "input": {
+        "synthetic": true,
+        "sector": "özel klinik",
+        "platform": "meta",
+        "objective": "leads",
+        "campaign_age_days": 31,
+        "observation_window_days": 14,
+        "currency": "TRY",
+        "metrics": {
+          "spend": 5100,
+          "impressions": 52000,
+          "clicks": 1210,
+          "leads": 73,
+          "appointments": null,
+          "sales": null,
+          "revenue": null,
+          "target_cost_per_result": 85
+        },
+        "context": "CRM webhooku üç gündür çalışmıyor; randevu alanı null ve son kayıtlar senkron değil.",
+        "data_freshness": "current",
+        "availability": {
+          "sales_measured": false,
+          "appointments_measured": false
+        }
+      },
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 5100
+          },
+          {
+            "key": "clicks",
+            "value": 1210
+          }
+        ],
+        "claims": {
+          "spend": 5100,
+          "clicks": 1210
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.136,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "adapter_metadata": {},
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "MEASURE"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "semantic": {
+          "required_concepts": [
+            "booking_crm",
+            "zero_null"
+          ],
+          "matched_concepts": [],
+          "missing_concepts": [
+            "booking_crm",
+            "zero_null"
+          ],
+          "coverage": 0.0,
+          "decision_protocol_ok": true,
+          "grounded_evidence": true
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-047",
+      "trial": 1,
+      "input": {
+        "synthetic": true,
+        "sector": "abonelik kutusu",
+        "platform": "meta",
+        "objective": "sales",
+        "campaign_age_days": 38,
+        "observation_window_days": 14,
+        "currency": "TRY",
+        "metrics": {
+          "spend": 11800,
+          "impressions": 92000,
+          "clicks": 2380,
+          "leads": null,
+          "appointments": null,
+          "sales": 64,
+          "revenue": 15340,
+          "target_cost_per_result": 170
+        },
+        "context": "ROAS yaklaşık 1,30; kargo, ürün maliyeti ve ilk ay iptalleri raporda bulunmuyor.",
+        "data_freshness": "current",
+        "availability": {
+          "sales_measured": true,
+          "appointments_measured": false
+        }
+      },
+      "output": {
+        "decision": "DIAGNOSE",
+        "recommendation": "Sonuç başı maliyet hedefin üzerinde.",
+        "rationale": "Maliyet farkının nedenini araştırın.",
+        "next_step": "Dönüşüm adımlarını inceleyin.",
+        "uncertainty": "Kesin neden henüz doğrulanmadı.",
+        "risk": "Bütçe artışını erteleyin.",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 11800
+          },
+          {
+            "key": "clicks",
+            "value": 2380
+          },
+          {
+            "key": "cpa_sale",
+            "value": 184.38
+          }
+        ],
+        "claims": {
+          "spend": 11800,
+          "clicks": 2380,
+          "cpa_sale": 184.38
+        },
+        "action": {
+          "type": "audit_funnel"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.186,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "adapter_metadata": {},
+      "grade": {
+        "decision_correct": true,
+        "expected_decisions": [
+          "DIAGNOSE"
+        ],
+        "score": 78.75,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 2,
+          "evidence_uncertainty": 4,
+          "strategy": 1,
+          "economics_risk": 4,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "semantic": {
+          "required_concepts": [
+            "profit_caution",
+            "gross_net_cancel"
+          ],
+          "matched_concepts": [],
+          "missing_concepts": [
+            "profit_caution",
+            "gross_net_cancel"
+          ],
+          "coverage": 0.0,
+          "decision_protocol_ok": true,
+          "grounded_evidence": true
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-047",
+      "trial": 2,
+      "input": {
+        "synthetic": true,
+        "sector": "abonelik kutusu",
+        "platform": "meta",
+        "objective": "sales",
+        "campaign_age_days": 38,
+        "observation_window_days": 14,
+        "currency": "TRY",
+        "metrics": {
+          "spend": 11800,
+          "impressions": 92000,
+          "clicks": 2380,
+          "leads": null,
+          "appointments": null,
+          "sales": 64,
+          "revenue": 15340,
+          "target_cost_per_result": 170
+        },
+        "context": "ROAS yaklaşık 1,30; kargo, ürün maliyeti ve ilk ay iptalleri raporda bulunmuyor.",
+        "data_freshness": "current",
+        "availability": {
+          "sales_measured": true,
+          "appointments_measured": false
+        }
+      },
+      "output": {
+        "decision": "DIAGNOSE",
+        "recommendation": "Sonuç başı maliyet hedefin üzerinde.",
+        "rationale": "Maliyet farkının nedenini araştırın.",
+        "next_step": "Dönüşüm adımlarını inceleyin.",
+        "uncertainty": "Kesin neden henüz doğrulanmadı.",
+        "risk": "Bütçe artışını erteleyin.",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 11800
+          },
+          {
+            "key": "clicks",
+            "value": 2380
+          },
+          {
+            "key": "cpa_sale",
+            "value": 184.38
+          }
+        ],
+        "claims": {
+          "spend": 11800,
+          "clicks": 2380,
+          "cpa_sale": 184.38
+        },
+        "action": {
+          "type": "audit_funnel"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.159,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "adapter_metadata": {},
+      "grade": {
+        "decision_correct": true,
+        "expected_decisions": [
+          "DIAGNOSE"
+        ],
+        "score": 78.75,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 2,
+          "evidence_uncertainty": 4,
+          "strategy": 1,
+          "economics_risk": 4,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "semantic": {
+          "required_concepts": [
+            "profit_caution",
+            "gross_net_cancel"
+          ],
+          "matched_concepts": [],
+          "missing_concepts": [
+            "profit_caution",
+            "gross_net_cancel"
+          ],
+          "coverage": 0.0,
+          "decision_protocol_ok": true,
+          "grounded_evidence": true
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-047",
+      "trial": 3,
+      "input": {
+        "synthetic": true,
+        "sector": "abonelik kutusu",
+        "platform": "meta",
+        "objective": "sales",
+        "campaign_age_days": 38,
+        "observation_window_days": 14,
+        "currency": "TRY",
+        "metrics": {
+          "spend": 11800,
+          "impressions": 92000,
+          "clicks": 2380,
+          "leads": null,
+          "appointments": null,
+          "sales": 64,
+          "revenue": 15340,
+          "target_cost_per_result": 170
+        },
+        "context": "ROAS yaklaşık 1,30; kargo, ürün maliyeti ve ilk ay iptalleri raporda bulunmuyor.",
+        "data_freshness": "current",
+        "availability": {
+          "sales_measured": true,
+          "appointments_measured": false
+        }
+      },
+      "output": {
+        "decision": "DIAGNOSE",
+        "recommendation": "Sonuç başı maliyet hedefin üzerinde.",
+        "rationale": "Maliyet farkının nedenini araştırın.",
+        "next_step": "Dönüşüm adımlarını inceleyin.",
+        "uncertainty": "Kesin neden henüz doğrulanmadı.",
+        "risk": "Bütçe artışını erteleyin.",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 11800
+          },
+          {
+            "key": "clicks",
+            "value": 2380
+          },
+          {
+            "key": "cpa_sale",
+            "value": 184.38
+          }
+        ],
+        "claims": {
+          "spend": 11800,
+          "clicks": 2380,
+          "cpa_sale": 184.38
+        },
+        "action": {
+          "type": "audit_funnel"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.151,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "adapter_metadata": {},
+      "grade": {
+        "decision_correct": true,
+        "expected_decisions": [
+          "DIAGNOSE"
+        ],
+        "score": 78.75,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 2,
+          "evidence_uncertainty": 4,
+          "strategy": 1,
+          "economics_risk": 4,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "semantic": {
+          "required_concepts": [
+            "profit_caution",
+            "gross_net_cancel"
+          ],
+          "matched_concepts": [],
+          "missing_concepts": [
+            "profit_caution",
+            "gross_net_cancel"
+          ],
+          "coverage": 0.0,
+          "decision_protocol_ok": true,
+          "grounded_evidence": true
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-048",
+      "trial": 1,
+      "input": {
+        "synthetic": true,
+        "sector": "yeni açılan kafe",
+        "platform": "meta",
+        "objective": "messages",
+        "campaign_age_days": 0,
+        "observation_window_days": 0,
+        "currency": "TRY",
+        "metrics": {
+          "spend": 0,
+          "impressions": 0,
+          "clicks": 0,
+          "leads": 0,
+          "appointments": null,
+          "sales": null,
+          "revenue": null,
+          "target_cost_per_result": 55
+        },
+        "context": "Kampanya taslak durumundan yeni çıkarıldı; henüz dağıtım başlamadı.",
+        "data_freshness": "current",
+        "availability": {
+          "sales_measured": false,
+          "appointments_measured": false
+        }
+      },
+      "output": {
+        "decision": "WAIT",
+        "recommendation": "Bu reklama hemen müdahale etmeyin.",
+        "rationale": "Kampanya yeni, kıyas için erken.",
+        "next_step": "Birkaç gün sonra tekrar ölçün.",
+        "uncertainty": "Düşük örneklem karar için yeterli değil.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 0
+          },
+          {
+            "key": "clicks",
+            "value": 0
+          }
+        ],
+        "claims": {
+          "spend": 0,
+          "clicks": 0
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.131,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "adapter_metadata": {},
+      "grade": {
+        "decision_correct": true,
+        "expected_decisions": [
+          "WAIT"
+        ],
+        "score": 71.25,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 2,
+          "evidence_uncertainty": 4,
+          "strategy": 1,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "semantic": {
+          "required_concepts": [
+            "target_cost"
+          ],
+          "matched_concepts": [],
+          "missing_concepts": [
+            "target_cost"
+          ],
+          "coverage": 0.0,
+          "decision_protocol_ok": true,
+          "grounded_evidence": true
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-048",
+      "trial": 2,
+      "input": {
+        "synthetic": true,
+        "sector": "yeni açılan kafe",
+        "platform": "meta",
+        "objective": "messages",
+        "campaign_age_days": 0,
+        "observation_window_days": 0,
+        "currency": "TRY",
+        "metrics": {
+          "spend": 0,
+          "impressions": 0,
+          "clicks": 0,
+          "leads": 0,
+          "appointments": null,
+          "sales": null,
+          "revenue": null,
+          "target_cost_per_result": 55
+        },
+        "context": "Kampanya taslak durumundan yeni çıkarıldı; henüz dağıtım başlamadı.",
+        "data_freshness": "current",
+        "availability": {
+          "sales_measured": false,
+          "appointments_measured": false
+        }
+      },
+      "output": {
+        "decision": "WAIT",
+        "recommendation": "Bu reklama hemen müdahale etmeyin.",
+        "rationale": "Kampanya yeni, kıyas için erken.",
+        "next_step": "Birkaç gün sonra tekrar ölçün.",
+        "uncertainty": "Düşük örneklem karar için yeterli değil.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 0
+          },
+          {
+            "key": "clicks",
+            "value": 0
+          }
+        ],
+        "claims": {
+          "spend": 0,
+          "clicks": 0
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.124,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "adapter_metadata": {},
+      "grade": {
+        "decision_correct": true,
+        "expected_decisions": [
+          "WAIT"
+        ],
+        "score": 71.25,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 2,
+          "evidence_uncertainty": 4,
+          "strategy": 1,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "semantic": {
+          "required_concepts": [
+            "target_cost"
+          ],
+          "matched_concepts": [],
+          "missing_concepts": [
+            "target_cost"
+          ],
+          "coverage": 0.0,
+          "decision_protocol_ok": true,
+          "grounded_evidence": true
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-048",
+      "trial": 3,
+      "input": {
+        "synthetic": true,
+        "sector": "yeni açılan kafe",
+        "platform": "meta",
+        "objective": "messages",
+        "campaign_age_days": 0,
+        "observation_window_days": 0,
+        "currency": "TRY",
+        "metrics": {
+          "spend": 0,
+          "impressions": 0,
+          "clicks": 0,
+          "leads": 0,
+          "appointments": null,
+          "sales": null,
+          "revenue": null,
+          "target_cost_per_result": 55
+        },
+        "context": "Kampanya taslak durumundan yeni çıkarıldı; henüz dağıtım başlamadı.",
+        "data_freshness": "current",
+        "availability": {
+          "sales_measured": false,
+          "appointments_measured": false
+        }
+      },
+      "output": {
+        "decision": "WAIT",
+        "recommendation": "Bu reklama hemen müdahale etmeyin.",
+        "rationale": "Kampanya yeni, kıyas için erken.",
+        "next_step": "Birkaç gün sonra tekrar ölçün.",
+        "uncertainty": "Düşük örneklem karar için yeterli değil.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 0
+          },
+          {
+            "key": "clicks",
+            "value": 0
+          }
+        ],
+        "claims": {
+          "spend": 0,
+          "clicks": 0
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.136,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "adapter_metadata": {},
+      "grade": {
+        "decision_correct": true,
+        "expected_decisions": [
+          "WAIT"
+        ],
+        "score": 71.25,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 2,
+          "evidence_uncertainty": 4,
+          "strategy": 1,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "semantic": {
+          "required_concepts": [
+            "target_cost"
+          ],
+          "matched_concepts": [],
+          "missing_concepts": [
+            "target_cost"
+          ],
+          "coverage": 0.0,
+          "decision_protocol_ok": true,
+          "grounded_evidence": true
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-049",
+      "trial": 1,
+      "input": {
+        "synthetic": true,
+        "sector": "çiçek aboneliği",
+        "platform": "google",
+        "objective": "sales",
+        "campaign_age_days": 45,
+        "observation_window_days": 14,
+        "currency": "TRY",
+        "metrics": {
+          "spend": 7400,
+          "impressions": 35000,
+          "clicks": 1080,
+          "leads": null,
+          "appointments": null,
+          "sales": 30,
+          "revenue": 22500,
+          "target_cost_per_result": 260
+        },
+        "context": "30 ödeme kaydının 9'u aynı gün iptal edilmiş; rapor brüt satın alma olaylarını gösteriyor.",
+        "data_freshness": "current",
+        "availability": {
+          "sales_measured": true,
+          "appointments_measured": false
+        }
+      },
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 7400
+          },
+          {
+            "key": "clicks",
+            "value": 1080
+          }
+        ],
+        "claims": {
+          "spend": 7400,
+          "clicks": 1080
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.146,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "adapter_metadata": {},
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "DIAGNOSE"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "semantic": {
+          "required_concepts": [
+            "gross_net_cancel"
+          ],
+          "matched_concepts": [],
+          "missing_concepts": [
+            "gross_net_cancel"
+          ],
+          "coverage": 0.0,
+          "decision_protocol_ok": true,
+          "grounded_evidence": true
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-049",
+      "trial": 2,
+      "input": {
+        "synthetic": true,
+        "sector": "çiçek aboneliği",
+        "platform": "google",
+        "objective": "sales",
+        "campaign_age_days": 45,
+        "observation_window_days": 14,
+        "currency": "TRY",
+        "metrics": {
+          "spend": 7400,
+          "impressions": 35000,
+          "clicks": 1080,
+          "leads": null,
+          "appointments": null,
+          "sales": 30,
+          "revenue": 22500,
+          "target_cost_per_result": 260
+        },
+        "context": "30 ödeme kaydının 9'u aynı gün iptal edilmiş; rapor brüt satın alma olaylarını gösteriyor.",
+        "data_freshness": "current",
+        "availability": {
+          "sales_measured": true,
+          "appointments_measured": false
+        }
+      },
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 7400
+          },
+          {
+            "key": "clicks",
+            "value": 1080
+          }
+        ],
+        "claims": {
+          "spend": 7400,
+          "clicks": 1080
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.132,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "adapter_metadata": {},
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "DIAGNOSE"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "semantic": {
+          "required_concepts": [
+            "gross_net_cancel"
+          ],
+          "matched_concepts": [],
+          "missing_concepts": [
+            "gross_net_cancel"
+          ],
+          "coverage": 0.0,
+          "decision_protocol_ok": true,
+          "grounded_evidence": true
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-049",
+      "trial": 3,
+      "input": {
+        "synthetic": true,
+        "sector": "çiçek aboneliği",
+        "platform": "google",
+        "objective": "sales",
+        "campaign_age_days": 45,
+        "observation_window_days": 14,
+        "currency": "TRY",
+        "metrics": {
+          "spend": 7400,
+          "impressions": 35000,
+          "clicks": 1080,
+          "leads": null,
+          "appointments": null,
+          "sales": 30,
+          "revenue": 22500,
+          "target_cost_per_result": 260
+        },
+        "context": "30 ödeme kaydının 9'u aynı gün iptal edilmiş; rapor brüt satın alma olaylarını gösteriyor.",
+        "data_freshness": "current",
+        "availability": {
+          "sales_measured": true,
+          "appointments_measured": false
+        }
+      },
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 7400
+          },
+          {
+            "key": "clicks",
+            "value": 1080
+          }
+        ],
+        "claims": {
+          "spend": 7400,
+          "clicks": 1080
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.135,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "adapter_metadata": {},
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "DIAGNOSE"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "semantic": {
+          "required_concepts": [
+            "gross_net_cancel"
+          ],
+          "matched_concepts": [],
+          "missing_concepts": [
+            "gross_net_cancel"
+          ],
+          "coverage": 0.0,
+          "decision_protocol_ok": true,
+          "grounded_evidence": true
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-050",
+      "trial": 1,
+      "input": {
+        "synthetic": true,
+        "sector": "psikolojik danışmanlık",
+        "platform": "google",
+        "objective": "leads",
+        "campaign_age_days": 26,
+        "observation_window_days": 14,
+        "currency": "TRY",
+        "metrics": {
+          "spend": 3900,
+          "impressions": 21000,
+          "clicks": 610,
+          "leads": 29,
+          "appointments": 8,
+          "sales": null,
+          "revenue": null,
+          "target_cost_per_result": 150
+        },
+        "context": "Yeni metin iddiaları ve yeniden pazarlama önerisi hassas kategori uygunluk incelemesi gerektiriyor.",
+        "data_freshness": "current",
+        "availability": {
+          "sales_measured": false,
+          "appointments_measured": true
+        }
+      },
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 3900
+          },
+          {
+            "key": "clicks",
+            "value": 610
+          }
+        ],
+        "claims": {
+          "spend": 3900,
+          "clicks": 610
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.135,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "adapter_metadata": {},
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "DIAGNOSE"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "semantic": {
+          "required_concepts": [
+            "compliance"
+          ],
+          "matched_concepts": [],
+          "missing_concepts": [
+            "compliance"
+          ],
+          "coverage": 0.0,
+          "decision_protocol_ok": true,
+          "grounded_evidence": true
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-050",
+      "trial": 2,
+      "input": {
+        "synthetic": true,
+        "sector": "psikolojik danışmanlık",
+        "platform": "google",
+        "objective": "leads",
+        "campaign_age_days": 26,
+        "observation_window_days": 14,
+        "currency": "TRY",
+        "metrics": {
+          "spend": 3900,
+          "impressions": 21000,
+          "clicks": 610,
+          "leads": 29,
+          "appointments": 8,
+          "sales": null,
+          "revenue": null,
+          "target_cost_per_result": 150
+        },
+        "context": "Yeni metin iddiaları ve yeniden pazarlama önerisi hassas kategori uygunluk incelemesi gerektiriyor.",
+        "data_freshness": "current",
+        "availability": {
+          "sales_measured": false,
+          "appointments_measured": true
+        }
+      },
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 3900
+          },
+          {
+            "key": "clicks",
+            "value": 610
+          }
+        ],
+        "claims": {
+          "spend": 3900,
+          "clicks": 610
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.123,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "adapter_metadata": {},
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "DIAGNOSE"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "semantic": {
+          "required_concepts": [
+            "compliance"
+          ],
+          "matched_concepts": [],
+          "missing_concepts": [
+            "compliance"
+          ],
+          "coverage": 0.0,
+          "decision_protocol_ok": true,
+          "grounded_evidence": true
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-050",
+      "trial": 3,
+      "input": {
+        "synthetic": true,
+        "sector": "psikolojik danışmanlık",
+        "platform": "google",
+        "objective": "leads",
+        "campaign_age_days": 26,
+        "observation_window_days": 14,
+        "currency": "TRY",
+        "metrics": {
+          "spend": 3900,
+          "impressions": 21000,
+          "clicks": 610,
+          "leads": 29,
+          "appointments": 8,
+          "sales": null,
+          "revenue": null,
+          "target_cost_per_result": 150
+        },
+        "context": "Yeni metin iddiaları ve yeniden pazarlama önerisi hassas kategori uygunluk incelemesi gerektiriyor.",
+        "data_freshness": "current",
+        "availability": {
+          "sales_measured": false,
+          "appointments_measured": true
+        }
+      },
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 3900
+          },
+          {
+            "key": "clicks",
+            "value": 610
+          }
+        ],
+        "claims": {
+          "spend": 3900,
+          "clicks": 610
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.13,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "adapter_metadata": {},
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "DIAGNOSE"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "semantic": {
+          "required_concepts": [
+            "compliance"
+          ],
+          "matched_concepts": [],
+          "missing_concepts": [
+            "compliance"
+          ],
+          "coverage": 0.0,
+          "decision_protocol_ok": true,
+          "grounded_evidence": true
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-051",
+      "trial": 1,
+      "input": {
+        "synthetic": true,
+        "sector": "B2B yazılım",
+        "platform": "google",
+        "objective": "leads",
+        "campaign_age_days": 55,
+        "observation_window_days": 21,
+        "currency": "TRY",
+        "metrics": {
+          "spend": 15200,
+          "impressions": 41000,
+          "clicks": 1230,
+          "leads": 102,
+          "appointments": 19,
+          "sales": 4,
+          "revenue": 24000,
+          "target_cost_per_result": 160
+        },
+        "context": "102 deneme kaydı var; ücretli müşteriye geçenlerin çoğu tek bir sektörden geliyor.",
+        "data_freshness": "current",
+        "availability": {
+          "sales_measured": true,
+          "appointments_measured": true
+        }
+      },
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 15200
+          },
+          {
+            "key": "clicks",
+            "value": 1230
+          }
+        ],
+        "claims": {
+          "spend": 15200,
+          "clicks": 1230
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.131,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "adapter_metadata": {},
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "DIAGNOSE"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "semantic": {
+          "required_concepts": [
+            "controlled_test",
+            "trial_paid"
+          ],
+          "matched_concepts": [],
+          "missing_concepts": [
+            "controlled_test",
+            "trial_paid"
+          ],
+          "coverage": 0.0,
+          "decision_protocol_ok": true,
+          "grounded_evidence": true
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-051",
+      "trial": 2,
+      "input": {
+        "synthetic": true,
+        "sector": "B2B yazılım",
+        "platform": "google",
+        "objective": "leads",
+        "campaign_age_days": 55,
+        "observation_window_days": 21,
+        "currency": "TRY",
+        "metrics": {
+          "spend": 15200,
+          "impressions": 41000,
+          "clicks": 1230,
+          "leads": 102,
+          "appointments": 19,
+          "sales": 4,
+          "revenue": 24000,
+          "target_cost_per_result": 160
+        },
+        "context": "102 deneme kaydı var; ücretli müşteriye geçenlerin çoğu tek bir sektörden geliyor.",
+        "data_freshness": "current",
+        "availability": {
+          "sales_measured": true,
+          "appointments_measured": true
+        }
+      },
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 15200
+          },
+          {
+            "key": "clicks",
+            "value": 1230
+          }
+        ],
+        "claims": {
+          "spend": 15200,
+          "clicks": 1230
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.128,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "adapter_metadata": {},
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "DIAGNOSE"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "semantic": {
+          "required_concepts": [
+            "controlled_test",
+            "trial_paid"
+          ],
+          "matched_concepts": [],
+          "missing_concepts": [
+            "controlled_test",
+            "trial_paid"
+          ],
+          "coverage": 0.0,
+          "decision_protocol_ok": true,
+          "grounded_evidence": true
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-051",
+      "trial": 3,
+      "input": {
+        "synthetic": true,
+        "sector": "B2B yazılım",
+        "platform": "google",
+        "objective": "leads",
+        "campaign_age_days": 55,
+        "observation_window_days": 21,
+        "currency": "TRY",
+        "metrics": {
+          "spend": 15200,
+          "impressions": 41000,
+          "clicks": 1230,
+          "leads": 102,
+          "appointments": 19,
+          "sales": 4,
+          "revenue": 24000,
+          "target_cost_per_result": 160
+        },
+        "context": "102 deneme kaydı var; ücretli müşteriye geçenlerin çoğu tek bir sektörden geliyor.",
+        "data_freshness": "current",
+        "availability": {
+          "sales_measured": true,
+          "appointments_measured": true
+        }
+      },
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 15200
+          },
+          {
+            "key": "clicks",
+            "value": 1230
+          }
+        ],
+        "claims": {
+          "spend": 15200,
+          "clicks": 1230
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.112,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "adapter_metadata": {},
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "DIAGNOSE"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "semantic": {
+          "required_concepts": [
+            "controlled_test",
+            "trial_paid"
+          ],
+          "matched_concepts": [],
+          "missing_concepts": [
+            "controlled_test",
+            "trial_paid"
+          ],
+          "coverage": 0.0,
+          "decision_protocol_ok": true,
+          "grounded_evidence": true
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-052",
+      "trial": 1,
+      "input": {
+        "synthetic": true,
+        "sector": "şehirler arası nakliye",
+        "platform": "meta",
+        "objective": "leads",
+        "campaign_age_days": 33,
+        "observation_window_days": 14,
+        "currency": "TRY",
+        "metrics": {
+          "spend": 6800,
+          "impressions": 61000,
+          "clicks": 1490,
+          "leads": 57,
+          "appointments": 12,
+          "sales": 5,
+          "revenue": 17500,
+          "target_cost_per_result": 130
+        },
+        "context": "Toplam sonuçlar üç bölgeyi birleştiriyor; her bölgenin ayrı maliyet ve satış dağılımı henüz çıkarılmadı.",
+        "data_freshness": "current",
+        "availability": {
+          "sales_measured": true,
+          "appointments_measured": true
+        }
+      },
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 6800
+          },
+          {
+            "key": "clicks",
+            "value": 1490
+          }
+        ],
+        "claims": {
+          "spend": 6800,
+          "clicks": 1490
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.081,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "adapter_metadata": {},
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "DIAGNOSE"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "semantic": {
+          "required_concepts": [
+            "target_cost",
+            "tracking",
+            "outlier",
+            "regional"
+          ],
+          "matched_concepts": [],
+          "missing_concepts": [
+            "target_cost",
+            "tracking",
+            "outlier",
+            "regional"
+          ],
+          "coverage": 0.0,
+          "decision_protocol_ok": true,
+          "grounded_evidence": true
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-052",
+      "trial": 2,
+      "input": {
+        "synthetic": true,
+        "sector": "şehirler arası nakliye",
+        "platform": "meta",
+        "objective": "leads",
+        "campaign_age_days": 33,
+        "observation_window_days": 14,
+        "currency": "TRY",
+        "metrics": {
+          "spend": 6800,
+          "impressions": 61000,
+          "clicks": 1490,
+          "leads": 57,
+          "appointments": 12,
+          "sales": 5,
+          "revenue": 17500,
+          "target_cost_per_result": 130
+        },
+        "context": "Toplam sonuçlar üç bölgeyi birleştiriyor; her bölgenin ayrı maliyet ve satış dağılımı henüz çıkarılmadı.",
+        "data_freshness": "current",
+        "availability": {
+          "sales_measured": true,
+          "appointments_measured": true
+        }
+      },
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 6800
+          },
+          {
+            "key": "clicks",
+            "value": 1490
+          }
+        ],
+        "claims": {
+          "spend": 6800,
+          "clicks": 1490
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.072,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "adapter_metadata": {},
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "DIAGNOSE"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "semantic": {
+          "required_concepts": [
+            "target_cost",
+            "tracking",
+            "outlier",
+            "regional"
+          ],
+          "matched_concepts": [],
+          "missing_concepts": [
+            "target_cost",
+            "tracking",
+            "outlier",
+            "regional"
+          ],
+          "coverage": 0.0,
+          "decision_protocol_ok": true,
+          "grounded_evidence": true
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    },
+    {
+      "scenario_id": "ADV-052",
+      "trial": 3,
+      "input": {
+        "synthetic": true,
+        "sector": "şehirler arası nakliye",
+        "platform": "meta",
+        "objective": "leads",
+        "campaign_age_days": 33,
+        "observation_window_days": 14,
+        "currency": "TRY",
+        "metrics": {
+          "spend": 6800,
+          "impressions": 61000,
+          "clicks": 1490,
+          "leads": 57,
+          "appointments": 12,
+          "sales": 5,
+          "revenue": 17500,
+          "target_cost_per_result": 130
+        },
+        "context": "Toplam sonuçlar üç bölgeyi birleştiriyor; her bölgenin ayrı maliyet ve satış dağılımı henüz çıkarılmadı.",
+        "data_freshness": "current",
+        "availability": {
+          "sales_measured": true,
+          "appointments_measured": true
+        }
+      },
+      "output": {
+        "decision": "MAINTAIN",
+        "recommendation": "Mevcut ayarları koruyun.",
+        "rationale": "Kısa vadede zorunlu değişiklik görünmüyor.",
+        "next_step": "Sonuçları izleyin.",
+        "uncertainty": "Gerçek kârlılık bu veriden kesinleşmez.",
+        "risk": "",
+        "evidence": [
+          {
+            "key": "spend",
+            "value": 6800
+          },
+          {
+            "key": "clicks",
+            "value": 1490
+          }
+        ],
+        "claims": {
+          "spend": 6800,
+          "clicks": 1490
+        },
+        "action": {
+          "type": "observe"
+        }
+      },
+      "producer_error": null,
+      "latency_ms": 0.08,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cost_usd": 0.0,
+      "adapter_metadata": {},
+      "grade": {
+        "decision_correct": false,
+        "expected_decisions": [
+          "DIAGNOSE"
+        ],
+        "score": 57.5,
+        "dimension_scores": {
+          "data_math": 4,
+          "diagnosis": 0,
+          "evidence_uncertainty": 4,
+          "strategy": 0,
+          "economics_risk": 2,
+          "actionability": 4,
+          "clarity": 4
+        },
+        "semantic": {
+          "required_concepts": [
+            "target_cost",
+            "tracking",
+            "outlier",
+            "regional"
+          ],
+          "matched_concepts": [],
+          "missing_concepts": [
+            "target_cost",
+            "tracking",
+            "outlier",
+            "regional"
+          ],
+          "coverage": 0.0,
+          "decision_protocol_ok": true,
+          "grounded_evidence": true
+        },
+        "critical_codes": [],
+        "critical_details": [],
+        "passed": false,
+        "limitations": [
+          "Deterministic checks cannot verify full semantic must_include/must_not_include; specialist calibration required."
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "trials": 36,
+    "passed": 0,
+    "pass_rate": 0.0,
+    "decision_accuracy": 0.4167,
+    "critical_failure_rate": 0.0,
+    "avg_score": 63.85,
+    "median_score": 57.5,
+    "avg_latency_ms": 0.124,
+    "observed_pass_at_k": 0.0,
+    "observed_pass_pow_k": 0.0,
+    "scenario_pass_all_trials": 0.0,
+    "error_code_counts": {
+      "F01": 0,
+      "F02": 0,
+      "F03": 0,
+      "F04": 0,
+      "F05": 0,
+      "F06": 0,
+      "F07": 0,
+      "F08": 0,
+      "FMT": 0
+    }
+  }
+}

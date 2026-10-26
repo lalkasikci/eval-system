@@ -1,0 +1,31 @@
+﻿run_id,model,split,scenario_id,trial,decision,accepted,score,pass,critical_codes,latency_ms,recommendation
+13fcbbc76b79,v3,holdout,ADV-005,1,MAINTAIN,MAINTAIN,78.75,False,,0.127,Mevcut reklamı koruyup hedef sonuç maliyetini düzenli izleyin.
+13fcbbc76b79,v3,holdout,ADV-005,2,MAINTAIN,MAINTAIN,78.75,False,,0.087,Mevcut reklamı koruyup hedef sonuç maliyetini düzenli izleyin.
+13fcbbc76b79,v3,holdout,ADV-005,3,MAINTAIN,MAINTAIN,78.75,False,,0.078,Mevcut reklamı koruyup hedef sonuç maliyetini düzenli izleyin.
+13fcbbc76b79,v3,holdout,ADV-010,1,WAIT,WAIT,100.0,True,,0.067,Bu kısa döneme bakarak reklamı değiştirmeyin.
+13fcbbc76b79,v3,holdout,ADV-010,2,WAIT,WAIT,100.0,True,,0.061,Bu kısa döneme bakarak reklamı değiştirmeyin.
+13fcbbc76b79,v3,holdout,ADV-010,3,WAIT,WAIT,100.0,True,,0.059,Bu kısa döneme bakarak reklamı değiştirmeyin.
+13fcbbc76b79,v3,holdout,ADV-016,1,DIAGNOSE,DIAGNOSE,100.0,True,,0.087,Talep çok ama randevuya dönüşüm zayıf; müşteri takip sürecini inceleyin.
+13fcbbc76b79,v3,holdout,ADV-016,2,DIAGNOSE,DIAGNOSE,100.0,True,,0.079,Talep çok ama randevuya dönüşüm zayıf; müşteri takip sürecini inceleyin.
+13fcbbc76b79,v3,holdout,ADV-016,3,DIAGNOSE,DIAGNOSE,100.0,True,,0.076,Talep çok ama randevuya dönüşüm zayıf; müşteri takip sürecini inceleyin.
+13fcbbc76b79,v3,holdout,ADV-021,1,ACT,ACT,100.0,True,,0.073,İşe yarayan sorgu ve saat bölümünü sınırlı bir testle geliştirin.
+13fcbbc76b79,v3,holdout,ADV-021,2,ACT,ACT,100.0,True,,0.071,İşe yarayan sorgu ve saat bölümünü sınırlı bir testle geliştirin.
+13fcbbc76b79,v3,holdout,ADV-021,3,ACT,ACT,100.0,True,,0.065,İşe yarayan sorgu ve saat bölümünü sınırlı bir testle geliştirin.
+13fcbbc76b79,v3,holdout,ADV-027,1,MEASURE,MEASURE,100.0,True,,0.061,Telefon tıklaması ile tamamlanan gerçek görüşmeyi ayrı ölçün.
+13fcbbc76b79,v3,holdout,ADV-027,2,MEASURE,MEASURE,100.0,True,,0.057,Telefon tıklaması ile tamamlanan gerçek görüşmeyi ayrı ölçün.
+13fcbbc76b79,v3,holdout,ADV-027,3,MEASURE,MEASURE,100.0,True,,0.057,Telefon tıklaması ile tamamlanan gerçek görüşmeyi ayrı ölçün.
+13fcbbc76b79,v3,holdout,ADV-030,1,DIAGNOSE,DIAGNOSE,100.0,True,,0.074,Zaman kısıtı ile rezervasyon dönüşümünü birlikte inceleyin.
+13fcbbc76b79,v3,holdout,ADV-030,2,DIAGNOSE,DIAGNOSE,100.0,True,,0.07,Zaman kısıtı ile rezervasyon dönüşümünü birlikte inceleyin.
+13fcbbc76b79,v3,holdout,ADV-030,3,DIAGNOSE,DIAGNOSE,100.0,True,,0.068,Zaman kısıtı ile rezervasyon dönüşümünü birlikte inceleyin.
+13fcbbc76b79,v3,holdout,ADV-032,1,DIAGNOSE,DIAGNOSE,100.0,True,,0.069,Brüt ve net satışları ayırıp iptal/iade nedenlerini inceleyin.
+13fcbbc76b79,v3,holdout,ADV-032,2,DIAGNOSE,DIAGNOSE,100.0,True,,0.066,Brüt ve net satışları ayırıp iptal/iade nedenlerini inceleyin.
+13fcbbc76b79,v3,holdout,ADV-032,3,DIAGNOSE,DIAGNOSE,100.0,True,,0.063,Brüt ve net satışları ayırıp iptal/iade nedenlerini inceleyin.
+13fcbbc76b79,v3,holdout,ADV-034,1,DIAGNOSE,DIAGNOSE,100.0,True,,0.072,Kampanya değişikliğini mevzuat ve platform uygunluk kontrolüne bağlayın.
+13fcbbc76b79,v3,holdout,ADV-034,2,DIAGNOSE,DIAGNOSE,100.0,True,,0.067,Kampanya değişikliğini mevzuat ve platform uygunluk kontrolüne bağlayın.
+13fcbbc76b79,v3,holdout,ADV-034,3,DIAGNOSE,DIAGNOSE,100.0,True,,0.066,Kampanya değişikliğini mevzuat ve platform uygunluk kontrolüne bağlayın.
+13fcbbc76b79,v3,holdout,ADV-037,1,WAIT,WAIT,100.0,True,,0.056,Henüz reklam harcaması ve dağıtım yok.
+13fcbbc76b79,v3,holdout,ADV-037,2,WAIT,WAIT,100.0,True,,0.074,Henüz reklam harcaması ve dağıtım yok.
+13fcbbc76b79,v3,holdout,ADV-037,3,WAIT,WAIT,100.0,True,,0.051,Henüz reklam harcaması ve dağıtım yok.
+13fcbbc76b79,v3,holdout,ADV-040,1,ACT,DIAGNOSE,65.0,False,,0.059,Bütçeyi büyütmek yerine boş tarih ve kapasiteye dönük küçük bir test yapın.
+13fcbbc76b79,v3,holdout,ADV-040,2,ACT,DIAGNOSE,65.0,False,,0.054,Bütçeyi büyütmek yerine boş tarih ve kapasiteye dönük küçük bir test yapın.
+13fcbbc76b79,v3,holdout,ADV-040,3,ACT,DIAGNOSE,65.0,False,,0.059,Bütçeyi büyütmek yerine boş tarih ve kapasiteye dönük küçük bir test yapın.

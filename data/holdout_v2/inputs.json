@@ -1,0 +1,50 @@
+[
+  {
+    "id": "ADV-041", "group": "Early-stage / wait",
+    "input": {"scenario_id":"ADV-041","synthetic":true,"sector":"veteriner kliniği","platform":"meta","objective":"leads","campaign_age_days":2,"observation_window_days":2,"currency":"TRY","metrics":{"spend":780,"impressions":11500,"clicks":210,"leads":5,"appointments":1,"sales":null,"revenue":null,"target_cost_per_result":140},"context":"Yeni kampanya; hafta sonu açıldı ve randevu geri dönüşleri ertesi iş günü işleniyor.","data_freshness":"current","availability":{"sales_measured":false,"appointments_measured":true}}
+  },
+  {
+    "id": "ADV-042", "group": "Measurement / measure",
+    "input": {"scenario_id":"ADV-042","synthetic":true,"sector":"online eğitim","platform":"google","objective":"sales","campaign_age_days":24,"observation_window_days":14,"currency":"TRY","metrics":{"spend":8400,"impressions":46000,"clicks":1320,"leads":96,"appointments":null,"sales":null,"revenue":null,"target_cost_per_result":420},"context":"Ödeme başarı sayfasındaki Purchase etiketi son site güncellemesinden sonra gönderilmiyor.","data_freshness":"current","availability":{"sales_measured":false,"appointments_measured":false}}
+  },
+  {
+    "id": "ADV-043", "group": "Performance / diagnose",
+    "input": {"scenario_id":"ADV-043","synthetic":true,"sector":"fizyoterapi merkezi","platform":"meta","objective":"leads","campaign_age_days":42,"observation_window_days":14,"currency":"TRY","metrics":{"spend":7200,"impressions":68000,"clicks":1540,"leads":88,"appointments":6,"sales":null,"revenue":null,"target_cost_per_result":95},"context":"Form talepleri ucuzladı ancak çağrı ekibi nitelikli randevuya dönüşümün düştüğünü bildiriyor.","data_freshness":"current","availability":{"sales_measured":false,"appointments_measured":true}}
+  },
+  {
+    "id": "ADV-044", "group": "Healthy / maintain",
+    "input": {"scenario_id":"ADV-044","synthetic":true,"sector":"evcil hayvan ürünleri","platform":"google","objective":"sales","campaign_age_days":50,"observation_window_days":21,"currency":"TRY","metrics":{"spend":9600,"impressions":54000,"clicks":1680,"leads":null,"appointments":null,"sales":48,"revenue":38400,"target_cost_per_result":230},"context":"Satın alma takibi doğrulanmış; ürün marjı ve iadelerin nihai maliyeti bu görünümde yok.","data_freshness":"current","availability":{"sales_measured":true,"appointments_measured":false}}
+  },
+  {
+    "id": "ADV-045", "group": "Budget / act or diagnose",
+    "input": {"scenario_id":"ADV-045","synthetic":true,"sector":"acil tesisat servisi","platform":"google","objective":"calls","campaign_age_days":60,"observation_window_days":21,"currency":"TRY","metrics":{"spend":6300,"impressions":29000,"clicks":940,"leads":null,"appointments":null,"sales":null,"revenue":null,"target_cost_per_result":180},"context":"Çağrı izleme doğrulanmış; akşam saatlerinde yüksek niyetli aramalar geliyor ve ekip ek talebi karşılayabilir.","data_freshness":"current","availability":{"sales_measured":false,"appointments_measured":false}}
+  },
+  {
+    "id": "ADV-046", "group": "Measurement / measure",
+    "input": {"scenario_id":"ADV-046","synthetic":true,"sector":"özel klinik","platform":"meta","objective":"leads","campaign_age_days":31,"observation_window_days":14,"currency":"TRY","metrics":{"spend":5100,"impressions":52000,"clicks":1210,"leads":73,"appointments":null,"sales":null,"revenue":null,"target_cost_per_result":85},"context":"CRM webhooku üç gündür çalışmıyor; randevu alanı null ve son kayıtlar senkron değil.","data_freshness":"current","availability":{"sales_measured":false,"appointments_measured":false}}
+  },
+  {
+    "id": "ADV-047", "group": "Conflicting signals",
+    "input": {"scenario_id":"ADV-047","synthetic":true,"sector":"abonelik kutusu","platform":"meta","objective":"sales","campaign_age_days":38,"observation_window_days":14,"currency":"TRY","metrics":{"spend":11800,"impressions":92000,"clicks":2380,"leads":null,"appointments":null,"sales":64,"revenue":15340,"target_cost_per_result":170},"context":"ROAS yaklaşık 1,30; kargo, ürün maliyeti ve ilk ay iptalleri raporda bulunmuyor.","data_freshness":"current","availability":{"sales_measured":true,"appointments_measured":false}}
+  },
+  {
+    "id": "ADV-048", "group": "Stability / edge cases",
+    "input": {"scenario_id":"ADV-048","synthetic":true,"sector":"yeni açılan kafe","platform":"meta","objective":"messages","campaign_age_days":0,"observation_window_days":0,"currency":"TRY","metrics":{"spend":0,"impressions":0,"clicks":0,"leads":0,"appointments":null,"sales":null,"revenue":null,"target_cost_per_result":55},"context":"Kampanya taslak durumundan yeni çıkarıldı; henüz dağıtım başlamadı.","data_freshness":"current","availability":{"sales_measured":false,"appointments_measured":false}}
+  },
+  {
+    "id": "ADV-049", "group": "Conflicting signals",
+    "input": {"scenario_id":"ADV-049","synthetic":true,"sector":"çiçek aboneliği","platform":"google","objective":"sales","campaign_age_days":45,"observation_window_days":14,"currency":"TRY","metrics":{"spend":7400,"impressions":35000,"clicks":1080,"leads":null,"appointments":null,"sales":30,"revenue":22500,"target_cost_per_result":260},"context":"30 ödeme kaydının 9'u aynı gün iptal edilmiş; rapor brüt satın alma olaylarını gösteriyor.","data_freshness":"current","availability":{"sales_measured":true,"appointments_measured":false}}
+  },
+  {
+    "id": "ADV-050", "group": "Platform / constraints",
+    "input": {"scenario_id":"ADV-050","synthetic":true,"sector":"psikolojik danışmanlık","platform":"google","objective":"leads","campaign_age_days":26,"observation_window_days":14,"currency":"TRY","metrics":{"spend":3900,"impressions":21000,"clicks":610,"leads":29,"appointments":8,"sales":null,"revenue":null,"target_cost_per_result":150},"context":"Yeni metin iddiaları ve yeniden pazarlama önerisi hassas kategori uygunluk incelemesi gerektiriyor.","data_freshness":"current","availability":{"sales_measured":false,"appointments_measured":true}}
+  },
+  {
+    "id": "ADV-051", "group": "Performance / diagnose",
+    "input": {"scenario_id":"ADV-051","synthetic":true,"sector":"B2B yazılım","platform":"google","objective":"leads","campaign_age_days":55,"observation_window_days":21,"currency":"TRY","metrics":{"spend":15200,"impressions":41000,"clicks":1230,"leads":102,"appointments":19,"sales":4,"revenue":24000,"target_cost_per_result":160},"context":"102 deneme kaydı var; ücretli müşteriye geçenlerin çoğu tek bir sektörden geliyor.","data_freshness":"current","availability":{"sales_measured":true,"appointments_measured":true}}
+  },
+  {
+    "id": "ADV-052", "group": "Stability / edge cases",
+    "input": {"scenario_id":"ADV-052","synthetic":true,"sector":"şehirler arası nakliye","platform":"meta","objective":"leads","campaign_age_days":33,"observation_window_days":14,"currency":"TRY","metrics":{"spend":6800,"impressions":61000,"clicks":1490,"leads":57,"appointments":12,"sales":5,"revenue":17500,"target_cost_per_result":130},"context":"Toplam sonuçlar üç bölgeyi birleştiriyor; her bölgenin ayrı maliyet ve satış dağılımı henüz çıkarılmadı.","data_freshness":"current","availability":{"sales_measured":true,"appointments_measured":true}}
+  }
+]

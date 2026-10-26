@@ -1,0 +1,31 @@
+﻿run_id,model,split,scenario_id,trial,decision,accepted,score,pass,critical_codes,latency_ms,recommendation
+725f0c1257db,v2,holdout,ADV-005,1,MAINTAIN,MAINTAIN,71.25,False,,0.293,Mevcut ayarları koruyun.
+725f0c1257db,v2,holdout,ADV-005,2,MAINTAIN,MAINTAIN,71.25,False,,0.386,Mevcut ayarları koruyun.
+725f0c1257db,v2,holdout,ADV-005,3,MAINTAIN,MAINTAIN,71.25,False,,0.585,Mevcut ayarları koruyun.
+725f0c1257db,v2,holdout,ADV-010,1,WAIT,WAIT,71.25,False,,0.349,Bu reklama hemen müdahale etmeyin.
+725f0c1257db,v2,holdout,ADV-010,2,WAIT,WAIT,71.25,False,,0.131,Bu reklama hemen müdahale etmeyin.
+725f0c1257db,v2,holdout,ADV-010,3,WAIT,WAIT,71.25,False,,0.124,Bu reklama hemen müdahale etmeyin.
+725f0c1257db,v2,holdout,ADV-016,1,MAINTAIN,DIAGNOSE,57.5,False,,0.133,Mevcut ayarları koruyun.
+725f0c1257db,v2,holdout,ADV-016,2,MAINTAIN,DIAGNOSE,57.5,False,,0.156,Mevcut ayarları koruyun.
+725f0c1257db,v2,holdout,ADV-016,3,MAINTAIN,DIAGNOSE,57.5,False,,0.114,Mevcut ayarları koruyun.
+725f0c1257db,v2,holdout,ADV-021,1,MAINTAIN,ACT,57.5,False,,0.124,Mevcut ayarları koruyun.
+725f0c1257db,v2,holdout,ADV-021,2,MAINTAIN,ACT,57.5,False,,0.116,Mevcut ayarları koruyun.
+725f0c1257db,v2,holdout,ADV-021,3,MAINTAIN,ACT,57.5,False,,0.139,Mevcut ayarları koruyun.
+725f0c1257db,v2,holdout,ADV-027,1,MAINTAIN,MEASURE,57.5,False,,0.116,Mevcut ayarları koruyun.
+725f0c1257db,v2,holdout,ADV-027,2,MAINTAIN,MEASURE,57.5,False,,0.11,Mevcut ayarları koruyun.
+725f0c1257db,v2,holdout,ADV-027,3,MAINTAIN,MEASURE,57.5,False,,0.11,Mevcut ayarları koruyun.
+725f0c1257db,v2,holdout,ADV-030,1,MAINTAIN,DIAGNOSE,57.5,False,,0.112,Mevcut ayarları koruyun.
+725f0c1257db,v2,holdout,ADV-030,2,MAINTAIN,DIAGNOSE,57.5,False,,0.117,Mevcut ayarları koruyun.
+725f0c1257db,v2,holdout,ADV-030,3,MAINTAIN,DIAGNOSE,57.5,False,,0.113,Mevcut ayarları koruyun.
+725f0c1257db,v2,holdout,ADV-032,1,MAINTAIN,DIAGNOSE,57.5,False,,0.114,Mevcut ayarları koruyun.
+725f0c1257db,v2,holdout,ADV-032,2,MAINTAIN,DIAGNOSE,57.5,False,,0.11,Mevcut ayarları koruyun.
+725f0c1257db,v2,holdout,ADV-032,3,MAINTAIN,DIAGNOSE,57.5,False,,0.112,Mevcut ayarları koruyun.
+725f0c1257db,v2,holdout,ADV-034,1,DIAGNOSE,DIAGNOSE,78.75,False,,0.19,Sonuç başı maliyet hedefin üzerinde.
+725f0c1257db,v2,holdout,ADV-034,2,DIAGNOSE,DIAGNOSE,78.75,False,,0.25,Sonuç başı maliyet hedefin üzerinde.
+725f0c1257db,v2,holdout,ADV-034,3,DIAGNOSE,DIAGNOSE,78.75,False,,0.217,Sonuç başı maliyet hedefin üzerinde.
+725f0c1257db,v2,holdout,ADV-037,1,MAINTAIN,WAIT,57.5,False,,0.205,Mevcut ayarları koruyun.
+725f0c1257db,v2,holdout,ADV-037,2,MAINTAIN,WAIT,57.5,False,,0.178,Mevcut ayarları koruyun.
+725f0c1257db,v2,holdout,ADV-037,3,MAINTAIN,WAIT,57.5,False,,0.191,Mevcut ayarları koruyun.
+725f0c1257db,v2,holdout,ADV-040,1,MAINTAIN,DIAGNOSE,57.5,False,,0.196,Mevcut ayarları koruyun.
+725f0c1257db,v2,holdout,ADV-040,2,MAINTAIN,DIAGNOSE,57.5,False,,0.195,Mevcut ayarları koruyun.
+725f0c1257db,v2,holdout,ADV-040,3,MAINTAIN,DIAGNOSE,57.5,False,,0.199,Mevcut ayarları koruyun.

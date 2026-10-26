@@ -1,0 +1,37 @@
+﻿run_id,model,split,scenario_id,trial,decision,accepted,score,pass,critical_codes,latency_ms,recommendation
+eba2f11617ef,v3,holdout_v2,ADV-041,1,WAIT,WAIT,78.75,False,,0.137,Bu kısa döneme bakarak reklamı değiştirmeyin.
+eba2f11617ef,v3,holdout_v2,ADV-041,2,WAIT,WAIT,78.75,False,,0.096,Bu kısa döneme bakarak reklamı değiştirmeyin.
+eba2f11617ef,v3,holdout_v2,ADV-041,3,WAIT,WAIT,78.75,False,,0.082,Bu kısa döneme bakarak reklamı değiştirmeyin.
+eba2f11617ef,v3,holdout_v2,ADV-042,1,MEASURE,MEASURE,100.0,True,,0.087,Önce Purchase/sonuç olay akışını ve entegrasyonu doğrulayın.
+eba2f11617ef,v3,holdout_v2,ADV-042,2,MEASURE,MEASURE,100.0,True,,0.081,Önce Purchase/sonuç olay akışını ve entegrasyonu doğrulayın.
+eba2f11617ef,v3,holdout_v2,ADV-042,3,MEASURE,MEASURE,100.0,True,,0.073,Önce Purchase/sonuç olay akışını ve entegrasyonu doğrulayın.
+eba2f11617ef,v3,holdout_v2,ADV-043,1,DIAGNOSE,DIAGNOSE,100.0,True,,0.131,Talep çok ama randevuya dönüşüm zayıf; müşteri takip sürecini inceleyin.
+eba2f11617ef,v3,holdout_v2,ADV-043,2,DIAGNOSE,DIAGNOSE,100.0,True,,0.106,Talep çok ama randevuya dönüşüm zayıf; müşteri takip sürecini inceleyin.
+eba2f11617ef,v3,holdout_v2,ADV-043,3,DIAGNOSE,DIAGNOSE,100.0,True,,0.1,Talep çok ama randevuya dönüşüm zayıf; müşteri takip sürecini inceleyin.
+eba2f11617ef,v3,holdout_v2,ADV-044,1,DIAGNOSE,MAINTAIN,65.0,False,,0.105,ROAS ile kârlılığı ayırıp maliyet ve marjı inceleyin.
+eba2f11617ef,v3,holdout_v2,ADV-044,2,DIAGNOSE,MAINTAIN,65.0,False,,0.131,ROAS ile kârlılığı ayırıp maliyet ve marjı inceleyin.
+eba2f11617ef,v3,holdout_v2,ADV-044,3,DIAGNOSE,MAINTAIN,65.0,False,,0.094,ROAS ile kârlılığı ayırıp maliyet ve marjı inceleyin.
+eba2f11617ef,v3,holdout_v2,ADV-045,1,ACT,ACT,100.0,True,,0.108,İşe yarayan sorgu ve saat bölümünü sınırlı bir testle geliştirin.
+eba2f11617ef,v3,holdout_v2,ADV-045,2,ACT,ACT,100.0,True,,0.085,İşe yarayan sorgu ve saat bölümünü sınırlı bir testle geliştirin.
+eba2f11617ef,v3,holdout_v2,ADV-045,3,ACT,ACT,100.0,True,,0.103,İşe yarayan sorgu ve saat bölümünü sınırlı bir testle geliştirin.
+eba2f11617ef,v3,holdout_v2,ADV-046,1,MEASURE,MEASURE,100.0,True,,0.134,CRM ve sonuç entegrasyonunu düzeltmeden performans kararı vermeyin.
+eba2f11617ef,v3,holdout_v2,ADV-046,2,MEASURE,MEASURE,100.0,True,,0.12,CRM ve sonuç entegrasyonunu düzeltmeden performans kararı vermeyin.
+eba2f11617ef,v3,holdout_v2,ADV-046,3,MEASURE,MEASURE,100.0,True,,0.124,CRM ve sonuç entegrasyonunu düzeltmeden performans kararı vermeyin.
+eba2f11617ef,v3,holdout_v2,ADV-047,1,DIAGNOSE,DIAGNOSE,100.0,True,,0.152,Brüt ve net satışları ayırıp iptal/iade nedenlerini inceleyin.
+eba2f11617ef,v3,holdout_v2,ADV-047,2,DIAGNOSE,DIAGNOSE,100.0,True,,0.131,Brüt ve net satışları ayırıp iptal/iade nedenlerini inceleyin.
+eba2f11617ef,v3,holdout_v2,ADV-047,3,DIAGNOSE,DIAGNOSE,100.0,True,,0.134,Brüt ve net satışları ayırıp iptal/iade nedenlerini inceleyin.
+eba2f11617ef,v3,holdout_v2,ADV-048,1,WAIT,WAIT,100.0,True,,0.114,Henüz reklam harcaması ve dağıtım yok.
+eba2f11617ef,v3,holdout_v2,ADV-048,2,WAIT,WAIT,100.0,True,,0.109,Henüz reklam harcaması ve dağıtım yok.
+eba2f11617ef,v3,holdout_v2,ADV-048,3,WAIT,WAIT,100.0,True,,0.112,Henüz reklam harcaması ve dağıtım yok.
+eba2f11617ef,v3,holdout_v2,ADV-049,1,MEASURE,DIAGNOSE,65.0,False,,0.132,Önce Purchase/sonuç olay akışını ve entegrasyonu doğrulayın.
+eba2f11617ef,v3,holdout_v2,ADV-049,2,MEASURE,DIAGNOSE,65.0,False,,0.121,Önce Purchase/sonuç olay akışını ve entegrasyonu doğrulayın.
+eba2f11617ef,v3,holdout_v2,ADV-049,3,MEASURE,DIAGNOSE,65.0,False,,0.144,Önce Purchase/sonuç olay akışını ve entegrasyonu doğrulayın.
+eba2f11617ef,v3,holdout_v2,ADV-050,1,DIAGNOSE,DIAGNOSE,100.0,True,,0.106,Kampanya değişikliğini mevzuat ve platform uygunluk kontrolüne bağlayın.
+eba2f11617ef,v3,holdout_v2,ADV-050,2,DIAGNOSE,DIAGNOSE,100.0,True,,0.087,Kampanya değişikliğini mevzuat ve platform uygunluk kontrolüne bağlayın.
+eba2f11617ef,v3,holdout_v2,ADV-050,3,DIAGNOSE,DIAGNOSE,100.0,True,,0.086,Kampanya değişikliğini mevzuat ve platform uygunluk kontrolüne bağlayın.
+eba2f11617ef,v3,holdout_v2,ADV-051,1,DIAGNOSE,DIAGNOSE,100.0,True,,0.107,Deneme kaydı ile ücretli müşteri dönüşümünü ayrı değerlendirin.
+eba2f11617ef,v3,holdout_v2,ADV-051,2,DIAGNOSE,DIAGNOSE,100.0,True,,0.087,Deneme kaydı ile ücretli müşteri dönüşümünü ayrı değerlendirin.
+eba2f11617ef,v3,holdout_v2,ADV-051,3,DIAGNOSE,DIAGNOSE,100.0,True,,0.084,Deneme kaydı ile ücretli müşteri dönüşümünü ayrı değerlendirin.
+eba2f11617ef,v3,holdout_v2,ADV-052,1,DIAGNOSE,DIAGNOSE,100.0,True,,0.103,Bölgesel performansı ayırmadan bütçe ölçeklemeyin.
+eba2f11617ef,v3,holdout_v2,ADV-052,2,DIAGNOSE,DIAGNOSE,100.0,True,,0.079,Bölgesel performansı ayırmadan bütçe ölçeklemeyin.
+eba2f11617ef,v3,holdout_v2,ADV-052,3,DIAGNOSE,DIAGNOSE,100.0,True,,0.076,Bölgesel performansı ayırmadan bütçe ölçeklemeyin.

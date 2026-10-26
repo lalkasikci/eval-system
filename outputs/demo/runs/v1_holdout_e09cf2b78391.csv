@@ -1,0 +1,31 @@
+﻿run_id,model,split,scenario_id,trial,decision,accepted,score,pass,critical_codes,latency_ms,recommendation
+e09cf2b78391,v1,holdout,ADV-005,1,MAINTAIN,MAINTAIN,85.0,True,,0.029,Reklamınız iyi gidiyor.
+e09cf2b78391,v1,holdout,ADV-005,2,MAINTAIN,MAINTAIN,85.0,True,,0.019,Reklamınız iyi gidiyor.
+e09cf2b78391,v1,holdout,ADV-005,3,MAINTAIN,MAINTAIN,85.0,True,,0.017,Reklamınız iyi gidiyor.
+e09cf2b78391,v1,holdout,ADV-010,1,MAINTAIN,WAIT,50.0,False,,0.017,Reklamınız iyi gidiyor.
+e09cf2b78391,v1,holdout,ADV-010,2,MAINTAIN,WAIT,50.0,False,,0.018,Reklamınız iyi gidiyor.
+e09cf2b78391,v1,holdout,ADV-010,3,MAINTAIN,WAIT,50.0,False,,0.016,Reklamınız iyi gidiyor.
+e09cf2b78391,v1,holdout,ADV-016,1,ACT,DIAGNOSE,42.5,False,"F05,F05",0.018,Tıklamalar var; bütçeyi artırın.
+e09cf2b78391,v1,holdout,ADV-016,2,ACT,DIAGNOSE,42.5,False,"F05,F05",0.016,Tıklamalar var; bütçeyi artırın.
+e09cf2b78391,v1,holdout,ADV-016,3,ACT,DIAGNOSE,42.5,False,"F05,F05",0.015,Tıklamalar var; bütçeyi artırın.
+e09cf2b78391,v1,holdout,ADV-021,1,MAINTAIN,ACT,50.0,False,,0.015,Reklamınız iyi gidiyor.
+e09cf2b78391,v1,holdout,ADV-021,2,MAINTAIN,ACT,50.0,False,,0.015,Reklamınız iyi gidiyor.
+e09cf2b78391,v1,holdout,ADV-021,3,MAINTAIN,ACT,50.0,False,,0.016,Reklamınız iyi gidiyor.
+e09cf2b78391,v1,holdout,ADV-027,1,ACT,MEASURE,42.5,False,F05,0.017,Tıklamalar var; bütçeyi artırın.
+e09cf2b78391,v1,holdout,ADV-027,2,ACT,MEASURE,42.5,False,F05,0.015,Tıklamalar var; bütçeyi artırın.
+e09cf2b78391,v1,holdout,ADV-027,3,ACT,MEASURE,42.5,False,F05,0.015,Tıklamalar var; bütçeyi artırın.
+e09cf2b78391,v1,holdout,ADV-030,1,ACT,DIAGNOSE,42.5,False,"F05,F05",0.015,Tıklamalar var; bütçeyi artırın.
+e09cf2b78391,v1,holdout,ADV-030,2,ACT,DIAGNOSE,42.5,False,"F05,F05",0.015,Tıklamalar var; bütçeyi artırın.
+e09cf2b78391,v1,holdout,ADV-030,3,ACT,DIAGNOSE,42.5,False,"F05,F05",0.014,Tıklamalar var; bütçeyi artırın.
+e09cf2b78391,v1,holdout,ADV-032,1,ACT,DIAGNOSE,42.5,False,"F05,F05",0.014,Tıklamalar var; bütçeyi artırın.
+e09cf2b78391,v1,holdout,ADV-032,2,ACT,DIAGNOSE,42.5,False,"F05,F05",0.015,Tıklamalar var; bütçeyi artırın.
+e09cf2b78391,v1,holdout,ADV-032,3,ACT,DIAGNOSE,42.5,False,"F05,F05",0.014,Tıklamalar var; bütçeyi artırın.
+e09cf2b78391,v1,holdout,ADV-034,1,ACT,DIAGNOSE,42.5,False,"F05,F05",0.015,Tıklamalar var; bütçeyi artırın.
+e09cf2b78391,v1,holdout,ADV-034,2,ACT,DIAGNOSE,42.5,False,"F05,F05",0.014,Tıklamalar var; bütçeyi artırın.
+e09cf2b78391,v1,holdout,ADV-034,3,ACT,DIAGNOSE,42.5,False,"F05,F05",0.014,Tıklamalar var; bütçeyi artırın.
+e09cf2b78391,v1,holdout,ADV-037,1,MAINTAIN,WAIT,50.0,False,,0.016,Reklamınız iyi gidiyor.
+e09cf2b78391,v1,holdout,ADV-037,2,MAINTAIN,WAIT,50.0,False,,0.014,Reklamınız iyi gidiyor.
+e09cf2b78391,v1,holdout,ADV-037,3,MAINTAIN,WAIT,50.0,False,,0.014,Reklamınız iyi gidiyor.
+e09cf2b78391,v1,holdout,ADV-040,1,ACT,DIAGNOSE,42.5,False,F05,0.015,Tıklamalar var; bütçeyi artırın.
+e09cf2b78391,v1,holdout,ADV-040,2,ACT,DIAGNOSE,42.5,False,F05,0.014,Tıklamalar var; bütçeyi artırın.
+e09cf2b78391,v1,holdout,ADV-040,3,ACT,DIAGNOSE,42.5,False,F05,0.014,Tıklamalar var; bütçeyi artırın.

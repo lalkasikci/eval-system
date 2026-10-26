@@ -1,0 +1,122 @@
+[
+  {
+    "finding": "winner_underfunded",
+    "title": "Güçlü reklamın bütçesi sınırlı kalıyor",
+    "body": "Bu reklamın sonuçları istikrarlı görünüyor. Yeterli kanıt doğrulanırsa bütçeyi kontrollü olarak artırmak değerlendirilebilir.",
+    "brand": "Örnek Güzellik Merkezi",
+    "hint": "Son 7 gün · örnek veri",
+    "currentBudget": 500,
+    "budgetOwner": "campaign",
+    "gate": true,
+    "severity": "firsat"
+  },
+  {
+    "finding": "scaling_ready",
+    "title": "Reklamı büyütmeye uygun sinyaller var",
+    "body": "Sonuçlar hedefe yakın ve dağıtım düzenli. Artış yapmadan önce değişiklik etkisini kontrol edin.",
+    "brand": "Örnek Mobilya",
+    "hint": "Son 14 gün · örnek veri",
+    "currentBudget": 1200,
+    "budgetOwner": "adset",
+    "gate": true,
+    "severity": "firsat"
+  },
+  {
+    "finding": "low_messaging_rate",
+    "title": "Mesajlaşma başlayan kişi sayısı düşük",
+    "body": "Reklamı görenler mesaj başlatmıyor olabilir. İlk karşılaşma metnini daha açık hale getirmeyi deneyin.",
+    "brand": "Örnek Kuaför",
+    "hint": "Son 7 gün · örnek veri",
+    "groupId": "ornek-grup-101",
+    "severity": "aksiyon"
+  },
+  {
+    "finding": "outcome_winner",
+    "title": "Kazanan içerik belirlendi",
+    "body": "Bu içerik diğerlerinden daha güçlü sonuçlar göstermiş. Aynı yaklaşımın varyasyonlarını test edebilirsiniz.",
+    "brand": "Örnek Takı",
+    "hint": "Son 14 gün · örnek veri",
+    "creativeId": "ornek-kreatif-208",
+    "severity": "firsat"
+  },
+  {
+    "finding": "creative_fatigue",
+    "title": "İçerik yorulma belirtileri gösteriyor",
+    "body": "Aynı içerik daha sık gösterilirken ilgi azalıyor olabilir. Alternatif bir içerik oluşturmayı düşünün.",
+    "brand": "Örnek Restoran",
+    "hint": "Son 7 gün · örnek veri",
+    "severity": "aksiyon"
+  },
+  {
+    "finding": "unmarked_leads",
+    "title": "Müşteri taleplerinin sonuçları eksik",
+    "body": "Gelen Kutusu’nda sonuçları işaretleyerek reklamın gerçekten ne kazandırdığını daha doğru görebilirsiniz.",
+    "brand": "Örnek Emlak",
+    "hint": "Son 14 gün · örnek veri",
+    "severity": "aksiyon"
+  },
+  {
+    "finding": "tracking_missing",
+    "title": "Satış ölçümlemesi eksik",
+    "body": "Satış verileri kaydedilmediğinde kampanya kârlılığını değerlendirmek mümkün olmayabilir.",
+    "brand": "Örnek E-ticaret",
+    "hint": "Bugün · örnek veri",
+    "severity": "kritik"
+  },
+  {
+    "finding": "click_to_landing_dropoff",
+    "title": "Tıklama sonrası ziyaretler düşüyor",
+    "body": "Reklama tıklanmasına rağmen sayfaya ulaşan kişi sayısı düşük. Açılış sayfasının hızını ve yönlendirmelerini inceleyin.",
+    "brand": "Örnek Eğitim",
+    "hint": "Son 7 gün · örnek veri",
+    "severity": "aksiyon"
+  },
+  {
+    "finding": "cpa_rising",
+    "title": "Sonuç başına maliyet artıyor",
+    "body": "Kısa süreli dalgalanma olabilir. Yeni verilerle tekrar değerlendirmek için kartı takibe alın.",
+    "brand": "Örnek Spor Salonu",
+    "hint": "Son 3 gün · örnek veri",
+    "severity": "izleme"
+  },
+  {
+    "finding": "learning_phase_active",
+    "title": "Kampanya hâlâ öğrenme aşamasında",
+    "body": "Yeni başlayan kampanyada erken ve gereksiz değişiklikler sonuçları yorumlamayı zorlaştırabilir.",
+    "brand": "Örnek Klinik",
+    "hint": "2 gün · örnek veri",
+    "severity": "bilgi"
+  },
+  {
+    "finding": "healthy_no_action",
+    "title": "Reklamlar hedef doğrultusunda ilerliyor",
+    "body": "Veri yeni bir müdahaleyi gerektirmiyor. Mevcut kurguya devam edip sonuçları gözlemleyin.",
+    "brand": "Örnek Butik",
+    "hint": "Son 14 gün · örnek veri",
+    "severity": "bilgi"
+  },
+  {
+    "finding": "not_delivering",
+    "title": "Reklam gösterilmiyor",
+    "body": "Durum ve yayın ayarlarının Kontrol Paneli’nde kontrol edilmesi gerekiyor.",
+    "brand": "Örnek Danışmanlık",
+    "hint": "Bugün · örnek veri",
+    "severity": "kritik"
+  },
+  {
+    "finding": "data_gap",
+    "title": "Bazı sonuç verileri eksik",
+    "body": "Kısa süreli veri boşluğu var. Eksiklik giderildiğinde yeniden değerlendirin.",
+    "brand": "Örnek Diş Kliniği",
+    "hint": "Son 7 gün · örnek veri",
+    "severity": "izleme"
+  },
+  {
+    "finding": "greeting_improved",
+    "title": "Karşılama mesajı iyiye gidiyor",
+    "body": "Son değişiklikten sonra olumlu işaretler görüldü. Ek bir müdahaleye gerek yok.",
+    "brand": "Örnek Mağaza",
+    "hint": "Son 5 gün · örnek veri",
+    "severity": "bilgi"
+  }
+]

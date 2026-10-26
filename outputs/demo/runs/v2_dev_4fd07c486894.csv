@@ -1,0 +1,91 @@
+﻿run_id,model,split,scenario_id,trial,decision,accepted,score,pass,critical_codes,latency_ms,recommendation
+4fd07c486894,v2,dev,ADV-001,1,MAINTAIN,MAINTAIN,71.25,False,,0.091,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-001,2,MAINTAIN,MAINTAIN,71.25,False,,0.064,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-001,3,MAINTAIN,MAINTAIN,71.25,False,,0.063,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-002,1,MAINTAIN,MAINTAIN,71.25,False,,0.057,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-002,2,MAINTAIN,MAINTAIN,71.25,False,,0.054,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-002,3,MAINTAIN,MAINTAIN,71.25,False,,0.053,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-003,1,MAINTAIN,MAINTAIN,71.25,False,,0.053,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-003,2,MAINTAIN,MAINTAIN,71.25,False,,0.052,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-003,3,MAINTAIN,MAINTAIN,71.25,False,,0.055,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-004,1,MAINTAIN,MAINTAIN,71.25,False,,0.055,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-004,2,MAINTAIN,MAINTAIN,71.25,False,,0.052,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-004,3,MAINTAIN,MAINTAIN,71.25,False,,0.051,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-006,1,WAIT,WAIT,92.5,True,,0.06,Bu reklama hemen müdahale etmeyin.
+4fd07c486894,v2,dev,ADV-006,2,WAIT,WAIT,92.5,True,,0.052,Bu reklama hemen müdahale etmeyin.
+4fd07c486894,v2,dev,ADV-006,3,WAIT,WAIT,92.5,True,,0.051,Bu reklama hemen müdahale etmeyin.
+4fd07c486894,v2,dev,ADV-007,1,WAIT,WAIT,71.25,False,,0.071,Bu reklama hemen müdahale etmeyin.
+4fd07c486894,v2,dev,ADV-007,2,WAIT,WAIT,71.25,False,,0.051,Bu reklama hemen müdahale etmeyin.
+4fd07c486894,v2,dev,ADV-007,3,WAIT,WAIT,71.25,False,,0.051,Bu reklama hemen müdahale etmeyin.
+4fd07c486894,v2,dev,ADV-008,1,WAIT,WAIT,71.25,False,,0.051,Bu reklama hemen müdahale etmeyin.
+4fd07c486894,v2,dev,ADV-008,2,WAIT,WAIT,71.25,False,,0.05,Bu reklama hemen müdahale etmeyin.
+4fd07c486894,v2,dev,ADV-008,3,WAIT,WAIT,71.25,False,,0.049,Bu reklama hemen müdahale etmeyin.
+4fd07c486894,v2,dev,ADV-009,1,WAIT,WAIT,92.5,True,,0.05,Bu reklama hemen müdahale etmeyin.
+4fd07c486894,v2,dev,ADV-009,2,WAIT,WAIT,92.5,True,,0.049,Bu reklama hemen müdahale etmeyin.
+4fd07c486894,v2,dev,ADV-009,3,WAIT,WAIT,92.5,True,,0.049,Bu reklama hemen müdahale etmeyin.
+4fd07c486894,v2,dev,ADV-011,1,MAINTAIN,DIAGNOSE,57.5,False,,0.054,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-011,2,MAINTAIN,DIAGNOSE,57.5,False,,0.051,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-011,3,MAINTAIN,DIAGNOSE,57.5,False,,0.119,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-012,1,DIAGNOSE,DIAGNOSE,78.75,False,,0.076,Sonuç başı maliyet hedefin üzerinde.
+4fd07c486894,v2,dev,ADV-012,2,DIAGNOSE,DIAGNOSE,78.75,False,,0.061,Sonuç başı maliyet hedefin üzerinde.
+4fd07c486894,v2,dev,ADV-012,3,DIAGNOSE,DIAGNOSE,78.75,False,,0.062,Sonuç başı maliyet hedefin üzerinde.
+4fd07c486894,v2,dev,ADV-013,1,DIAGNOSE,DIAGNOSE,78.75,False,,0.06,Sonuç başı maliyet hedefin üzerinde.
+4fd07c486894,v2,dev,ADV-013,2,DIAGNOSE,DIAGNOSE,78.75,False,,0.072,Sonuç başı maliyet hedefin üzerinde.
+4fd07c486894,v2,dev,ADV-013,3,DIAGNOSE,DIAGNOSE,78.75,False,,0.057,Sonuç başı maliyet hedefin üzerinde.
+4fd07c486894,v2,dev,ADV-014,1,DIAGNOSE,DIAGNOSE,100.0,True,,0.057,Sonuç başı maliyet hedefin üzerinde.
+4fd07c486894,v2,dev,ADV-014,2,DIAGNOSE,DIAGNOSE,100.0,True,,0.057,Sonuç başı maliyet hedefin üzerinde.
+4fd07c486894,v2,dev,ADV-014,3,DIAGNOSE,DIAGNOSE,100.0,True,,0.056,Sonuç başı maliyet hedefin üzerinde.
+4fd07c486894,v2,dev,ADV-015,1,DIAGNOSE,DIAGNOSE,78.75,False,,0.057,Sonuç başı maliyet hedefin üzerinde.
+4fd07c486894,v2,dev,ADV-015,2,DIAGNOSE,DIAGNOSE,78.75,False,,0.057,Sonuç başı maliyet hedefin üzerinde.
+4fd07c486894,v2,dev,ADV-015,3,DIAGNOSE,DIAGNOSE,78.75,False,,0.065,Sonuç başı maliyet hedefin üzerinde.
+4fd07c486894,v2,dev,ADV-017,1,MAINTAIN,ACT,57.5,False,,0.053,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-017,2,MAINTAIN,ACT,57.5,False,,0.064,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-017,3,MAINTAIN,ACT,57.5,False,,0.051,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-018,1,MAINTAIN,ACT,57.5,False,,0.056,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-018,2,MAINTAIN,ACT,57.5,False,,0.054,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-018,3,MAINTAIN,ACT,57.5,False,,0.051,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-019,1,MAINTAIN,ACT,57.5,False,,0.051,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-019,2,MAINTAIN,ACT,57.5,False,,0.049,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-019,3,MAINTAIN,ACT,57.5,False,,0.05,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-020,1,MAINTAIN,ACT,57.5,False,,0.053,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-020,2,MAINTAIN,ACT,57.5,False,,0.052,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-020,3,MAINTAIN,ACT,57.5,False,,0.051,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-022,1,MEASURE,MEASURE,92.5,True,,0.06,Önce sonuç takibini doğrulayın.
+4fd07c486894,v2,dev,ADV-022,2,MEASURE,MEASURE,92.5,True,,0.05,Önce sonuç takibini doğrulayın.
+4fd07c486894,v2,dev,ADV-022,3,MEASURE,MEASURE,92.5,True,,0.051,Önce sonuç takibini doğrulayın.
+4fd07c486894,v2,dev,ADV-023,1,MEASURE,MEASURE,71.25,False,,0.052,Önce sonuç takibini doğrulayın.
+4fd07c486894,v2,dev,ADV-023,2,MEASURE,MEASURE,71.25,False,,0.053,Önce sonuç takibini doğrulayın.
+4fd07c486894,v2,dev,ADV-023,3,MEASURE,MEASURE,71.25,False,,0.052,Önce sonuç takibini doğrulayın.
+4fd07c486894,v2,dev,ADV-024,1,MEASURE,MEASURE,71.25,False,,0.051,Önce sonuç takibini doğrulayın.
+4fd07c486894,v2,dev,ADV-024,2,MEASURE,MEASURE,71.25,False,,0.058,Önce sonuç takibini doğrulayın.
+4fd07c486894,v2,dev,ADV-024,3,MEASURE,MEASURE,71.25,False,,0.051,Önce sonuç takibini doğrulayın.
+4fd07c486894,v2,dev,ADV-025,1,MAINTAIN,MEASURE,57.5,False,,0.053,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-025,2,MAINTAIN,MEASURE,57.5,False,,0.052,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-025,3,MAINTAIN,MEASURE,57.5,False,,0.051,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-026,1,MEASURE,MEASURE,71.25,False,,0.059,Önce sonuç takibini doğrulayın.
+4fd07c486894,v2,dev,ADV-026,2,MEASURE,MEASURE,71.25,False,,0.051,Önce sonuç takibini doğrulayın.
+4fd07c486894,v2,dev,ADV-026,3,MEASURE,MEASURE,71.25,False,,0.051,Önce sonuç takibini doğrulayın.
+4fd07c486894,v2,dev,ADV-028,1,MAINTAIN,DIAGNOSE,57.5,False,,0.052,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-028,2,MAINTAIN,DIAGNOSE,57.5,False,,0.051,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-028,3,MAINTAIN,DIAGNOSE,57.5,False,,0.051,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-029,1,MAINTAIN,DIAGNOSE,57.5,False,,0.054,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-029,2,MAINTAIN,DIAGNOSE,57.5,False,,0.053,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-029,3,MAINTAIN,DIAGNOSE,57.5,False,,0.051,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-031,1,MAINTAIN,DIAGNOSE,57.5,False,,0.052,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-031,2,MAINTAIN,DIAGNOSE,57.5,False,,0.051,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-031,3,MAINTAIN,DIAGNOSE,57.5,False,,0.05,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-033,1,MAINTAIN,MAINTAIN,92.5,True,,0.052,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-033,2,MAINTAIN,MAINTAIN,92.5,True,,0.051,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-033,3,MAINTAIN,MAINTAIN,92.5,True,,0.052,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-035,1,MAINTAIN,DIAGNOSE,57.5,False,,0.054,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-035,2,MAINTAIN,DIAGNOSE,57.5,False,,0.056,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-035,3,MAINTAIN,DIAGNOSE,57.5,False,,0.051,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-036,1,MAINTAIN,WAIT,57.5,False,,0.053,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-036,2,MAINTAIN,WAIT,57.5,False,,0.051,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-036,3,MAINTAIN,WAIT,57.5,False,,0.052,Mevcut ayarları koruyun.
+4fd07c486894,v2,dev,ADV-038,1,MEASURE,MEASURE,71.25,False,,0.049,Önce sonuç takibini doğrulayın.
+4fd07c486894,v2,dev,ADV-038,2,MEASURE,MEASURE,71.25,False,,0.048,Önce sonuç takibini doğrulayın.
+4fd07c486894,v2,dev,ADV-038,3,MEASURE,MEASURE,71.25,False,,0.048,Önce sonuç takibini doğrulayın.
+4fd07c486894,v2,dev,ADV-039,1,DIAGNOSE,DIAGNOSE,78.75,False,,0.062,Sonuç başı maliyet hedefin üzerinde.
+4fd07c486894,v2,dev,ADV-039,2,DIAGNOSE,DIAGNOSE,78.75,False,,0.903,Sonuç başı maliyet hedefin üzerinde.
+4fd07c486894,v2,dev,ADV-039,3,DIAGNOSE,DIAGNOSE,78.75,False,,0.071,Sonuç başı maliyet hedefin üzerinde.

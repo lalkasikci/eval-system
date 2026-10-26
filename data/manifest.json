@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "date": "2026-10-24",
+  "source": "user-supplied synthetic Advise Lab scenario pack",
+  "split": {
+    "dev": 30,
+    "holdout": 10,
+    "holdout_v2": 12
+  },
+  "files": {
+    "data/dev/scenarios.json": "76117fc0ded6e01d5476bdddb7e936fc55d77f4852a3021af9688f22d8f9cf2d",
+    "data/holdout/inputs.json": "014dbac97115ffec0367d956f50c9a2181304ed5ebc5c134295d04862b4b2502",
+    "data/holdout/private/gold.json": "de95a463f74d75fe3dfdaaca9dfde6c53ee72293b8d28252b3f591b8cde89502",
+    "docs/QUALITY_STANDARD.md": "25b98f69d86d61b354b3bd2bf8c61eaa4b0599aeeb054c7d016a5db515453bdd",
+    "data/holdout_v2/inputs.json": "c154f083f19e522a16875713753002bc7d092c02fc0ab85e2e40045be5e84979",
+    "data/holdout_v2/private/gold.json": "2a51eab872339fbfbaa2f72731f41d24c341062e93f7485d0bb201c13d9f3560"
+  }
+}

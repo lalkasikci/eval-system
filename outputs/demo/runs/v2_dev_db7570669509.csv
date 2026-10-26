@@ -1,0 +1,91 @@
+﻿run_id,model,split,scenario_id,trial,decision,accepted,score,pass,critical_codes,latency_ms,recommendation
+db7570669509,v2,dev,ADV-001,1,MAINTAIN,MAINTAIN,71.25,False,,0.296,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-001,2,MAINTAIN,MAINTAIN,71.25,False,,0.209,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-001,3,MAINTAIN,MAINTAIN,71.25,False,,0.208,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-002,1,MAINTAIN,MAINTAIN,71.25,False,,0.213,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-002,2,MAINTAIN,MAINTAIN,71.25,False,,0.233,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-002,3,MAINTAIN,MAINTAIN,71.25,False,,0.239,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-003,1,MAINTAIN,MAINTAIN,71.25,False,,0.241,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-003,2,MAINTAIN,MAINTAIN,71.25,False,,0.229,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-003,3,MAINTAIN,MAINTAIN,71.25,False,,0.233,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-004,1,MAINTAIN,MAINTAIN,71.25,False,,0.254,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-004,2,MAINTAIN,MAINTAIN,71.25,False,,0.27,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-004,3,MAINTAIN,MAINTAIN,71.25,False,,0.235,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-006,1,WAIT,WAIT,92.5,True,,0.249,Bu reklama hemen müdahale etmeyin.
+db7570669509,v2,dev,ADV-006,2,WAIT,WAIT,92.5,True,,0.22,Bu reklama hemen müdahale etmeyin.
+db7570669509,v2,dev,ADV-006,3,WAIT,WAIT,92.5,True,,0.216,Bu reklama hemen müdahale etmeyin.
+db7570669509,v2,dev,ADV-007,1,WAIT,WAIT,71.25,False,,0.234,Bu reklama hemen müdahale etmeyin.
+db7570669509,v2,dev,ADV-007,2,WAIT,WAIT,71.25,False,,0.653,Bu reklama hemen müdahale etmeyin.
+db7570669509,v2,dev,ADV-007,3,WAIT,WAIT,71.25,False,,0.754,Bu reklama hemen müdahale etmeyin.
+db7570669509,v2,dev,ADV-008,1,WAIT,WAIT,71.25,False,,0.294,Bu reklama hemen müdahale etmeyin.
+db7570669509,v2,dev,ADV-008,2,WAIT,WAIT,71.25,False,,0.216,Bu reklama hemen müdahale etmeyin.
+db7570669509,v2,dev,ADV-008,3,WAIT,WAIT,71.25,False,,0.217,Bu reklama hemen müdahale etmeyin.
+db7570669509,v2,dev,ADV-009,1,WAIT,WAIT,92.5,True,,0.213,Bu reklama hemen müdahale etmeyin.
+db7570669509,v2,dev,ADV-009,2,WAIT,WAIT,92.5,True,,0.195,Bu reklama hemen müdahale etmeyin.
+db7570669509,v2,dev,ADV-009,3,WAIT,WAIT,92.5,True,,0.197,Bu reklama hemen müdahale etmeyin.
+db7570669509,v2,dev,ADV-011,1,MAINTAIN,DIAGNOSE,57.5,False,,0.225,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-011,2,MAINTAIN,DIAGNOSE,57.5,False,,0.206,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-011,3,MAINTAIN,DIAGNOSE,57.5,False,,0.562,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-012,1,DIAGNOSE,DIAGNOSE,78.75,False,,0.293,Sonuç başı maliyet hedefin üzerinde.
+db7570669509,v2,dev,ADV-012,2,DIAGNOSE,DIAGNOSE,78.75,False,,0.861,Sonuç başı maliyet hedefin üzerinde.
+db7570669509,v2,dev,ADV-012,3,DIAGNOSE,DIAGNOSE,78.75,False,,0.341,Sonuç başı maliyet hedefin üzerinde.
+db7570669509,v2,dev,ADV-013,1,DIAGNOSE,DIAGNOSE,78.75,False,,0.588,Sonuç başı maliyet hedefin üzerinde.
+db7570669509,v2,dev,ADV-013,2,DIAGNOSE,DIAGNOSE,78.75,False,,0.242,Sonuç başı maliyet hedefin üzerinde.
+db7570669509,v2,dev,ADV-013,3,DIAGNOSE,DIAGNOSE,78.75,False,,0.236,Sonuç başı maliyet hedefin üzerinde.
+db7570669509,v2,dev,ADV-014,1,DIAGNOSE,DIAGNOSE,100.0,True,,0.25,Sonuç başı maliyet hedefin üzerinde.
+db7570669509,v2,dev,ADV-014,2,DIAGNOSE,DIAGNOSE,100.0,True,,0.264,Sonuç başı maliyet hedefin üzerinde.
+db7570669509,v2,dev,ADV-014,3,DIAGNOSE,DIAGNOSE,100.0,True,,0.283,Sonuç başı maliyet hedefin üzerinde.
+db7570669509,v2,dev,ADV-015,1,DIAGNOSE,DIAGNOSE,78.75,False,,0.263,Sonuç başı maliyet hedefin üzerinde.
+db7570669509,v2,dev,ADV-015,2,DIAGNOSE,DIAGNOSE,78.75,False,,0.518,Sonuç başı maliyet hedefin üzerinde.
+db7570669509,v2,dev,ADV-015,3,DIAGNOSE,DIAGNOSE,78.75,False,,0.317,Sonuç başı maliyet hedefin üzerinde.
+db7570669509,v2,dev,ADV-017,1,MAINTAIN,ACT,57.5,False,,0.78,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-017,2,MAINTAIN,ACT,57.5,False,,0.232,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-017,3,MAINTAIN,ACT,57.5,False,,0.266,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-018,1,MAINTAIN,ACT,57.5,False,,0.999,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-018,2,MAINTAIN,ACT,57.5,False,,0.307,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-018,3,MAINTAIN,ACT,57.5,False,,0.469,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-019,1,MAINTAIN,ACT,57.5,False,,0.854,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-019,2,MAINTAIN,ACT,57.5,False,,0.289,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-019,3,MAINTAIN,ACT,57.5,False,,1.85,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-020,1,MAINTAIN,ACT,57.5,False,,0.211,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-020,2,MAINTAIN,ACT,57.5,False,,0.145,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-020,3,MAINTAIN,ACT,57.5,False,,0.135,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-022,1,MEASURE,MEASURE,92.5,True,,0.152,Önce sonuç takibini doğrulayın.
+db7570669509,v2,dev,ADV-022,2,MEASURE,MEASURE,92.5,True,,0.136,Önce sonuç takibini doğrulayın.
+db7570669509,v2,dev,ADV-022,3,MEASURE,MEASURE,92.5,True,,0.125,Önce sonuç takibini doğrulayın.
+db7570669509,v2,dev,ADV-023,1,MEASURE,MEASURE,71.25,False,,0.131,Önce sonuç takibini doğrulayın.
+db7570669509,v2,dev,ADV-023,2,MEASURE,MEASURE,71.25,False,,0.126,Önce sonuç takibini doğrulayın.
+db7570669509,v2,dev,ADV-023,3,MEASURE,MEASURE,71.25,False,,0.123,Önce sonuç takibini doğrulayın.
+db7570669509,v2,dev,ADV-024,1,MEASURE,MEASURE,71.25,False,,0.128,Önce sonuç takibini doğrulayın.
+db7570669509,v2,dev,ADV-024,2,MEASURE,MEASURE,71.25,False,,0.303,Önce sonuç takibini doğrulayın.
+db7570669509,v2,dev,ADV-024,3,MEASURE,MEASURE,71.25,False,,0.13,Önce sonuç takibini doğrulayın.
+db7570669509,v2,dev,ADV-025,1,MAINTAIN,MEASURE,57.5,False,,0.138,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-025,2,MAINTAIN,MEASURE,57.5,False,,0.128,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-025,3,MAINTAIN,MEASURE,57.5,False,,0.144,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-026,1,MEASURE,MEASURE,71.25,False,,0.503,Önce sonuç takibini doğrulayın.
+db7570669509,v2,dev,ADV-026,2,MEASURE,MEASURE,71.25,False,,0.196,Önce sonuç takibini doğrulayın.
+db7570669509,v2,dev,ADV-026,3,MEASURE,MEASURE,71.25,False,,0.384,Önce sonuç takibini doğrulayın.
+db7570669509,v2,dev,ADV-028,1,MAINTAIN,DIAGNOSE,57.5,False,,0.144,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-028,2,MAINTAIN,DIAGNOSE,57.5,False,,0.132,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-028,3,MAINTAIN,DIAGNOSE,57.5,False,,0.134,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-029,1,MAINTAIN,DIAGNOSE,57.5,False,,0.205,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-029,2,MAINTAIN,DIAGNOSE,57.5,False,,0.135,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-029,3,MAINTAIN,DIAGNOSE,57.5,False,,0.128,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-031,1,MAINTAIN,DIAGNOSE,57.5,False,,0.133,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-031,2,MAINTAIN,DIAGNOSE,57.5,False,,0.127,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-031,3,MAINTAIN,DIAGNOSE,57.5,False,,0.126,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-033,1,MAINTAIN,MAINTAIN,92.5,True,,0.148,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-033,2,MAINTAIN,MAINTAIN,92.5,True,,0.125,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-033,3,MAINTAIN,MAINTAIN,92.5,True,,0.126,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-035,1,MAINTAIN,DIAGNOSE,57.5,False,,0.134,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-035,2,MAINTAIN,DIAGNOSE,57.5,False,,0.128,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-035,3,MAINTAIN,DIAGNOSE,57.5,False,,0.127,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-036,1,MAINTAIN,WAIT,57.5,False,,0.133,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-036,2,MAINTAIN,WAIT,57.5,False,,0.123,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-036,3,MAINTAIN,WAIT,57.5,False,,0.127,Mevcut ayarları koruyun.
+db7570669509,v2,dev,ADV-038,1,MEASURE,MEASURE,71.25,False,,0.147,Önce sonuç takibini doğrulayın.
+db7570669509,v2,dev,ADV-038,2,MEASURE,MEASURE,71.25,False,,0.121,Önce sonuç takibini doğrulayın.
+db7570669509,v2,dev,ADV-038,3,MEASURE,MEASURE,71.25,False,,0.117,Önce sonuç takibini doğrulayın.
+db7570669509,v2,dev,ADV-039,1,DIAGNOSE,DIAGNOSE,78.75,False,,0.163,Sonuç başı maliyet hedefin üzerinde.
+db7570669509,v2,dev,ADV-039,2,DIAGNOSE,DIAGNOSE,78.75,False,,2.806,Sonuç başı maliyet hedefin üzerinde.
+db7570669509,v2,dev,ADV-039,3,DIAGNOSE,DIAGNOSE,78.75,False,,0.27,Sonuç başı maliyet hedefin üzerinde.

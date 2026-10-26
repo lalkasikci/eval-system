@@ -1,0 +1,41 @@
+﻿id,group,sector,platform,objective,decision,set
+ADV-001,Healthy / maintain,güzellik merkezi,meta,lead,MAINTAIN,dev
+ADV-002,Healthy / maintain,takı e-ticaret,meta,sales,MAINTAIN,dev
+ADV-003,Healthy / maintain,diş kliniği,google,leads,MAINTAIN,dev
+ADV-004,Healthy / maintain,emlak,meta,messages,MAINTAIN,dev
+ADV-005,Healthy / maintain,kurs,google,leads,MAINTAIN,holdout
+ADV-006,Early-stage / wait,güzellik merkezi,meta,lead,WAIT,dev
+ADV-007,Early-stage / wait,giyim e-ticaret,meta,sales,WAIT,dev
+ADV-008,Early-stage / wait,oto servis,google,calls,WAIT,dev
+ADV-009,Early-stage / wait,danışmanlık,meta,lead,WAIT,dev
+ADV-010,Early-stage / wait,yemek servisi,google,leads,WAIT,holdout
+ADV-011,Performance / diagnose,estetik kliniği,meta,lead,DIAGNOSE,dev
+ADV-012,Performance / diagnose,ev dekorasyon,meta,sales,DIAGNOSE,dev
+ADV-013,Performance / diagnose,özel ders,google,leads,DIAGNOSE,dev
+ADV-014,Performance / diagnose,spor salonu,meta,messages,DIAGNOSE,dev
+ADV-015,Performance / diagnose,mobilya,google,sales,DIAGNOSE,dev
+ADV-016,Performance / diagnose,araç kiralama,meta,leads,DIAGNOSE,holdout
+ADV-017,Budget / act or diagnose,çilingir,google,calls,ACT,dev
+ADV-018,Budget / act or diagnose,butik otel,meta,lead,ACT,dev
+ADV-019,Budget / act or diagnose,temizlik hizmeti,google,leads,ACT,dev
+ADV-020,Budget / act or diagnose,fırın,meta,messages,ACT,dev
+ADV-021,Budget / act or diagnose,bilgisayar tamiri,google,leads,ACT,holdout
+ADV-022,Measurement / measure,takı e-ticaret,meta,sales,MEASURE,dev
+ADV-023,Measurement / measure,restoran,google,leads,MEASURE,dev
+ADV-024,Measurement / measure,kuaför,meta,messages,MEASURE,dev
+ADV-025,Measurement / measure,eğitim kurumu,google,leads,MEASURE,dev
+ADV-026,Measurement / measure,diş kliniği,meta,lead,MEASURE,dev
+ADV-027,Measurement / measure,beyaz eşya servisi,google,calls,MEASURE,holdout
+ADV-028,Conflicting signals,sağlık turizmi,meta,leads,DIAGNOSE,dev
+ADV-029,Conflicting signals,giyim e-ticaret,google,sales,DIAGNOSE,dev
+ADV-030,Conflicting signals,spor etkinliği,meta,leads,DIAGNOSE,holdout
+ADV-031,Conflicting signals,yerel diyetisyen,meta,lead,DIAGNOSE,dev
+ADV-032,Conflicting signals,çiçekçi,google,sales,DIAGNOSE,holdout
+ADV-033,Platform / constraints,araç yıkama,meta,messages,MAINTAIN,dev
+ADV-034,Platform / constraints,avukatlık bürosu,google,leads,DIAGNOSE,holdout
+ADV-035,Platform / constraints,yazılım SaaS,google,leads,DIAGNOSE,dev
+ADV-036,Platform / constraints,pet shop,meta,sales,WAIT,dev
+ADV-037,Stability / edge cases,yerel market,google,leads,WAIT,holdout
+ADV-038,Stability / edge cases,halı yıkama,meta,messages,MEASURE,dev
+ADV-039,Stability / edge cases,çiçek mağazası,meta,sales,DIAGNOSE,dev
+ADV-040,Stability / edge cases,tesisatçı,google,calls,DIAGNOSE,holdout

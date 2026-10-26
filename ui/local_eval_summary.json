@@ -1,0 +1,525 @@
+{
+  "summaries": {
+    "dev": {
+      "v1": {
+        "trials": 90,
+        "passed": 0,
+        "pass_rate": 0.0,
+        "decision_accuracy": 0.1333,
+        "critical_failure_rate": 0.7667,
+        "avg_score": 47.42,
+        "median_score": 42.5,
+        "avg_latency_ms": 0.018,
+        "observed_pass_at_k": 0.0,
+        "observed_pass_pow_k": 0.0,
+        "scenario_pass_all_trials": 0.0,
+        "error_code_counts": {
+          "F01": 0,
+          "F02": 0,
+          "F03": 0,
+          "F04": 0,
+          "F05": 69,
+          "F06": 0,
+          "F07": 0,
+          "F08": 0,
+          "FMT": 0
+        }
+      },
+      "v2": {
+        "trials": 90,
+        "passed": 57,
+        "pass_rate": 0.6333,
+        "decision_accuracy": 0.6333,
+        "critical_failure_rate": 0.0,
+        "avg_score": 80.92,
+        "median_score": 92.5,
+        "avg_latency_ms": 0.021,
+        "observed_pass_at_k": 0.6333,
+        "observed_pass_pow_k": 0.6333,
+        "scenario_pass_all_trials": 0.6333,
+        "error_code_counts": {
+          "F01": 0,
+          "F02": 0,
+          "F03": 0,
+          "F04": 0,
+          "F05": 0,
+          "F06": 0,
+          "F07": 0,
+          "F08": 0,
+          "FMT": 0
+        }
+      },
+      "v3": {
+        "trials": 90,
+        "passed": 90,
+        "pass_rate": 1.0,
+        "decision_accuracy": 1.0,
+        "critical_failure_rate": 0.0,
+        "avg_score": 100.0,
+        "median_score": 100.0,
+        "avg_latency_ms": 0.02,
+        "observed_pass_at_k": 1.0,
+        "observed_pass_pow_k": 1.0,
+        "scenario_pass_all_trials": 1.0,
+        "error_code_counts": {
+          "F01": 0,
+          "F02": 0,
+          "F03": 0,
+          "F04": 0,
+          "F05": 0,
+          "F06": 0,
+          "F07": 0,
+          "F08": 0,
+          "FMT": 0
+        }
+      }
+    },
+    "holdout": {
+      "v1": {
+        "trials": 30,
+        "passed": 3,
+        "pass_rate": 0.1,
+        "decision_accuracy": 0.1,
+        "critical_failure_rate": 0.6,
+        "avg_score": 49.0,
+        "median_score": 42.5,
+        "avg_latency_ms": 0.016,
+        "observed_pass_at_k": 0.1,
+        "observed_pass_pow_k": 0.1,
+        "scenario_pass_all_trials": 0.1,
+        "error_code_counts": {
+          "F01": 0,
+          "F02": 0,
+          "F03": 0,
+          "F04": 0,
+          "F05": 18,
+          "F06": 0,
+          "F07": 0,
+          "F08": 0,
+          "FMT": 0
+        }
+      },
+      "v2": {
+        "trials": 30,
+        "passed": 9,
+        "pass_rate": 0.3,
+        "decision_accuracy": 0.3,
+        "critical_failure_rate": 0.0,
+        "avg_score": 68.75,
+        "median_score": 57.5,
+        "avg_latency_ms": 0.02,
+        "observed_pass_at_k": 0.3,
+        "observed_pass_pow_k": 0.3,
+        "scenario_pass_all_trials": 0.3,
+        "error_code_counts": {
+          "F01": 0,
+          "F02": 0,
+          "F03": 0,
+          "F04": 0,
+          "F05": 0,
+          "F06": 0,
+          "F07": 0,
+          "F08": 0,
+          "FMT": 0
+        }
+      },
+      "v3": {
+        "trials": 30,
+        "passed": 30,
+        "pass_rate": 1.0,
+        "decision_accuracy": 1.0,
+        "critical_failure_rate": 0.0,
+        "avg_score": 100.0,
+        "median_score": 100.0,
+        "avg_latency_ms": 0.022,
+        "observed_pass_at_k": 1.0,
+        "observed_pass_pow_k": 1.0,
+        "scenario_pass_all_trials": 1.0,
+        "error_code_counts": {
+          "F01": 0,
+          "F02": 0,
+          "F03": 0,
+          "F04": 0,
+          "F05": 0,
+          "F06": 0,
+          "F07": 0,
+          "F08": 0,
+          "FMT": 0
+        }
+      }
+    }
+  },
+  "comparisons": [
+    {
+      "split": "dev",
+      "from": "v1",
+      "to": "v2",
+      "from_pass": 0.0,
+      "to_pass": 0.6333,
+      "pass_delta": 0.6333,
+      "from_avg_score": 47.42,
+      "to_avg_score": 80.92,
+      "regressions": [],
+      "improvements": [
+        "ADV-001",
+        "ADV-002",
+        "ADV-003",
+        "ADV-004",
+        "ADV-006",
+        "ADV-007",
+        "ADV-008",
+        "ADV-009",
+        "ADV-012",
+        "ADV-013",
+        "ADV-014",
+        "ADV-015",
+        "ADV-022",
+        "ADV-023",
+        "ADV-024",
+        "ADV-026",
+        "ADV-033",
+        "ADV-038",
+        "ADV-039"
+      ],
+      "note": "Paired comparison uses trial 1; inspect all trials for stochastic candidates."
+    },
+    {
+      "split": "dev",
+      "from": "v2",
+      "to": "v3",
+      "from_pass": 0.6333,
+      "to_pass": 1.0,
+      "pass_delta": 0.3667,
+      "from_avg_score": 80.92,
+      "to_avg_score": 100.0,
+      "regressions": [],
+      "improvements": [
+        "ADV-011",
+        "ADV-017",
+        "ADV-018",
+        "ADV-019",
+        "ADV-020",
+        "ADV-025",
+        "ADV-028",
+        "ADV-029",
+        "ADV-031",
+        "ADV-035",
+        "ADV-036"
+      ],
+      "note": "Paired comparison uses trial 1; inspect all trials for stochastic candidates."
+    },
+    {
+      "split": "dev",
+      "from": "v1",
+      "to": "v3",
+      "from_pass": 0.0,
+      "to_pass": 1.0,
+      "pass_delta": 1.0,
+      "from_avg_score": 47.42,
+      "to_avg_score": 100.0,
+      "regressions": [],
+      "improvements": [
+        "ADV-001",
+        "ADV-002",
+        "ADV-003",
+        "ADV-004",
+        "ADV-006",
+        "ADV-007",
+        "ADV-008",
+        "ADV-009",
+        "ADV-011",
+        "ADV-012",
+        "ADV-013",
+        "ADV-014",
+        "ADV-015",
+        "ADV-017",
+        "ADV-018",
+        "ADV-019",
+        "ADV-020",
+        "ADV-022",
+        "ADV-023",
+        "ADV-024",
+        "ADV-025",
+        "ADV-026",
+        "ADV-028",
+        "ADV-029",
+        "ADV-031",
+        "ADV-033",
+        "ADV-035",
+        "ADV-036",
+        "ADV-038",
+        "ADV-039"
+      ],
+      "note": "Paired comparison uses trial 1; inspect all trials for stochastic candidates."
+    },
+    {
+      "split": "holdout",
+      "from": "v1",
+      "to": "v2",
+      "from_pass": 0.1,
+      "to_pass": 0.3,
+      "pass_delta": 0.2,
+      "from_avg_score": 49.0,
+      "to_avg_score": 68.75,
+      "regressions": [],
+      "improvements": [
+        "ADV-010",
+        "ADV-034"
+      ],
+      "note": "Paired comparison uses trial 1; inspect all trials for stochastic candidates."
+    },
+    {
+      "split": "holdout",
+      "from": "v2",
+      "to": "v3",
+      "from_pass": 0.3,
+      "to_pass": 1.0,
+      "pass_delta": 0.7,
+      "from_avg_score": 68.75,
+      "to_avg_score": 100.0,
+      "regressions": [],
+      "improvements": [
+        "ADV-016",
+        "ADV-021",
+        "ADV-027",
+        "ADV-030",
+        "ADV-032",
+        "ADV-037",
+        "ADV-040"
+      ],
+      "note": "Paired comparison uses trial 1; inspect all trials for stochastic candidates."
+    },
+    {
+      "split": "holdout",
+      "from": "v1",
+      "to": "v3",
+      "from_pass": 0.1,
+      "to_pass": 1.0,
+      "pass_delta": 0.9,
+      "from_avg_score": 49.0,
+      "to_avg_score": 100.0,
+      "regressions": [],
+      "improvements": [
+        "ADV-010",
+        "ADV-016",
+        "ADV-021",
+        "ADV-027",
+        "ADV-030",
+        "ADV-032",
+        "ADV-034",
+        "ADV-037",
+        "ADV-040"
+      ],
+      "note": "Paired comparison uses trial 1; inspect all trials for stochastic candidates."
+    }
+  ],
+  "calibration": {
+    "positive_controls": 18,
+    "negative_mutations": 8,
+    "detection_rate": 1.0,
+    "false_positive_rate": 0.0,
+    "missed_mutations": [],
+    "details": [
+      {
+        "case": "ADV-001_good",
+        "label": "good",
+        "expected_code": null,
+        "detected_codes": [],
+        "correct": true
+      },
+      {
+        "case": "ADV-002_good",
+        "label": "good",
+        "expected_code": null,
+        "detected_codes": [],
+        "correct": true
+      },
+      {
+        "case": "ADV-003_good",
+        "label": "good",
+        "expected_code": null,
+        "detected_codes": [],
+        "correct": true
+      },
+      {
+        "case": "ADV-006_good",
+        "label": "good",
+        "expected_code": null,
+        "detected_codes": [],
+        "correct": true
+      },
+      {
+        "case": "ADV-007_good",
+        "label": "good",
+        "expected_code": null,
+        "detected_codes": [],
+        "correct": true
+      },
+      {
+        "case": "ADV-009_good",
+        "label": "good",
+        "expected_code": null,
+        "detected_codes": [],
+        "correct": true
+      },
+      {
+        "case": "ADV-011_good",
+        "label": "good",
+        "expected_code": null,
+        "detected_codes": [],
+        "correct": true
+      },
+      {
+        "case": "ADV-013_good",
+        "label": "good",
+        "expected_code": null,
+        "detected_codes": [],
+        "correct": true
+      },
+      {
+        "case": "ADV-017_good",
+        "label": "good",
+        "expected_code": null,
+        "detected_codes": [],
+        "correct": true
+      },
+      {
+        "case": "ADV-018_good",
+        "label": "good",
+        "expected_code": null,
+        "detected_codes": [],
+        "correct": true
+      },
+      {
+        "case": "ADV-019_good",
+        "label": "good",
+        "expected_code": null,
+        "detected_codes": [],
+        "correct": true
+      },
+      {
+        "case": "ADV-020_good",
+        "label": "good",
+        "expected_code": null,
+        "detected_codes": [],
+        "correct": true
+      },
+      {
+        "case": "ADV-022_good",
+        "label": "good",
+        "expected_code": null,
+        "detected_codes": [],
+        "correct": true
+      },
+      {
+        "case": "ADV-025_good",
+        "label": "good",
+        "expected_code": null,
+        "detected_codes": [],
+        "correct": true
+      },
+      {
+        "case": "ADV-028_good",
+        "label": "good",
+        "expected_code": null,
+        "detected_codes": [],
+        "correct": true
+      },
+      {
+        "case": "ADV-031_good",
+        "label": "good",
+        "expected_code": null,
+        "detected_codes": [],
+        "correct": true
+      },
+      {
+        "case": "ADV-036_good",
+        "label": "good",
+        "expected_code": null,
+        "detected_codes": [],
+        "correct": true
+      },
+      {
+        "case": "ADV-038_good",
+        "label": "good",
+        "expected_code": null,
+        "detected_codes": [],
+        "correct": true
+      },
+      {
+        "case": "ADV-001_F01",
+        "label": "mutated",
+        "expected_code": "F01",
+        "detected_codes": [
+          "F01"
+        ],
+        "correct": true
+      },
+      {
+        "case": "ADV-002_F02",
+        "label": "mutated",
+        "expected_code": "F02",
+        "detected_codes": [
+          "F01",
+          "F02"
+        ],
+        "correct": true
+      },
+      {
+        "case": "ADV-003_F03",
+        "label": "mutated",
+        "expected_code": "F03",
+        "detected_codes": [
+          "F03"
+        ],
+        "correct": true
+      },
+      {
+        "case": "ADV-006_F04",
+        "label": "mutated",
+        "expected_code": "F04",
+        "detected_codes": [
+          "F04"
+        ],
+        "correct": true
+      },
+      {
+        "case": "ADV-007_F05",
+        "label": "mutated",
+        "expected_code": "F05",
+        "detected_codes": [
+          "F05"
+        ],
+        "correct": true
+      },
+      {
+        "case": "ADV-011_F06",
+        "label": "mutated",
+        "expected_code": "F06",
+        "detected_codes": [
+          "F06"
+        ],
+        "correct": true
+      },
+      {
+        "case": "ADV-012_F07",
+        "label": "mutated",
+        "expected_code": "F07",
+        "detected_codes": [
+          "F07"
+        ],
+        "correct": true
+      },
+      {
+        "case": "ADV-013_F08",
+        "label": "mutated",
+        "expected_code": "F08",
+        "detected_codes": [
+          "F08"
+        ],
+        "correct": true
+      }
+    ],
+    "limits": "Hand-crafted mutations are narrow known-pattern tests; not blind human-annotated validity. Expert agreement: NOT MEASURED."
+  }
+}

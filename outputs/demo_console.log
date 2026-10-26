@@ -1,0 +1,7 @@
+dev v1: 0/90 passed; decision accuracy 13.3%; score 47.42
+dev v2: 57/90 passed; decision accuracy 63.3%; score 80.92
+dev v3: 90/90 passed; decision accuracy 100.0%; score 100.0
+holdout v1: 3/30 passed; decision accuracy 10.0%; score 49.0
+holdout v2: 9/30 passed; decision accuracy 30.0%; score 68.75
+holdout v3: 30/30 passed; decision accuracy 100.0%; score 100.0
+Complete: outputs/demo/FINAL_REPORT.md outputs/demo/DASHBOARD.html

@@ -1,0 +1,37 @@
+﻿run_id,model,split,scenario_id,trial,decision,accepted,score,pass,critical_codes,latency_ms,recommendation
+2deeb2d56e08,v2,holdout_v2,ADV-041,1,WAIT,WAIT,71.25,False,,0.165,Bu reklama hemen müdahale etmeyin.
+2deeb2d56e08,v2,holdout_v2,ADV-041,2,WAIT,WAIT,71.25,False,,0.116,Bu reklama hemen müdahale etmeyin.
+2deeb2d56e08,v2,holdout_v2,ADV-041,3,WAIT,WAIT,71.25,False,,0.108,Bu reklama hemen müdahale etmeyin.
+2deeb2d56e08,v2,holdout_v2,ADV-042,1,MEASURE,MEASURE,71.25,False,,0.129,Önce sonuç takibini doğrulayın.
+2deeb2d56e08,v2,holdout_v2,ADV-042,2,MEASURE,MEASURE,71.25,False,,0.13,Önce sonuç takibini doğrulayın.
+2deeb2d56e08,v2,holdout_v2,ADV-042,3,MEASURE,MEASURE,71.25,False,,0.141,Önce sonuç takibini doğrulayın.
+2deeb2d56e08,v2,holdout_v2,ADV-043,1,MAINTAIN,DIAGNOSE,57.5,False,,0.13,Mevcut ayarları koruyun.
+2deeb2d56e08,v2,holdout_v2,ADV-043,2,MAINTAIN,DIAGNOSE,57.5,False,,0.089,Mevcut ayarları koruyun.
+2deeb2d56e08,v2,holdout_v2,ADV-043,3,MAINTAIN,DIAGNOSE,57.5,False,,0.076,Mevcut ayarları koruyun.
+2deeb2d56e08,v2,holdout_v2,ADV-044,1,MAINTAIN,MAINTAIN,71.25,False,,0.1,Mevcut ayarları koruyun.
+2deeb2d56e08,v2,holdout_v2,ADV-044,2,MAINTAIN,MAINTAIN,71.25,False,,0.082,Mevcut ayarları koruyun.
+2deeb2d56e08,v2,holdout_v2,ADV-044,3,MAINTAIN,MAINTAIN,71.25,False,,0.077,Mevcut ayarları koruyun.
+2deeb2d56e08,v2,holdout_v2,ADV-045,1,MAINTAIN,ACT,57.5,False,,0.076,Mevcut ayarları koruyun.
+2deeb2d56e08,v2,holdout_v2,ADV-045,2,MAINTAIN,ACT,57.5,False,,0.115,Mevcut ayarları koruyun.
+2deeb2d56e08,v2,holdout_v2,ADV-045,3,MAINTAIN,ACT,57.5,False,,0.158,Mevcut ayarları koruyun.
+2deeb2d56e08,v2,holdout_v2,ADV-046,1,MAINTAIN,MEASURE,57.5,False,,0.109,Mevcut ayarları koruyun.
+2deeb2d56e08,v2,holdout_v2,ADV-046,2,MAINTAIN,MEASURE,57.5,False,,0.229,Mevcut ayarları koruyun.
+2deeb2d56e08,v2,holdout_v2,ADV-046,3,MAINTAIN,MEASURE,57.5,False,,0.136,Mevcut ayarları koruyun.
+2deeb2d56e08,v2,holdout_v2,ADV-047,1,DIAGNOSE,DIAGNOSE,78.75,False,,0.186,Sonuç başı maliyet hedefin üzerinde.
+2deeb2d56e08,v2,holdout_v2,ADV-047,2,DIAGNOSE,DIAGNOSE,78.75,False,,0.159,Sonuç başı maliyet hedefin üzerinde.
+2deeb2d56e08,v2,holdout_v2,ADV-047,3,DIAGNOSE,DIAGNOSE,78.75,False,,0.151,Sonuç başı maliyet hedefin üzerinde.
+2deeb2d56e08,v2,holdout_v2,ADV-048,1,WAIT,WAIT,71.25,False,,0.131,Bu reklama hemen müdahale etmeyin.
+2deeb2d56e08,v2,holdout_v2,ADV-048,2,WAIT,WAIT,71.25,False,,0.124,Bu reklama hemen müdahale etmeyin.
+2deeb2d56e08,v2,holdout_v2,ADV-048,3,WAIT,WAIT,71.25,False,,0.136,Bu reklama hemen müdahale etmeyin.
+2deeb2d56e08,v2,holdout_v2,ADV-049,1,MAINTAIN,DIAGNOSE,57.5,False,,0.146,Mevcut ayarları koruyun.
+2deeb2d56e08,v2,holdout_v2,ADV-049,2,MAINTAIN,DIAGNOSE,57.5,False,,0.132,Mevcut ayarları koruyun.
+2deeb2d56e08,v2,holdout_v2,ADV-049,3,MAINTAIN,DIAGNOSE,57.5,False,,0.135,Mevcut ayarları koruyun.
+2deeb2d56e08,v2,holdout_v2,ADV-050,1,MAINTAIN,DIAGNOSE,57.5,False,,0.135,Mevcut ayarları koruyun.
+2deeb2d56e08,v2,holdout_v2,ADV-050,2,MAINTAIN,DIAGNOSE,57.5,False,,0.123,Mevcut ayarları koruyun.
+2deeb2d56e08,v2,holdout_v2,ADV-050,3,MAINTAIN,DIAGNOSE,57.5,False,,0.13,Mevcut ayarları koruyun.
+2deeb2d56e08,v2,holdout_v2,ADV-051,1,MAINTAIN,DIAGNOSE,57.5,False,,0.131,Mevcut ayarları koruyun.
+2deeb2d56e08,v2,holdout_v2,ADV-051,2,MAINTAIN,DIAGNOSE,57.5,False,,0.128,Mevcut ayarları koruyun.
+2deeb2d56e08,v2,holdout_v2,ADV-051,3,MAINTAIN,DIAGNOSE,57.5,False,,0.112,Mevcut ayarları koruyun.
+2deeb2d56e08,v2,holdout_v2,ADV-052,1,MAINTAIN,DIAGNOSE,57.5,False,,0.081,Mevcut ayarları koruyun.
+2deeb2d56e08,v2,holdout_v2,ADV-052,2,MAINTAIN,DIAGNOSE,57.5,False,,0.072,Mevcut ayarları koruyun.
+2deeb2d56e08,v2,holdout_v2,ADV-052,3,MAINTAIN,DIAGNOSE,57.5,False,,0.08,Mevcut ayarları koruyun.

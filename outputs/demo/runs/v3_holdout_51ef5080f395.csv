@@ -1,0 +1,31 @@
+﻿run_id,model,split,scenario_id,trial,decision,accepted,score,pass,critical_codes,latency_ms,recommendation
+51ef5080f395,v3,holdout,ADV-005,1,MAINTAIN,MAINTAIN,100.0,True,,0.044,Mevcut reklamı koruyup düzenli izleyin.
+51ef5080f395,v3,holdout,ADV-005,2,MAINTAIN,MAINTAIN,100.0,True,,0.029,Mevcut reklamı koruyup düzenli izleyin.
+51ef5080f395,v3,holdout,ADV-005,3,MAINTAIN,MAINTAIN,100.0,True,,0.024,Mevcut reklamı koruyup düzenli izleyin.
+51ef5080f395,v3,holdout,ADV-010,1,WAIT,WAIT,100.0,True,,0.023,Bu kısa döneme bakarak reklamı değiştirmeyin.
+51ef5080f395,v3,holdout,ADV-010,2,WAIT,WAIT,100.0,True,,0.02,Bu kısa döneme bakarak reklamı değiştirmeyin.
+51ef5080f395,v3,holdout,ADV-010,3,WAIT,WAIT,100.0,True,,0.019,Bu kısa döneme bakarak reklamı değiştirmeyin.
+51ef5080f395,v3,holdout,ADV-016,1,DIAGNOSE,DIAGNOSE,100.0,True,,0.024,Bütçeyi büyütmeden önce dönüşüm kalitesini ve kayıp nedenlerini inceleyin.
+51ef5080f395,v3,holdout,ADV-016,2,DIAGNOSE,DIAGNOSE,100.0,True,,0.021,Bütçeyi büyütmeden önce dönüşüm kalitesini ve kayıp nedenlerini inceleyin.
+51ef5080f395,v3,holdout,ADV-016,3,DIAGNOSE,DIAGNOSE,100.0,True,,0.02,Bütçeyi büyütmeden önce dönüşüm kalitesini ve kayıp nedenlerini inceleyin.
+51ef5080f395,v3,holdout,ADV-021,1,ACT,ACT,100.0,True,,0.021,İşe yarayan bölümü sınırlı bir testle geliştirin.
+51ef5080f395,v3,holdout,ADV-021,2,ACT,ACT,100.0,True,,0.02,İşe yarayan bölümü sınırlı bir testle geliştirin.
+51ef5080f395,v3,holdout,ADV-021,3,ACT,ACT,100.0,True,,0.02,İşe yarayan bölümü sınırlı bir testle geliştirin.
+51ef5080f395,v3,holdout,ADV-027,1,MEASURE,MEASURE,100.0,True,,0.019,Önce sonuç ölçümlemesini doğrulayın.
+51ef5080f395,v3,holdout,ADV-027,2,MEASURE,MEASURE,100.0,True,,0.038,Önce sonuç ölçümlemesini doğrulayın.
+51ef5080f395,v3,holdout,ADV-027,3,MEASURE,MEASURE,100.0,True,,0.017,Önce sonuç ölçümlemesini doğrulayın.
+51ef5080f395,v3,holdout,ADV-030,1,DIAGNOSE,DIAGNOSE,100.0,True,,0.022,Bütçeyi büyütmeden önce dönüşüm kalitesini ve kayıp nedenlerini inceleyin.
+51ef5080f395,v3,holdout,ADV-030,2,DIAGNOSE,DIAGNOSE,100.0,True,,0.02,Bütçeyi büyütmeden önce dönüşüm kalitesini ve kayıp nedenlerini inceleyin.
+51ef5080f395,v3,holdout,ADV-030,3,DIAGNOSE,DIAGNOSE,100.0,True,,0.02,Bütçeyi büyütmeden önce dönüşüm kalitesini ve kayıp nedenlerini inceleyin.
+51ef5080f395,v3,holdout,ADV-032,1,DIAGNOSE,DIAGNOSE,100.0,True,,0.023,Bütçeyi büyütmeden önce dönüşüm kalitesini ve kayıp nedenlerini inceleyin.
+51ef5080f395,v3,holdout,ADV-032,2,DIAGNOSE,DIAGNOSE,100.0,True,,0.02,Bütçeyi büyütmeden önce dönüşüm kalitesini ve kayıp nedenlerini inceleyin.
+51ef5080f395,v3,holdout,ADV-032,3,DIAGNOSE,DIAGNOSE,100.0,True,,0.02,Bütçeyi büyütmeden önce dönüşüm kalitesini ve kayıp nedenlerini inceleyin.
+51ef5080f395,v3,holdout,ADV-034,1,DIAGNOSE,DIAGNOSE,100.0,True,,0.023,Bütçeyi büyütmeden önce dönüşüm kalitesini ve kayıp nedenlerini inceleyin.
+51ef5080f395,v3,holdout,ADV-034,2,DIAGNOSE,DIAGNOSE,100.0,True,,0.02,Bütçeyi büyütmeden önce dönüşüm kalitesini ve kayıp nedenlerini inceleyin.
+51ef5080f395,v3,holdout,ADV-034,3,DIAGNOSE,DIAGNOSE,100.0,True,,0.019,Bütçeyi büyütmeden önce dönüşüm kalitesini ve kayıp nedenlerini inceleyin.
+51ef5080f395,v3,holdout,ADV-037,1,WAIT,WAIT,100.0,True,,0.019,Henüz reklam harcaması ve dağıtım yok.
+51ef5080f395,v3,holdout,ADV-037,2,WAIT,WAIT,100.0,True,,0.016,Henüz reklam harcaması ve dağıtım yok.
+51ef5080f395,v3,holdout,ADV-037,3,WAIT,WAIT,100.0,True,,0.019,Henüz reklam harcaması ve dağıtım yok.
+51ef5080f395,v3,holdout,ADV-040,1,DIAGNOSE,DIAGNOSE,100.0,True,,0.023,Bütçeyi büyütmeden önce dönüşüm kalitesini ve kayıp nedenlerini inceleyin.
+51ef5080f395,v3,holdout,ADV-040,2,DIAGNOSE,DIAGNOSE,100.0,True,,0.018,Bütçeyi büyütmeden önce dönüşüm kalitesini ve kayıp nedenlerini inceleyin.
+51ef5080f395,v3,holdout,ADV-040,3,DIAGNOSE,DIAGNOSE,100.0,True,,0.017,Bütçeyi büyütmeden önce dönüşüm kalitesini ve kayıp nedenlerini inceleyin.

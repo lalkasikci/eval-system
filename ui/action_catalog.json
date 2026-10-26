@@ -1,0 +1,155 @@
+{
+  "version": "1.0",
+  "environment": "prototype",
+  "source": "User-provided behavior/action mapping, 24 October 2026",
+  "actions": [
+    {
+      "id": "pause_ad",
+      "type": "write",
+      "name": "Reklamı duraklat",
+      "emoji": "⏸️",
+      "findings": [],
+      "description": "Reklamı Meta üzerinde PAUSED durumuna alır, gerçek durumu tekrar okur ve paneli eşitler. Şu an hiçbir finding bu aksiyonu çağırmıyor.",
+      "readback": true,
+      "approval": true
+    },
+    {
+      "id": "restart_ad",
+      "type": "write",
+      "name": "Reklamı yeniden başlat",
+      "emoji": "▶️",
+      "findings": [],
+      "description": "Kampanya + reklam seti + reklamı birlikte yeniden başlatır; Meta durumu yeniden okunur. Şu an hiçbir finding bu aksiyonu çağırmıyor.",
+      "readback": true,
+      "approval": true
+    },
+    {
+      "id": "raise_budget_10",
+      "type": "write",
+      "name": "Bütçeyi %10 artır",
+      "emoji": "💰",
+      "findings": [
+        "winner_underfunded",
+        "scaling_ready"
+      ],
+      "description": "Kullanıcının mevcut → önerilen günlük bütçeyi onaylamasıyla gerçek bütçe sahibi nesneye (campaign veya eski reklamlarda ad set) yazılır. Data gate kapalıysa yönlendirmeye düşer.",
+      "readback": true,
+      "approval": true,
+      "fallback": {
+        "winner_underfunded": "/control-panel",
+        "scaling_ready": "/publish"
+      }
+    },
+    {
+      "id": "rewrite_greeting",
+      "type": "navigate",
+      "name": "Karşılama mesajını yeniden yazdır",
+      "emoji": "💬",
+      "findings": [
+        "low_messaging_rate"
+      ],
+      "route": "/ads/<grup>?greeting=regen",
+      "description": "Reklam grubunun mesaj düzenleme akışını açar."
+    },
+    {
+      "id": "winning_creative_variants",
+      "type": "navigate",
+      "name": "Kazanan kreatifin varyasyonlarını ürettir",
+      "emoji": "🏆",
+      "findings": [
+        "outcome_winner",
+        "schedule_completed"
+      ],
+      "route": "/publish/campaign?creative=<kreatif>",
+      "description": "Seçili kreatif üzerinden yeni varyasyon akışına geçer."
+    },
+    {
+      "id": "new_creative",
+      "type": "navigate",
+      "name": "Yeni kreatif ürettir",
+      "emoji": "🎨",
+      "findings": [
+        "creative_fatigue",
+        "all_ads_underperforming",
+        "spend_without_outcomes",
+        "weak_ctr",
+        "ad_rejected_or_restricted"
+      ],
+      "route": "/publish",
+      "description": "Yeni reklam içeriği oluşturma ekranını açar."
+    },
+    {
+      "id": "mark_inbox_outcomes",
+      "type": "navigate",
+      "name": "Sonuçları Gelen Kutusu’nda işaretlet",
+      "emoji": "📥",
+      "findings": [
+        "unmarked_leads"
+      ],
+      "route": "/leads",
+      "description": "Henüz sonucu işaretlenmeyen taleplerin bulunduğu ekrana gider."
+    },
+    {
+      "id": "show_control_panel",
+      "type": "navigate",
+      "name": "Kontrol Paneli’nde ayarları göster",
+      "emoji": "🛠️",
+      "findings": [
+        "not_delivering"
+      ],
+      "route": "/control-panel",
+      "description": "Yayın ve reklam ayarlarını incelemek için Kontrol Paneli’ne gider."
+    },
+    {
+      "id": "connect_meta_pixel",
+      "type": "navigate",
+      "name": "Meta Pixel’ini bağlat",
+      "emoji": "🧠",
+      "findings": [
+        "tracking_missing"
+      ],
+      "route": "/brand-brain",
+      "description": "Marka Beyni üzerinden Pixel bağlantı alanına gider."
+    },
+    {
+      "id": "analyze_landing_page",
+      "type": "navigate",
+      "name": "Açılış sayfasını analiz ettir",
+      "emoji": "🌐",
+      "findings": [
+        "click_to_landing_dropoff"
+      ],
+      "route": "/seo",
+      "description": "Siteni Geliştir analiz ekranına gider."
+    },
+    {
+      "id": "follow_up",
+      "type": "follow",
+      "name": "Takibe al",
+      "emoji": "👁️",
+      "findings": [
+        "cpa_rising",
+        "data_gap",
+        "data_stale",
+        "winner_promising"
+      ],
+      "description": "Kartı takipte olarak işaretler ve yeniden inceleme tarihi belirler. Reklam hesabında değişiklik yapmaz."
+    },
+    {
+      "id": "info_only",
+      "type": "info",
+      "name": "Bilgi kartı — düğme yok",
+      "emoji": "ℹ️",
+      "findings": [
+        "insufficient_data",
+        "learning_phase_active",
+        "healthy_no_action",
+        "in_review_or_preparing",
+        "creative_test_starved",
+        "greeting_measuring",
+        "greeting_improved"
+      ],
+      "description": "Yalnızca bilgi sunar; kullanıcıyı gereksiz aksiyona zorlamaz."
+    }
+  ]
+}

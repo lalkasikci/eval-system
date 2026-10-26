@@ -1,0 +1,31 @@
+﻿run_id,model,split,scenario_id,trial,decision,accepted,score,pass,critical_codes,latency_ms,recommendation
+2e998380601b,v3,holdout,ADV-005,1,MAINTAIN,MAINTAIN,78.75,False,,0.401,Mevcut reklamı koruyup hedef sonuç maliyetini düzenli izleyin.
+2e998380601b,v3,holdout,ADV-005,2,MAINTAIN,MAINTAIN,78.75,False,,0.22,Mevcut reklamı koruyup hedef sonuç maliyetini düzenli izleyin.
+2e998380601b,v3,holdout,ADV-005,3,MAINTAIN,MAINTAIN,78.75,False,,0.258,Mevcut reklamı koruyup hedef sonuç maliyetini düzenli izleyin.
+2e998380601b,v3,holdout,ADV-010,1,WAIT,WAIT,100.0,True,,0.157,Bu kısa döneme bakarak reklamı değiştirmeyin.
+2e998380601b,v3,holdout,ADV-010,2,WAIT,WAIT,100.0,True,,0.136,Bu kısa döneme bakarak reklamı değiştirmeyin.
+2e998380601b,v3,holdout,ADV-010,3,WAIT,WAIT,100.0,True,,0.135,Bu kısa döneme bakarak reklamı değiştirmeyin.
+2e998380601b,v3,holdout,ADV-016,1,DIAGNOSE,DIAGNOSE,100.0,True,,0.202,Talep çok ama randevuya dönüşüm zayıf; müşteri takip sürecini inceleyin.
+2e998380601b,v3,holdout,ADV-016,2,DIAGNOSE,DIAGNOSE,100.0,True,,0.179,Talep çok ama randevuya dönüşüm zayıf; müşteri takip sürecini inceleyin.
+2e998380601b,v3,holdout,ADV-016,3,DIAGNOSE,DIAGNOSE,100.0,True,,0.194,Talep çok ama randevuya dönüşüm zayıf; müşteri takip sürecini inceleyin.
+2e998380601b,v3,holdout,ADV-021,1,ACT,ACT,100.0,True,,0.165,İşe yarayan sorgu ve saat bölümünü sınırlı bir testle geliştirin.
+2e998380601b,v3,holdout,ADV-021,2,ACT,ACT,100.0,True,,0.149,İşe yarayan sorgu ve saat bölümünü sınırlı bir testle geliştirin.
+2e998380601b,v3,holdout,ADV-021,3,ACT,ACT,100.0,True,,0.145,İşe yarayan sorgu ve saat bölümünü sınırlı bir testle geliştirin.
+2e998380601b,v3,holdout,ADV-027,1,MEASURE,MEASURE,100.0,True,,0.136,Telefon tıklaması ile tamamlanan gerçek görüşmeyi ayrı ölçün.
+2e998380601b,v3,holdout,ADV-027,2,MEASURE,MEASURE,100.0,True,,0.129,Telefon tıklaması ile tamamlanan gerçek görüşmeyi ayrı ölçün.
+2e998380601b,v3,holdout,ADV-027,3,MEASURE,MEASURE,100.0,True,,0.129,Telefon tıklaması ile tamamlanan gerçek görüşmeyi ayrı ölçün.
+2e998380601b,v3,holdout,ADV-030,1,DIAGNOSE,DIAGNOSE,100.0,True,,0.17,Zaman kısıtı ile rezervasyon dönüşümünü birlikte inceleyin.
+2e998380601b,v3,holdout,ADV-030,2,DIAGNOSE,DIAGNOSE,100.0,True,,0.162,Zaman kısıtı ile rezervasyon dönüşümünü birlikte inceleyin.
+2e998380601b,v3,holdout,ADV-030,3,DIAGNOSE,DIAGNOSE,100.0,True,,0.154,Zaman kısıtı ile rezervasyon dönüşümünü birlikte inceleyin.
+2e998380601b,v3,holdout,ADV-032,1,DIAGNOSE,DIAGNOSE,100.0,True,,0.373,Brüt ve net satışları ayırıp iptal/iade nedenlerini inceleyin.
+2e998380601b,v3,holdout,ADV-032,2,DIAGNOSE,DIAGNOSE,100.0,True,,0.166,Brüt ve net satışları ayırıp iptal/iade nedenlerini inceleyin.
+2e998380601b,v3,holdout,ADV-032,3,DIAGNOSE,DIAGNOSE,100.0,True,,0.152,Brüt ve net satışları ayırıp iptal/iade nedenlerini inceleyin.
+2e998380601b,v3,holdout,ADV-034,1,DIAGNOSE,DIAGNOSE,100.0,True,,0.169,Kampanya değişikliğini mevzuat ve platform uygunluk kontrolüne bağlayın.
+2e998380601b,v3,holdout,ADV-034,2,DIAGNOSE,DIAGNOSE,100.0,True,,0.153,Kampanya değişikliğini mevzuat ve platform uygunluk kontrolüne bağlayın.
+2e998380601b,v3,holdout,ADV-034,3,DIAGNOSE,DIAGNOSE,100.0,True,,0.585,Kampanya değişikliğini mevzuat ve platform uygunluk kontrolüne bağlayın.
+2e998380601b,v3,holdout,ADV-037,1,WAIT,WAIT,100.0,True,,0.269,Henüz reklam harcaması ve dağıtım yok.
+2e998380601b,v3,holdout,ADV-037,2,WAIT,WAIT,100.0,True,,0.239,Henüz reklam harcaması ve dağıtım yok.
+2e998380601b,v3,holdout,ADV-037,3,WAIT,WAIT,100.0,True,,0.23,Henüz reklam harcaması ve dağıtım yok.
+2e998380601b,v3,holdout,ADV-040,1,ACT,DIAGNOSE,65.0,False,,0.271,Bütçeyi büyütmek yerine boş tarih ve kapasiteye dönük küçük bir test yapın.
+2e998380601b,v3,holdout,ADV-040,2,ACT,DIAGNOSE,65.0,False,,0.243,Bütçeyi büyütmek yerine boş tarih ve kapasiteye dönük küçük bir test yapın.
+2e998380601b,v3,holdout,ADV-040,3,ACT,DIAGNOSE,65.0,False,,0.24,Bütçeyi büyütmek yerine boş tarih ve kapasiteye dönük küçük bir test yapın.

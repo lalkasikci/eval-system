@@ -1,0 +1,30 @@
+test_all_valid (test_contracts.ContractTests.test_all_valid) ... ok
+test_dataset_partition (test_contracts.ContractTests.test_dataset_partition) ... ok
+test_derived_math (test_contracts.ContractTests.test_derived_math) ... ok
+test_divide_by_zero_is_null (test_contracts.ContractTests.test_divide_by_zero_is_null) ... ok
+test_gold_not_in_holdout_input (test_contracts.ContractTests.test_gold_not_in_holdout_input) ... ok
+test_invalid_metrics_rejected (test_contracts.ContractTests.test_invalid_metrics_rejected) ... ok
+test_invalid_sales_measurement_rejected (test_contracts.ContractTests.test_invalid_sales_measurement_rejected) ... ok
+test_output_schema (test_contracts.ContractTests.test_output_schema) ... ok
+test_producer_input_has_no_gold_or_id (test_contracts.ContractTests.test_producer_input_has_no_gold_or_id) ... ok
+test_unknown_sales_not_zero (test_contracts.ContractTests.test_unknown_sales_not_zero) ... ok
+test_assert_guarantee_fails (test_grader.GraderTests.test_assert_guarantee_fails) ... ok
+test_caveat_guarantee_not_critical (test_grader.GraderTests.test_caveat_guarantee_not_critical) ... ok
+test_good_controls_no_false_positive (test_grader.GraderTests.test_good_controls_no_false_positive) ... ok
+test_hard_fail_overrides_score (test_grader.GraderTests.test_hard_fail_overrides_score) ... ok
+test_mutation_detection (test_grader.GraderTests.test_mutation_detection) ... ok
+test_null_sale_claim_detected (test_grader.GraderTests.test_null_sale_claim_detected) ... ok
+test_platform_mismatch (test_grader.GraderTests.test_platform_mismatch) ... ok
+test_unguarded_budget_scale (test_grader.GraderTests.test_unguarded_budget_scale) ... ok
+test_unsupported_currency_calculation (test_grader.GraderTests.test_unsupported_currency_calculation) ... ok
+test_zero_real_sale_not_hallucination (test_grader.GraderTests.test_zero_real_sale_not_hallucination) ... ok
+test_comparison (test_runs.RunnerTests.test_comparison) ... ok
+test_comparison_split_guard (test_runs.RunnerTests.test_comparison_split_guard) ... ok
+test_human_review_template_is_blank (test_runs.RunnerTests.test_human_review_template_is_blank) ... ok
+test_repeat_consistency (test_runs.RunnerTests.test_repeat_consistency) ... ok
+test_run_isolated_and_scored (test_runs.RunnerTests.test_run_isolated_and_scored) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 0.029s
+
+OK
