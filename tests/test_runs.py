@@ -55,3 +55,17 @@ class RunnerTests(unittest.TestCase):
   self.assertEqual(judged['metadata']['judge_model_identifiers'],['mock/judge'])
   self.assertEqual(judged['metadata']['estimated_judge_cost_usd'],0.03)
   self.assertTrue(all('judge' in row['grade'] for row in judged['results']))
+ def test_regrade_limit_and_unique_scenarios(self):
+  with tempfile.TemporaryDirectory() as d:
+   p=Path(d)/'run.json';p.write_text(json.dumps(self.b),encoding='utf-8')
+   judged=regrade_run(p,d,'test_runs:fake_judge',limit=2,unique_scenarios=True)
+   self.assertEqual(len(judged['results']),2)
+   self.assertEqual(len({x['scenario_id'] for x in judged['results']}),2)
+   self.assertEqual(judged['metadata']['judge_input_tokens'],20)
+   self.assertEqual(judged['metadata']['judge_output_tokens'],10)
+   self.assertEqual(judged['metadata']['estimated_judge_cost_usd'],0.002)
+   self.assertEqual(judged['results'][0]['judge_metadata']['model_identifier'],'mock/judge')
+   self.assertTrue((Path(d)/'run_judging_partial.json').exists())
+   resumed=regrade_run(p,d,'test_runs:fake_judge',limit=3,unique_scenarios=True,resume=True)
+   self.assertEqual(len(resumed['results']),3)
+   self.assertEqual(len({x['scenario_id'] for x in resumed['results']}),3)

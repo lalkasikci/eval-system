@@ -1,6 +1,7 @@
-import unittest,copy
+import unittest,copy,tempfile
+from pathlib import Path
 from madset_eval.contracts import validate_input,derived_metrics,generate_input,ContractError,validate_output
-from madset_eval.runs import load_split,validate_suite
+from madset_eval.runs import load_split,validate_suite,manifest_hash
 from madset_eval.baselines import v3
 
 class ContractTests(unittest.TestCase):
@@ -37,3 +38,8 @@ class ContractTests(unittest.TestCase):
  def test_output_schema(self):
   for case in self.dev:
    self.assertTrue(validate_output(v3(generate_input(case))))
+ def test_manifest_hash_ignores_git_line_endings(self):
+  with tempfile.TemporaryDirectory() as folder:
+   lf=Path(folder)/'lf.txt';crlf=Path(folder)/'crlf.txt'
+   lf.write_bytes(b'first\nsecond\n');crlf.write_bytes(b'first\r\nsecond\r\n')
+   self.assertEqual(manifest_hash(lf),manifest_hash(crlf))

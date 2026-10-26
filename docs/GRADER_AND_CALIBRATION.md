@@ -7,7 +7,7 @@
 1. **Kod tabanlı (çalışıyor):** Sözleşme geçerliliği, sayısal iddia–gerçek veri karşılaştırması, sıfır/null ayrımı, garanti söylemi için sınırlı ifade kontrolü, yüksek riskli bütçe aksiyonu, kanal uyumsuzluğu, yetkisiz eylem iddiası.
 2. **Açıklanabilir semantik heuristik (çalışıyor):** 7 boyutta 0–4 puanlara ek olarak gold `must_include` metninden alan kavramları çıkarılır; çıktıdaki kanıt, karar-protokolü ve kavram kapsaması kaydedilir. Doğru karar etiketi taşıyan genel/geçiştirici metin artık geçemez. Otomatik `80+`, `no hard fail`, en az `%75` kavram kapsaması, karar-protokolü ve grounded evidence yalnızca **offline ön kontrol**dür.
 3. **İnsan rubric'i (iş akışı ve form hazır):** İki bağımsız reklam uzmanı, örnekleri görmeden (sürüm/grader puanları maskelenerek) her kategoriye puan verebilir; uyuşmazlıklar uzlaşma listesine gider. Bu inceleme **henüz yapılmadı**.
-4. **Model tabanlı jüri (opsiyonel, adaptörü hazır):** `examples.claude_judge:judge` ile Claude yedi rubric boyutunu değerlendirebilir. Gerçek anahtarla ölçüm henüz yapılmadı; iki uzmanla uyum ölçülmeden sonucu kesin kalite kanıtı sayılmaz.
+4. **Model tabanlı jüri (opsiyonel, ölçüldü):** `examples.claude_judge:judge` ile Claude yedi rubric boyutunu değerlendirebilir. Claude Sonnet 4.6, geliştirme setindeki 30 V3 önerisini değerlendirdi; iki uzmanla uyum ölçülmeden sonucu kesin kalite kanıtı sayılmaz.
 
 ## Kritik hata kuralları
 
@@ -43,4 +43,15 @@ Başlangıç heuristiği kısa, düzgün yapılandırılmış ve doğru karar t�
 İsteğe bağlı `examples.claude_judge:judge` adaptörü, deterministik hard-check sonuçlarını değiştirmeden yedi rubric boyutunu ve genel anlamsal geçişi Claude ile değerlendirir. Bir hard-check hata kodu varsa LLM yüksek puan verse bile sonuç geçemez. Yargıç model/prompt sürümü, token sayıları, gecikme ve fiyat değişkenleri tanımlıysa maliyet koşu kaydına eklenir.
 
 Bu katman insan uzman etiketleriyle henüz kalibre edilmediğinden sonuçları geçici (`provisional`) kabul edilir. Güvenilirlik iddiası için kör insan etiketlerine karşı agreement, yanlış alarm ve hata yakalama oranı ayrıca ölçülmelidir.
+
+### Ölçülen Claude koşusu
+
+- Kapsam: 30 benzersiz geliştirme senaryosu, V3 kayıtlı çıktıları.
+- Model/prompt: `anthropic/claude-sonnet-4-6`, `madset-claude-judge-v1`.
+- Sonuç: 25/30 geçiş (%83,33), 30/30 karar doğruluğu, 91,04 ortalama puan, sıfır F01-F08/FMT.
+- Kaynak kullanımı: 57.952 girdi tokenı, 20.395 çıktı tokenı, çağrı başına ortalama 13,89 saniye.
+- Maliyet: fiyat ortam değişkenleri sabitlenmediği için `null`; sıfır olarak yorumlanmamalıdır.
+- Başarısız vakalar: ADV-001, ADV-003, ADV-014, ADV-017, ADV-038. Baskın eksiklik, mevcut metrikleri tam kullanmayan ve somut eşik/zaman vermeyen aksiyonlardır.
+
+ADV-001 tek-vaka bağlantı kontrolünde 92,5, toplu koşuda 76,25 puan almıştır. Bu gözlem yargıç çıktısının tekrarlı çağrılarda değişebildiğini gösterir. Bu nedenle LLM yargıcı, deterministik hard-check'lerin veya insan uzlaşmasının yerine geçmez; gerektiğinde tekrarlı yargı, mutasyon kontrolleri ve insan etiketleriyle kalibre edilmelidir.
 

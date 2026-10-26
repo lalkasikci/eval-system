@@ -1,6 +1,9 @@
 param(
     [string]$RunJson = "",
-    [string]$Out = "outputs/claude_judge"
+    [string]$Out = "outputs/claude_judge",
+    [ValidateRange(1, 30)]
+    [int]$Limit = 1,
+    [switch]$Resume
 )
 
 $ErrorActionPreference = "Stop"
@@ -18,9 +21,13 @@ $secret = Read-Host "Claude API anahtarı (ekranda görünmez)" -AsSecureString
 $pointer = [Runtime.InteropServices.Marshal]::SecureStringToBSTR($secret)
 try {
     $env:ANTHROPIC_API_KEY = [Runtime.InteropServices.Marshal]::PtrToStringBSTR($pointer)
-    & $python -m madset_eval regrade $RunJson `
-        --judge-adapter examples.claude_judge:judge `
-        --out $Out
+    $arguments = @(
+        "-m", "madset_eval", "regrade", $RunJson,
+        "--judge-adapter", "examples.claude_judge:judge",
+        "--unique-scenarios", "--limit", "$Limit", "--progress", "--out", $Out
+    )
+    if ($Resume) { $arguments += "--resume" }
+    & $python @arguments
     if ($LASTEXITCODE -ne 0) { throw "Claude judge çalışması başarısız oldu." }
 }
 finally {

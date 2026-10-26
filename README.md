@@ -40,7 +40,9 @@ Kod tabanlı matematik ve kritik hata denetimleri korunurken Claude, yedi rubric
 .\scripts\run_claude_judge.ps1
 ```
 
-Betik anahtarı görünmeyen bir giriş alanında ister, yalnızca alt Python sürecine `ANTHROPIC_API_KEY` olarak aktarır ve işlem bitince bellek/ortam değişkenini temizler. Varsayılan olarak en yeni `v3_dev` kaydını yeniden puanlar; öneri üreticisini tekrar çağırmaz. Sonuçlar `outputs/claude_judge/` altında saklanır. Claude sonucu tek başına yayın kararı değildir; insan etiketleriyle kalibrasyon yapılana kadar `provisional` kabul edilir.
+Betik anahtarı görünmeyen bir giriş alanında ister, yalnızca alt Python sürecine `ANTHROPIC_API_KEY` olarak aktarır ve işlem bitince bellek/ortam değişkenini temizler. Varsayılan olarak en yeni `v3_dev` kaydındaki **tek senaryoyu** bağlantı/maliyet güvenliği için değerlendirir ve her çağrıda ilerleme gösterir. Başarılı kontrolden sonra `-Limit 30` ile 30 benzersiz senaryo çalıştırılabilir. Sonuçlar her çağrıdan sonra `outputs/claude_judge/` altında kısmi olarak saklanır; hata sonrası `-Limit 30 -Resume` yalnız tamamlanmamış senaryolardan devam eder. Claude sonucu tek başına yayın kararı değildir; insan etiketleriyle kalibrasyon yapılana kadar `provisional` kabul edilir.
+
+Tamamlanan örnek koşuda Claude Sonnet 4.6, 30 V3 geliştirme önerisinin 25'ini geçirdi (%83,33); karar türlerinin 30'u da doğru ve kritik hata sayısı sıfırdı. Ortalama puan 91,04; kullanım 57.952 girdi ve 20.395 çıktı tokenı; ortalama yargıç gecikmesi 13,89 saniyeydi. Fiyatlar sabitlenmediği için maliyet `null` kaydedildi. Ayrıntılar `docs/FINAL_REPORT.md` ve `docs/GRADER_AND_CALIBRATION.md` içindedir.
 
 **Holdout setini iterasyon amacıyla tekrar tekrar test etmeyin.** İlk 10 vakalık holdout ve 12 vakalık `holdout_v2` final doğrulamada kullanılmış ve tüketilmiştir. Yeni üretici/prompt sürümleri için yeni, hash ile dondurulmuş bir kör set oluşturun.
 
@@ -111,7 +113,7 @@ python -m madset_eval review-analyze outputs/expert_review.csv
 
 **Ölçülüyor:** schema bütünlüğü, desteklenen sayısal iddialar, hesaplar, öngörülebilir kritik güvenlik ihlalleri, kabul edilen karar türü, karar-protokolü, senaryoya özgü kavram kapsaması, 7 boyutta başlangıç rubric, tekrarlı deneme tutarlılığı, bütün trial'ları kullanan paired regression, sürüm meta verisi ve grader mutasyon testi.
 
-**Henüz ölçülmüyor:** Tam Türkçe serbest metin semantiği, uzmanlar arası onay, kalibre edilmiş LLM-judge güvenilirliği, canlı müşteri satış lift'i ve gerçek reklam platformlarının desteklenebilirliği. Dolayısıyla `passed=true` **"offline otomatik ön kontrolden geçti"** anlamındadır; gerçek ürünün güvenli olduğu onayı değildir.
+**Henüz ölçülmüyor:** İnsan uzman konsensüsüyle doğrulanmış tam Türkçe serbest metin semantiği, uzmanlar arası onay, kalibre edilmiş LLM-judge güvenilirliği, canlı müşteri satış lift'i ve gerçek reklam platformlarının desteklenebilirliği. Claude ile bir dev koşusu yapılmış olması bu kalibrasyonun yerine geçmez. Dolayısıyla `passed=true` **"offline otomatik ön kontrolden geçti"** anlamındadır; gerçek ürünün güvenli olduğu onayı değildir.
 
 ## Mimari tercih
 
@@ -123,5 +125,3 @@ Tek işlemde kurulabilen, **Python standart kütüphanesiyle** çalışan bir ha
 - Kullanıcı tarafından sağlanan *AI ajanları için değerlendirme (eval) rehberi* (Anthropic rehberinin Türkçe sunumu). Task/trial/grader, değerlendirici kombinasyonu, tekrarlı koşu, regresyon, kalibrasyon ve gözden geçirme yöntemleri.
 
 Madset'e özgü sayısal puanlar, beş karar sınıfı ve F01–F08 kataloğu, **belgelerin doğrudan içeriği değil, bu laboratuvar için tasarlanan yerel sözleşmelerdir.**
-#   e v a l - s y s t e m  
- 

@@ -23,6 +23,10 @@ def main(argv=None):
     regrade=sp.add_parser('regrade',help='Re-score a saved transcript without rerunning its producer')
     regrade.add_argument('run_json');regrade.add_argument('--out',default='outputs/regraded')
     regrade.add_argument('--judge-adapter',help='Optional semantic judge: python module:function')
+    regrade.add_argument('--limit',type=int,default=None,help='Maximum records to regrade')
+    regrade.add_argument('--progress',action='store_true',help='Print progress for every record')
+    regrade.add_argument('--unique-scenarios',action='store_true',help='Use only the first trial of each scenario')
+    regrade.add_argument('--resume',action='store_true',help='Resume successful records from an existing partial file')
     mut=sp.add_parser('calibrate',help='Run positive and negative mutation controls')
     mut.add_argument('--out',default=None)
     rev=sp.add_parser('review-export',help='Create blank forms for two independent expert graders')
@@ -43,7 +47,7 @@ def main(argv=None):
         if args.out:Path(args.out).write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')
         print(json.dumps(result,ensure_ascii=False,indent=2));return 0
     if args.command=='regrade':
-        output=regrade_run(args.run_json,args.out,args.judge_adapter)
+        output=regrade_run(args.run_json,args.out,args.judge_adapter,args.limit,args.progress,args.unique_scenarios,args.resume)
         print(json.dumps({'file':output.get('file_path'),'summary':output['summary'],'metadata':output['metadata']},ensure_ascii=False,indent=2));return 0
     if args.command=='calibrate':
         result=measure();txt=json.dumps(result,ensure_ascii=False,indent=2)

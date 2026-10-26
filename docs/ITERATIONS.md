@@ -41,3 +41,9 @@ V3/refactor tamamlandıktan sonra 12 yeni vaka ve gold beklentisi SHA-256 ile do
 - Bu paket bir demo ve teknik eval iskeleti olarak kabul edilebilir.
 - Gerçek Madset modeli, iki uzman onayı ve genişletilmiş gerçek-kalite grader uyumu olmadan “ürüne hazır” kabul edilmez.
 - Yeni hatalar yeni senaryoya ve uygun regresyon testine dönüşür; eski sonuç kayıtları silinmez.
+
+## Claude LLM yargıç doğrulaması
+
+Kayıtlı V3 geliştirme çıktılarının 30 benzersiz senaryosu Claude Sonnet 4.6 ile değerlendirildi. Sonuç 25/30 geçiş (%83,33), 30/30 doğru karar, 91,04 ortalama puan ve sıfır kritik hata oldu. ADV-001, ADV-003, ADV-014, ADV-017 ve ADV-038 geçemedi. Claude'un ortak eleştirisi; mevcut satış/huni/ekonomi verilerinin eksik kullanılması ve önerilerin somut zaman, eşik ve kontrol planı vermemesiydi.
+
+Koşu 57.952 girdi ve 20.395 çıktı tokenı kullandı; ortalama yargıç gecikmesi 13,89 saniyeydi. Fiyatlar sabitlenmediği için maliyet kaydı `null` kaldı. ADV-001'in tek-vaka kontrolde 92,5, toplu koşuda 76,25 alması LLM yargıç değişkenliğini gösterdi. Bu kayıt bir iterasyon ölçümüdür; insan kalibrasyonu veya ürün yayın onayı değildir.

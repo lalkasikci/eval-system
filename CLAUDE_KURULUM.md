@@ -18,7 +18,7 @@ export ANTHROPIC_API_KEY='KENDI_API_KEYIN'
 .\scripts\run_claude_judge.ps1
 ```
 
-Betik anahtarı gizli giriş olarak ister, yalnız alt süreçte kullanır ve tamamlandığında ortamdan temizler. Anahtarı sohbet, kaynak kodu, `.env.example`, ekran görüntüsü veya GitHub'a yazma.
+Betik varsayılan olarak yalnızca **1 çağrı** yapar ve ilerlemeyi ekrana yazar. İlk çağrı başarılı olduktan sonra en fazla 30 benzersiz geliştirme senaryosu için `.\scripts\run_claude_judge.ps1 -Limit 30` kullanılabilir. Her çağrıdan sonra kısmi sonuç kaydedilir; ilk bağlantı/API hatasında işlem durur. Hata sonrası `.\scripts\run_claude_judge.ps1 -Limit 30 -Resume` yalnız başarıyla tamamlanmamış senaryolardan devam eder. Anahtarı gizli giriş olarak ister, yalnız alt süreçte kullanır ve tamamlandığında ortamdan temizler. Anahtarı sohbet, kaynak kodu, `.env.example`, ekran görüntüsü veya GitHub'a yazma.
 
 Bu güvenli betik mevcut en yeni `v3_dev` transcriptini Claude LLM yargıcıyla yeniden puanlar. Böylece öneri üretmek için ayrıca API çağrısı yapılmaz.
 

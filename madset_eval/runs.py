@@ -10,6 +10,11 @@ from .baselines import BASELINES
 
 VERSIONS={'v1':('rule-baseline-1','rules-v1'), 'v2':('rule-baseline-2','rules-v2'), 'v3':('rule-baseline-3','rules-v3')}
 
+def manifest_hash(path):
+    """Hash text consistently across LF and CRLF Git checkouts."""
+    content=Path(path).read_bytes().replace(b'\r\n',b'\n')
+    return hashlib.sha256(content).hexdigest()
+
 def load_split(split):
     if split=='dev': return load_json(ROOT/'data/dev/scenarios.json')
     if split=='holdout':return load_json(ROOT/'data/holdout/inputs.json')
@@ -51,7 +56,7 @@ def validate_suite():
     for relative,expected_hash in manifest.get('files',{}).items():
         path=ROOT/relative
         if not path.exists():errors.append(f'manifest file missing: {relative}');continue
-        actual=hashlib.sha256(path.read_bytes()).hexdigest()
+        actual=manifest_hash(path)
         if actual!=expected_hash:errors.append(f'manifest hash mismatch: {relative}')
     return {'valid':not errors,'errors':errors,'dev':len(dev),'holdout':len(hold),
             'holdout_v2':len(hold2),'total':len(dev)+len(hold),'total_original':len(dev)+len(hold),'total_with_new_holdout':len(all_ids),
@@ -158,13 +163,31 @@ def exec_run(model='v3',split='dev',trials=1,adapter=None,folder=None,save=True,
         response['file_path']=str(out)
     return response
 
-def regrade_run(path,folder=None,judge_adapter=None):
+def regrade_run(path,folder=None,judge_adapter=None,limit=None,progress=False,unique_scenarios=False,resume=False):
     """Re-score a saved transcript without calling its producer again."""
     source=Path(path);run=json.loads(source.read_text(encoding='utf-8'))
     split=run['metadata']['split'];records=load_split(split);expected=gold_for(split,records)
+    rows=run['results']
+    if unique_scenarios:
+        seen=set();rows=[row for row in rows if not (row['scenario_id'] in seen or seen.add(row['scenario_id']))]
+    if limit is not None and (not isinstance(limit,int) or limit<1):raise ValueError('limit must be a positive integer')
     rescored=[];judge_func=load_adapter(judge_adapter) if judge_adapter else None;judge_usage=[]
-    for row in run['results']:
+    destination=Path(folder) if folder else None
+    if destination:destination.mkdir(parents=True,exist_ok=True)
+    partial_path=destination/(source.stem+'_judging_partial.json') if destination and judge_adapter else None
+    if resume and partial_path and partial_path.exists():
+        previous=json.loads(partial_path.read_text(encoding='utf-8'))
+        rescored=[row for row in previous.get('results',[]) if not row.get('judge_error') and row.get('grade',{}).get('judge')]
+        judge_usage=[row.get('judge_metadata',{}) for row in rescored if isinstance(row.get('judge_metadata'),dict)]
+        completed={(row['scenario_id'],row.get('trial')) for row in rescored}
+        rows=[row for row in rows if (row['scenario_id'],row.get('trial')) not in completed]
+    target_total=limit if limit is not None else len(rescored)+len(rows)
+    remaining=max(0,target_total-len(rescored))
+    rows=rows[:remaining]
+    for row in rows:
+        index=len(rescored)+1
         if 'input' not in row:raise ValueError('saved run has no input transcript; cannot regrade safely')
+        if progress:print(f'[{index}/{target_total}] {row["scenario_id"]}: Claude değerlendirmesi başlıyor...',flush=True)
         updated=copy.deepcopy(row);gold=expected[updated['scenario_id']]
         updated['grade']=grade(updated['input'],updated['output'],gold)
         updated['judge_error']=None;updated['judge_latency_ms']=None
@@ -174,22 +197,35 @@ def regrade_run(path,folder=None,judge_adapter=None):
                 judgment=judge_func({'input':copy.deepcopy(updated['input']),'output':copy.deepcopy(updated['output']),'expectation':copy.deepcopy(gold)})
                 judgment=copy.deepcopy(judgment);meta=judgment.pop('_eval_metadata',{}) or {};judge_usage.append(meta)
                 updated['grade']=merge_judgment(updated['grade'],judgment)
+                updated['judge_metadata']=meta
             except Exception as exc:
                 updated['judge_error']=f'{type(exc).__name__}: {exc}';updated['grade']['passed']=False;updated['grade']['judge_error']=updated['judge_error']
             updated['judge_latency_ms']=round((time.perf_counter_ns()-begin)/1e6,3)
         rescored.append(updated)
+        if progress:
+            status='HATA: '+updated['judge_error'] if updated.get('judge_error') else 'tamamlandı'
+            print(f'[{index}/{target_total}] {row["scenario_id"]}: {status}',flush=True)
+        if partial_path:
+            checkpoint={'metadata':copy.deepcopy(run['metadata']),'results':rescored,'summary':summarize(rescored)}
+            checkpoint['metadata'].update({'judge_adapter':judge_adapter,'status':'partial','completed_judge_calls':len(rescored)})
+            partial_path.write_text(json.dumps(checkpoint,ensure_ascii=False,indent=2),encoding='utf-8')
+        if updated.get('judge_error'):
+            break
     result={'metadata':copy.deepcopy(run['metadata']),'results':rescored,'summary':summarize(rescored)}
     result['metadata']['regraded_from_run_id']=run['metadata']['run_id']
     result['metadata']['grader_version']='offline-semantic-1.1'
     result['metadata']['rubric_version']='1.1-provisional'
     result['metadata']['regraded_utc']=datetime.now(timezone.utc).isoformat()
     if judge_adapter:
+        judge_costs=[x.get('cost_usd') for x in judge_usage if isinstance(x.get('cost_usd'),(int,float))]
         result['metadata']['judge_adapter']=judge_adapter
         result['metadata']['judge_model_identifiers']=sorted({x.get('model_identifier') for x in judge_usage if x.get('model_identifier')})
         result['metadata']['judge_prompt_versions']=sorted({x.get('prompt_version') for x in judge_usage if x.get('prompt_version')})
+        result['metadata']['judge_input_tokens']=sum(x.get('input_tokens',0) for x in judge_usage if isinstance(x.get('input_tokens'),int)) or None
+        result['metadata']['judge_output_tokens']=sum(x.get('output_tokens',0) for x in judge_usage if isinstance(x.get('output_tokens'),int)) or None
+        result['metadata']['estimated_judge_cost_usd']=round(sum(judge_costs),8) if len(judge_costs)==len(rescored) else None
         result['metadata']['evaluation_mode']='deterministic-hard-checks+external-semantic-judge (human calibration pending)'
     if folder:
-        destination=Path(folder);destination.mkdir(parents=True,exist_ok=True)
         out=destination/(source.stem+'_regraded.json')
         out.write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')
         export_csv(result,out.with_suffix('.csv'));result['file_path']=str(out)
@@ -202,11 +238,13 @@ def summarize(records):
     by_case={sid:[r['grade']['passed'] for r in records if r['scenario_id']==sid] for sid in {x['scenario_id'] for x in records}}
     # Observed pass@k = fraction of cases with >=1 success across the supplied trials.
     # Observed pass^k = fraction of cases whose ALL trials passed. Neither is a population probability estimate.
+    judge_latencies=[x.get('judge_latency_ms') for x in records if isinstance(x.get('judge_latency_ms'),(int,float))]
     return {'trials':n,'passed':passes,'pass_rate':round(passes/n,4) if n else None,
        'decision_accuracy':round(ok/n,4) if n else None,'critical_failure_rate':round(failures/n,4) if n else None,
        'avg_score':round(statistics.mean(x['grade']['score'] for x in records),2) if n else None,
        'median_score':round(statistics.median(x['grade']['score'] for x in records),2) if n else None,
        'avg_latency_ms':round(statistics.mean(x['latency_ms'] for x in records),3) if n else None,
+       'avg_judge_latency_ms':round(statistics.mean(judge_latencies),3) if judge_latencies else None,
        'observed_pass_at_k':round(sum(any(vals) for vals in by_case.values())/len(by_case),4) if n else None,
        'observed_pass_pow_k':round(sum(all(vals) for vals in by_case.values())/len(by_case),4) if n else None,
        'scenario_pass_all_trials':round(sum(all(vals) for vals in by_case.values())/len(by_case),4) if n else None,

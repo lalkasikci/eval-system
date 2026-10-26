@@ -52,7 +52,7 @@ def page(canvas,doc):
     canvas.setFillColor(ACCENT);canvas.rect(0,h-9*mm,w,9*mm,stroke=0,fill=1)
     canvas.setStrokeColor(colors.HexColor('#d1d3cf'));canvas.line(18*mm,15*mm,w-18*mm,15*mm)
     canvas.setFont('Arial',7.5);canvas.setFillColor(MUTED)
-    canvas.drawString(18*mm,9*mm,'MADSET / ADVISE EVAL LAB v1.1')
+    canvas.drawString(18*mm,9*mm,'MADSET / ADVISE EVAL LAB v1.2')
     canvas.drawRightString(w-18*mm,9*mm,f'26.10.2026  -  {doc.page}/4')
     canvas.restoreState()
 
@@ -102,15 +102,17 @@ story += [Spacer(1,7*mm),P('KÖR SET BULGULARI','TitleX'),P('5 / Gerçek hata t�
           P('<b>Negatif mutasyon:</b> 8/8 hedef hata yakalandı. <b>Pozitif kontrol:</b> 19/19 doğru kabul edildi; gözlenen yanlış alarm yüzde 0.'),
           P('Kör sette "garanti veya uygunsuz iddia kullanmayın" cümlesi ilk grader tarafından F03 sayıldı. Negasyon bağlamı düzeltildi, regresyon testi eklendi ve mevcut transcript grader 1.1 ile yeniden puanlandı.'),
           P('Bu küçük, el yapımı kontrol kümesi tam Türkçe anlam doğruluğu değildir. Hazır kör CSV iki uzmanın bağımsız overall_pass ve yedi boyut puanı vermesine olanak sağlar. Analiz aracı agreement, Cohen kappa ve grader-vs-consensus recall/yanlış-alarm oranını hesaplar.'),
-          P('<b>Henüz yok:</b> doldurulmuş iki uzman etiketi ve kalibre edilmiş LLM judge. Bu nedenle stratejik uzmanlık onaylanmış sayılmaz.','SmallX'),PageBreak()]
+          P('<b>Claude dev koşusu:</b> Sonnet 4.6, 30 V3 önerisinin 25\'ini geçirdi (%83,33); karar 30/30, ortalama puan 91,04 ve kritik hata sıfırdır. Beş başarısız vaka ADV-001, 003, 014, 017 ve 038\'dir; ortak eksik uygulanabilir eşik/zaman ve mevcut huni-ekonomi verisinin tam kullanılmamasıdır.'),
+          P('Koşu 57.952 girdi + 20.395 çıktı tokenı kullandı; ortalama yargıç gecikmesi 13,89 saniyedir. Fiyatlar sabitlenmediği için maliyet null\'dır, sıfır değildir. ADV-001 tek kontrolde 92,5, toplu koşuda 76,25 aldığı için LLM yargıç değişkenliği görünürdür.','SmallX'),
+          P('<b>Henüz yok:</b> doldurulmuş iki uzman etiketi ve insan etiketlerine karşı kalibre edilmiş LLM judge. Bu nedenle stratejik uzmanlık onaylanmış sayılmaz.','SmallX'),PageBreak()]
 
 story += [Spacer(1,7*mm),P('TESLİMAT VE YAYIN KAPISI','TitleX'),P('7 / Tamamlananlar','H1X'),
           table([
             ['Teslim','Durum'],
             ['52 sentetik vaka; dev + iki holdout dalgası','Tamamlandı'],
             ['Şema, hash doğrulama ve gold izolasyonu','Çalışır'],
-            ['Üç sürüm, 35 anahtarsız test, tek komut harness','Geçti'],
-            ['Semantik kapsama ve kritik hata grader\'ı','Çalışır; uzman kalibrasyonu bekliyor'],
+            ['Üç sürüm, 39 anahtarsız test, temiz-klon koruması','Geçti'],
+            ['Semantik kapsama + 30-vaka Claude yargısı','Çalışır; insan kalibrasyonu bekliyor'],
             ['Trial-bazlı karşılaştırma ve regrade','Çalışır'],
             ['JSON, CSV, HTML, Markdown ve PDF rapor','Tamamlandı'],
             ['İki uzman için kör değerlendirme paketi','Hazır; insan etiketi yok'],
@@ -124,6 +126,6 @@ story += [Spacer(1,7*mm),P('TESLİMAT VE YAYIN KAPISI','TitleX'),P('7 / Tamamlan
           Spacer(1,3*mm),P('Kaynak dayanağı: Advise Lab gereksinimleri ve kullanıcı tarafından sağlanan AI ajan eval rehberi. Yerel karar sınıfları, ağırlıklar, semantik kavram kuralları ve baseline üreticiler bu laboratuvarın tasarım kararlarıdır.','SmallX')]
 
 doc=SimpleDocTemplate(str(OUT),pagesize=A4,rightMargin=18*mm,leftMargin=18*mm,
-                      topMargin=15*mm,bottomMargin=19*mm,title='Madset Advise Eval Lab Final Raporu v1.1')
+                      topMargin=15*mm,bottomMargin=19*mm,title='Madset Advise Eval Lab Final Raporu v1.2')
 doc.build(story,onFirstPage=page,onLaterPages=page)
 print(OUT)

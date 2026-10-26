@@ -1,4 +1,4 @@
-# MADSET — Advise Eval Lab Final Raporu v1.1
+# MADSET — Advise Eval Lab Final Raporu v1.2
 
 **Tarih:** 26 Ekim 2026  
 **Kapsam:** Yalnız sentetik reklam hesabı verilerinden yazılı öneri üreten çevrimdışı eval laboratuvarı.
@@ -56,17 +56,21 @@ Grader 8 hedefli negatif mutasyonun tamamını yakalamış, 19 pozitif kontrolde
 
 Bu ölçüm küçük ve el yapımıdır. Tam Türkçe anlam doğruluğunu veya stratejik uzmanlığı kanıtlamaz. İki uzman için kör değerlendirme CSV'si hazırlanmıştır; her satır senaryo ve öneri metnini içerir, otomatik puan son sütunda gizlenebilir. İnsan etiketleri girildiğinde analiz komutu gözlenen uyumu, Cohen kappa'yı ve otomatik grader'ın konsensüse göre recall/yanlış-alarm oranını hesaplar.
 
-İnsan etiketi henüz bulunmadığından uzman uyumu ve gerçek grader kalibrasyonu tamamlandı sayılamaz. Claude LLM-judge adaptörü hazırdır ancak gerçek anahtarla ölçülmemiş ve insan etiketlerine karşı kalibre edilmemiştir; dolayısıyla LLM-judge güvenilirliği iddia edilmez.
+İnsan etiketi henüz bulunmadığından uzman uyumu ve gerçek grader kalibrasyonu tamamlandı sayılamaz.
+
+Claude Sonnet 4.6 ile geliştirme setindeki 30 benzersiz V3 önerisinin tamamı ayrıca değerlendirilmiştir. Sonuç 25/30 geçiş (%83,33), 30/30 doğru karar, 91,04 ortalama puan ve sıfır kritik hata olmuştur. Beş başarısız vaka ADV-001, ADV-003, ADV-014, ADV-017 ve ADV-038'dir. Ortak sorunlar; mevcut huni ve ekonomik metriklerin yeterince kullanılmaması, hedefle sayısal karşılaştırmanın açık yazılmaması ve aksiyonların zaman/eşik bakımından fazla genel kalmasıdır. En zayıf ortalama boyut uygulanabilirliktir.
+
+Bu koşu 57.952 girdi ve 20.395 çıktı tokenı kullanmış; çağrı başına ortalama yargıç gecikmesi 13,89 saniye olmuştur. Sağlayıcı fiyatları koşuya sabitlenmediğinden tahmini maliyet `null` olarak saklanmıştır; bu, maliyetin sıfır olduğu anlamına gelmez. Önceki tek-vaka kontrolde ADV-001 92,5 alırken toplu koşuda 76,25 almıştır. Sıcaklık sıfır olsa bile görülen bu yargıç değişkenliği, tek bir LLM puanının kesin gerçek sayılamayacağını gösterir. Sonuçlar insan etiketleriyle kalibre edilene kadar geçicidir (`provisional`).
 
 ## 6. Maliyet ve operasyon
 
-V1/V2/V3 yerel Python kurallarıdır; API maliyeti 0 USD'dir. Harici adapter gerçek model adı, model sürümü, prompt sürümü ve token kullanımını kaydedebilir. Kullanıcı güncel sağlayıcı fiyatlarını ortam değişkenleriyle sabitlerse tahmini maliyet hesaplanır; aksi halde maliyet `null` kalır.
+V1/V2/V3 yerel Python kurallarıdır; üretim maliyetleri 0 USD'dir. Harici adapter gerçek model adı, model sürümü, prompt sürümü ve token kullanımını kaydedebilir. Claude yargıç koşusunda tokenlar kaydedilmiş, fakat fiyat değişkenleri sabitlenmediği için maliyet `null` kalmıştır.
 
 Eski `outputs/claude_v1` kaydı başarılı model ölçümü değildir: API anahtarı olmadığı için 30/30 producer error oluşmuştur. Bu kayıt üç başarılı iterasyon arasında sunulmamalıdır.
 
 ## 7. Teslimat ve açık kapılar
 
-**Tamamlanan:** tek komut eval, 52 sentetik vaka, iki ayrı holdout dalgası, gold izolasyonu, şema doğrulama, yedi boyutlu rubric, sekiz kritik hata, semantik kapsama kapısı, 35 anahtarsız test, isteğe bağlı Claude LLM yargıç adaptörü, trial-bazlı kayıt ve karşılaştırma, yeniden puanlama, JSON/CSV/HTML raporlama, kör uzman inceleme paketi ve 15 dakikalık demo akışı.
+**Tamamlanan:** tek komut eval, 52 sentetik vaka, iki ayrı holdout dalgası, gold izolasyonu, şema doğrulama, yedi boyutlu rubric, sekiz kritik hata, semantik kapsama kapısı, temiz-klon satır-sonu koruması, 39 anahtarsız test, JSON şemalı Claude LLM yargıç adaptörü, 30-vakalık gerçek Claude değerlendirmesi, çağrı limiti/ilerleme/ara kayıt koruması, trial-bazlı kayıt ve karşılaştırma, yeniden puanlama, JSON/CSV/HTML raporlama, kör uzman inceleme paketi ve 15 dakikalık demo akışı.
 
 **Dış bağımlılık:** iki bağımsız uzman, hazırlanan kör CSV'yi doldurmalı; uyuşmazlıklar üçüncü değerlendirme ile kapatılmalıdır.
 

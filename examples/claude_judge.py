@@ -20,6 +20,28 @@ MODEL = os.getenv('ANTHROPIC_JUDGE_MODEL', os.getenv('ANTHROPIC_MODEL', 'claude-
 API_VERSION = os.getenv('ANTHROPIC_API_VERSION', '2023-06-01')
 PROMPT_VERSION = 'madset-claude-judge-v1'
 
+JUDGE_TOOL = {
+    'name': 'submit_evaluation',
+    'description': 'Submit the final rubric evaluation for the supplied synthetic advertising recommendation.',
+    'input_schema': {
+        'type': 'object',
+        'properties': {
+            'decision_correct': {'type': 'boolean'},
+            'overall_pass': {'type': 'boolean'},
+            'dimension_scores': {
+                'type': 'object',
+                'properties': {key: {'type': 'integer', 'minimum': 0, 'maximum': 4} for key in WEIGHTS},
+                'required': list(WEIGHTS),
+                'additionalProperties': False,
+            },
+            'explanation': {'type': 'string', 'minLength': 1},
+            'violations': {'type': 'array', 'items': {'type': 'string'}},
+        },
+        'required': ['decision_correct', 'overall_pass', 'dimension_scores', 'explanation', 'violations'],
+        'additionalProperties': False,
+    },
+}
+
 SYSTEM = """Sen Madset Advise Lab için tarafsız bir değerlendirme yargıcısın.
 Yalnız verilen sentetik senaryoyu, aday öneriyi, beklentiyi ve rubric'i kullan.
 Reklam platformunda işlem yapma veya dış veri kullanma. Referans metne kelime kelime
@@ -36,10 +58,45 @@ Kararsızsan daha düşük puan ver ve gerekçeyi açıkla."""
 
 def _json_object(text):
     value = text.strip()
+    if not value:
+        raise ValueError('Claude yanıtında metin veya değerlendirme aracı bulunamadı')
     if value.startswith('```'):
         value = re.sub(r'^```(?:json)?\s*', '', value)
         value = re.sub(r'\s*```$', '', value)
     return json.loads(value)
+
+
+def _extract_judgment(response_data):
+    content = response_data.get('content') or []
+    for block in content:
+        if block.get('type') == 'tool_use' and block.get('name') == JUDGE_TOOL['name']:
+            result = block.get('input')
+            if not isinstance(result, dict):
+                raise ValueError('Claude değerlendirme aracı nesne döndürmedi')
+            violations = result.get('violations')
+            if violations is None:
+                result['violations'] = []
+            elif not isinstance(violations, list):
+                result['violations'] = [str(violations)]
+            else:
+                result['violations'] = [
+                    item if isinstance(item, str) else json.dumps(item, ensure_ascii=False, sort_keys=True)
+                    for item in violations
+                ]
+            if not isinstance(result.get('explanation'), str) or not result['explanation'].strip():
+                if result['violations']:
+                    result['explanation'] = 'Claude açıklama alanını boş bıraktı; bildirilen ihlaller: ' + '; '.join(result['violations'])
+                else:
+                    result['explanation'] = 'Claude yapılandırılmış puanları döndürdü ancak açıklama alanını boş bıraktı.'
+            return result
+    text = '\n'.join(block.get('text', '') for block in content if block.get('type') == 'text').strip()
+    if text:
+        return _json_object(text)
+    types = sorted({str(block.get('type', 'unknown')) for block in content})
+    raise ValueError(
+        'Claude yapılandırılmış değerlendirme döndürmedi; '
+        f'stop_reason={response_data.get("stop_reason")!r}, content_types={types}'
+    )
 
 
 def judge(payload):
@@ -54,15 +111,23 @@ def judge(payload):
     }
     body = {
         'model': MODEL,
-        'max_tokens': 900,
+        'max_tokens': 1200,
         'temperature': 0,
         'system': SYSTEM,
         'messages': [{'role': 'user', 'content': json.dumps(request_payload, ensure_ascii=False, sort_keys=True)}],
+        'tools': [JUDGE_TOOL],
+        'tool_choice': {'type': 'tool', 'name': JUDGE_TOOL['name']},
     }
     headers = {'content-type': 'application/json', 'anthropic-version': API_VERSION, 'x-api-key': key}
     workspace = os.getenv('ANTHROPIC_WORKSPACE_ID', '').strip()
     if workspace:
         headers['anthropic-workspace-id'] = workspace
+    try:
+        timeout_seconds = float(os.getenv('ANTHROPIC_TIMEOUT_SECONDS', '30'))
+    except ValueError:
+        raise RuntimeError('ANTHROPIC_TIMEOUT_SECONDS sayısal olmalıdır') from None
+    if not 5 <= timeout_seconds <= 120:
+        raise RuntimeError('ANTHROPIC_TIMEOUT_SECONDS 5 ile 120 arasında olmalıdır')
     request = urllib.request.Request(
         'https://api.anthropic.com/v1/messages',
         data=json.dumps(body, ensure_ascii=False).encode('utf-8'),
@@ -71,10 +136,9 @@ def judge(payload):
     )
     for attempt in range(3):
         try:
-            with urllib.request.urlopen(request, timeout=75) as response:
+            with urllib.request.urlopen(request, timeout=timeout_seconds) as response:
                 response_data = json.load(response)
-            text = '\n'.join(x['text'] for x in response_data.get('content', []) if x.get('type') == 'text')
-            result = _json_object(text)
+            result = _extract_judgment(response_data)
             result['provider'] = 'anthropic'
             result['model'] = str(response_data.get('model') or MODEL)
             validate_judge_output(result)
@@ -101,4 +165,6 @@ def judge(payload):
                 time.sleep(2 ** attempt)
                 continue
             raise RuntimeError(f'Claude judge HTTP {exc.code}: {safe_message}') from None
+        except (TimeoutError, urllib.error.URLError) as exc:
+            raise RuntimeError(f'Claude judge bağlantı/zaman aşımı hatası: {type(exc).__name__}') from None
     raise RuntimeError('Claude judge yanıt veremedi')
