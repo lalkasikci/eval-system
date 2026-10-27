@@ -1,5 +1,6 @@
 """Build the checked-in Advise Eval Lab final PDF."""
 from pathlib import Path
+import sys
 from reportlab.lib import colors
 from reportlab.lib.enums import TA_LEFT
 from reportlab.lib.pagesizes import A4
@@ -8,9 +9,13 @@ from reportlab.lib.units import mm
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, PageBreak, KeepTogether
+import unittest
 
 ROOT=Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from madset_eval.rubric import PASS_THRESHOLD, RUBRIC, RUBRIC_VERSION
 OUT=ROOT/'docs/FINAL_REPORT.pdf'
+TEST_COUNT=unittest.defaultTestLoader.discover(str(ROOT/'tests')).countTestCases()
 
 regular=Path(r'C:\Windows\Fonts\arial.ttf')
 bold=Path(r'C:\Windows\Fonts\arialbd.ttf')
@@ -53,7 +58,7 @@ def page(canvas,doc):
     canvas.setStrokeColor(colors.HexColor('#d1d3cf'));canvas.line(18*mm,15*mm,w-18*mm,15*mm)
     canvas.setFont('Arial',7.5);canvas.setFillColor(MUTED)
     canvas.drawString(18*mm,9*mm,'MADSET / ADVISE EVAL LAB v1.2')
-    canvas.drawRightString(w-18*mm,9*mm,f'26.10.2026  -  {doc.page}/4')
+    canvas.drawRightString(w-18*mm,9*mm,f'27.10.2026  -  {doc.page}/4')
     canvas.restoreState()
 
 story=[]
@@ -75,17 +80,8 @@ story += [Spacer(1,5*mm),P('<b>Yorum:</b> V3, V1\'e göre yeni kör sette +75 y�
 story += [Spacer(1,7*mm),P('DEĞERLENDİRME MİMARİSİ','TitleX'),
           P('3 / Rubric ve geçiş kapısı','H1X'),
           P('Rubric veri-matematik, teşhis, kanıt-belirsizlik, stratejik uygunluk, ticari risk, uygulanabilirlik ve sadelik boyutlarını 0-4 aralığında puanlar. Kritik hata yüksek puanla telafi edilemez.'),
-          table([
-            ['Boyut','Ağırlık','Geçiş kanıtı'],
-            ['Veri ve matematik','20','Doğrulanmış iddia ve doğru payda'],
-            ['Teşhis doğruluğu','20','Doğru karar ve senaryoya özgü kavram'],
-            ['Kanıt ve belirsizlik','15','Grounded evidence ve dürüst sınır'],
-            ['Stratejik uygunluk','15','Karar-protokolü ve hedef uyumu'],
-            ['Ticari risk','15','Kapasite, marj ve aşağı yönlü risk'],
-            ['Uygulanabilirlik','10','Somut sonraki adım'],
-            ['Sadelik','5','KOBİ sahibinin anlayacağı dil'],
-          ],[42*mm,23*mm,92*mm]),
-          Spacer(1,4*mm),P('Geçiş: en az 80/100, kabul edilen karar, sıfır F01-F08/FMT, en az yüzde 75 kavram kapsaması, karar sınıfına uygun protokol ve grounded evidence.'),
+          table([['Boyut','Ağırlık','4 puan çıpası']]+[[d['name'],str(d['weight']),d['four']] for d in RUBRIC['dimensions']],[42*mm,23*mm,92*mm]),
+          Spacer(1,4*mm),P(f'Geçiş: en az {PASS_THRESHOLD:g}/100, kabul edilen karar, sıfır F01-F08/FMT, en az yüzde 75 kavram kapsaması, karar sınıfına uygun protokol ve grounded evidence. Aktif rubrik: {RUBRIC_VERSION}.'),
           P('4 / Harness ve kayıt','H2X'),
           P('Her trial sentetik girdi transcriptini, çıktıyı, gerekçeyi, puanı, semantik kapsama kanıtını, kritik hata kodlarını, süreyi ve sürüm metaverisini saklar. Harici adapter model, prompt, token ve - fiyatlar sabitlenirse - maliyet bilgisini taşır.'),
           P('Karşılaştırma bütün trial\'ları senaryo bazında kullanır. Grader değişiklikleri üreticiyi yeniden çağırmadan <b>regrade</b> ile aynı transcript üzerinde uygulanır; eski sonuç korunur.'),PageBreak()]
@@ -102,8 +98,8 @@ story += [Spacer(1,7*mm),P('KÖR SET BULGULARI','TitleX'),P('5 / Gerçek hata t�
           P('<b>Negatif mutasyon:</b> 8/8 hedef hata yakalandı. <b>Pozitif kontrol:</b> 19/19 doğru kabul edildi; gözlenen yanlış alarm yüzde 0.'),
           P('Kör sette "garanti veya uygunsuz iddia kullanmayın" cümlesi ilk grader tarafından F03 sayıldı. Negasyon bağlamı düzeltildi, regresyon testi eklendi ve mevcut transcript grader 1.1 ile yeniden puanlandı.'),
           P('Bu küçük, el yapımı kontrol kümesi tam Türkçe anlam doğruluğu değildir. Hazır kör CSV iki uzmanın bağımsız overall_pass ve yedi boyut puanı vermesine olanak sağlar. Analiz aracı agreement, Cohen kappa ve grader-vs-consensus recall/yanlış-alarm oranını hesaplar.'),
-          P('<b>Claude dev koşusu:</b> Sonnet 4.6, 30 V3 önerisinin 25\'ini geçirdi (%83,33); karar 30/30, ortalama puan 91,04 ve kritik hata sıfırdır. Beş başarısız vaka ADV-001, 003, 014, 017 ve 038\'dir; ortak eksik uygulanabilir eşik/zaman ve mevcut huni-ekonomi verisinin tam kullanılmamasıdır.'),
-          P('Koşu 57.952 girdi + 20.395 çıktı tokenı kullandı; ortalama yargıç gecikmesi 13,89 saniyedir. Fiyatlar sabitlenmediği için maliyet null\'dır, sıfır değildir. ADV-001 tek kontrolde 92,5, toplu koşuda 76,25 aldığı için LLM yargıç değişkenliği görünürdür.','SmallX'),
+          P('<b>Claude tekrar güvenilirliği:</b> Aynı 30 öneri üç kez yargılandı. Geçişler %83,33 / %93,33 / %90; 27/30 oybirliği, ortalama ikili anlaşma %93,33 ve Fleiss kappa 0,6625. Değişken vakalar ADV-001, 003 ve 038; çoğunlukta kalanlar ADV-001, 014 ve 017\'dir.'),
+          P('Toplam 90 yargı 173.856 girdi + 62.023 çıktı tokenı ve tahmini 1,451913 USD kullandı. Tekrar tutarlılığı ölçülmüştür; insan etiketlerine karşı semantik doğruluk kalibrasyonu hâlâ açıktır.','SmallX'),
           P('<b>Henüz yok:</b> doldurulmuş iki uzman etiketi ve insan etiketlerine karşı kalibre edilmiş LLM judge. Bu nedenle stratejik uzmanlık onaylanmış sayılmaz.','SmallX'),PageBreak()]
 
 story += [Spacer(1,7*mm),P('TESLİMAT VE YAYIN KAPISI','TitleX'),P('7 / Tamamlananlar','H1X'),
@@ -111,7 +107,7 @@ story += [Spacer(1,7*mm),P('TESLİMAT VE YAYIN KAPISI','TitleX'),P('7 / Tamamlan
             ['Teslim','Durum'],
             ['52 sentetik vaka; dev + iki holdout dalgası','Tamamlandı'],
             ['Şema, hash doğrulama ve gold izolasyonu','Çalışır'],
-            ['Üç sürüm, 39 anahtarsız test, temiz-klon koruması','Geçti'],
+            ['Üç sürüm, '+str(TEST_COUNT)+' test, 90-yargı güvenilirliği','Geçti'],
             ['Semantik kapsama + 30-vaka Claude yargısı','Çalışır; insan kalibrasyonu bekliyor'],
             ['Trial-bazlı karşılaştırma ve regrade','Çalışır'],
             ['JSON, CSV, HTML, Markdown ve PDF rapor','Tamamlandı'],

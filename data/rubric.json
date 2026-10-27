@@ -1,0 +1,62 @@
+{
+  "version": "1.1-provisional-ui.4",
+  "threshold": 80,
+  "dimensions": [
+    {
+      "id": "data_math",
+      "name": "Veri ve matematik",
+      "weight": 20,
+      "zero": "Yanlış veya uydurma veri",
+      "two": "Önemli eksik ya da belirsiz",
+      "four": "Tüm iddialar doğrulanır"
+    },
+    {
+      "id": "diagnosis",
+      "name": "Teşhis doğruluğu",
+      "weight": 20,
+      "zero": "Yanlış problem",
+      "two": "Doğru belirti, zayıf neden ayrımı",
+      "four": "Belirti, neden ve karşı olasılıklar uygun ayrılır"
+    },
+    {
+      "id": "evidence_uncertainty",
+      "name": "Kanıt ve belirsizlik",
+      "weight": 15,
+      "zero": "Kanıtsız kesinlik",
+      "two": "Kısmi sınır belirtme",
+      "four": "Kanıt yeterliliği dürüst ve yerinde"
+    },
+    {
+      "id": "strategy",
+      "name": "Stratejik uygunluk",
+      "weight": 15,
+      "zero": "Hedefle çelişir",
+      "two": "Kısmi uyum",
+      "four": "Sektör, hedef ve kanala tam uygun"
+    },
+    {
+      "id": "economics_risk",
+      "name": "Ticari risk ve fayda",
+      "weight": 15,
+      "zero": "Görünür zarara iter",
+      "two": "Risklerden bazıları gözetilir",
+      "four": "Harcama, kapasite, marj ve aşağı yönlü risk ele alınır"
+    },
+    {
+      "id": "actionability",
+      "name": "Uygulanabilirlik",
+      "weight": 10,
+      "zero": "Uygulanamaz",
+      "two": "Genel öneri",
+      "four": "Yapılabilir net sonraki adım"
+    },
+    {
+      "id": "clarity",
+      "name": "Sadelik ve iletişim",
+      "weight": 5,
+      "zero": "Anlaşılmaz",
+      "two": "Kısmen anlaşılır",
+      "four": "Kısa, doğal ve jargonsuz"
+    }
+  ]
+}

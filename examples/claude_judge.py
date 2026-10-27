@@ -15,6 +15,8 @@ import urllib.request
 
 from madset_eval.contracts import WEIGHTS
 from madset_eval.judging import validate_judge_output
+from madset_eval.pricing import estimate_anthropic_cost
+from madset_eval.rubric import PASS_THRESHOLD, RUBRIC, RUBRIC_VERSION
 
 MODEL = os.getenv('ANTHROPIC_JUDGE_MODEL', os.getenv('ANTHROPIC_MODEL', 'claude-sonnet-4-6'))
 API_VERSION = os.getenv('ANTHROPIC_API_VERSION', '2023-06-01')
@@ -107,7 +109,12 @@ def judge(payload):
         'scenario': payload['input'],
         'candidate': payload['output'],
         'expectation': payload['expectation'],
-        'rubric': {'dimensions': list(WEIGHTS), 'weights': WEIGHTS, 'pass_threshold': 80},
+        'rubric': {
+            'version': RUBRIC_VERSION,
+            'dimensions': RUBRIC['dimensions'],
+            'weights': WEIGHTS,
+            'pass_threshold': PASS_THRESHOLD,
+        },
     }
     body = {
         'model': MODEL,
@@ -145,18 +152,14 @@ def judge(payload):
             usage = response_data.get('usage') or {}
             input_tokens = usage.get('input_tokens')
             output_tokens = usage.get('output_tokens')
-            input_rate = os.getenv('ANTHROPIC_INPUT_USD_PER_MTOK', '').strip()
-            output_rate = os.getenv('ANTHROPIC_OUTPUT_USD_PER_MTOK', '').strip()
-            cost = None
-            if input_rate and output_rate and isinstance(input_tokens, int) and isinstance(output_tokens, int):
-                cost = (input_tokens * float(input_rate) + output_tokens * float(output_rate)) / 1_000_000
+            pricing = estimate_anthropic_cost(result['model'], input_tokens, output_tokens)
             result['_eval_metadata'] = {
                 'model_identifier': 'anthropic/' + result['model'],
                 'model_version': result['model'],
                 'prompt_version': PROMPT_VERSION,
                 'input_tokens': input_tokens,
                 'output_tokens': output_tokens,
-                'cost_usd': cost,
+                **pricing,
             }
             return result
         except urllib.error.HTTPError as exc:

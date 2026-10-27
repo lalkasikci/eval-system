@@ -2,7 +2,7 @@
 from __future__ import annotations
 import argparse,json,sys
 from pathlib import Path
-from .runs import validate_suite,exec_run,compare,regrade_run
+from .runs import validate_suite,exec_run,compare,regrade_run,reprice_claude_run,analyze_judge_reliability
 from .calibration import measure
 from .reporting import render_dashboard,render_report
 from .review import export_template,analyze_review
@@ -27,6 +27,10 @@ def main(argv=None):
     regrade.add_argument('--progress',action='store_true',help='Print progress for every record')
     regrade.add_argument('--unique-scenarios',action='store_true',help='Use only the first trial of each scenario')
     regrade.add_argument('--resume',action='store_true',help='Resume successful records from an existing partial file')
+    reprice=sp.add_parser('price-claude-run',help='Add current configured Claude token prices to a saved run without API calls')
+    reprice.add_argument('run_json');reprice.add_argument('--out',default=None)
+    reliability=sp.add_parser('judge-reliability',help='Measure agreement across repeated judged run files')
+    reliability.add_argument('run_json',nargs='+');reliability.add_argument('--out',default=None)
     mut=sp.add_parser('calibrate',help='Run positive and negative mutation controls')
     mut.add_argument('--out',default=None)
     rev=sp.add_parser('review-export',help='Create blank forms for two independent expert graders')
@@ -49,6 +53,11 @@ def main(argv=None):
     if args.command=='regrade':
         output=regrade_run(args.run_json,args.out,args.judge_adapter,args.limit,args.progress,args.unique_scenarios,args.resume)
         print(json.dumps({'file':output.get('file_path'),'summary':output['summary'],'metadata':output['metadata']},ensure_ascii=False,indent=2));return 0
+    if args.command=='price-claude-run':
+        print(json.dumps(reprice_claude_run(args.run_json,args.out),ensure_ascii=False,indent=2));return 0
+    if args.command=='judge-reliability':
+        result=analyze_judge_reliability(args.run_json,args.out)
+        print(json.dumps({'file':result.get('file_path'),'summary':result['summary']},ensure_ascii=False,indent=2));return 0
     if args.command=='calibrate':
         result=measure();txt=json.dumps(result,ensure_ascii=False,indent=2)
         if args.out:Path(args.out).write_text(txt,encoding='utf-8')

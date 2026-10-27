@@ -61,11 +61,13 @@ Bağımsız test beklentilerini model girdisine katma. Holdout'a her prompt dene
 
 - Bu entegrasyon Claude ile **gerçek öneri üretir**, mevcut grader ise **offline heuristik**tir, uzman onaylı tam semantik değerlendirme değildir.
 - Dış API erişimi ve maliyet gerekir. API anahtarın yoksa yerel testler çalışır, Claude çağrısı çalışmaz.
-- Fiyat değişkenleri verilmezse dış adapter maliyeti `null` raporlar; bu durumda gerçek maliyet için sağlayıcının usage/billing kayıtlarını kullanın.
-- Adapter token sayılarını ve gerçek yanıt modelini kaydeder. Maliyeti otomatik hesaplamak için çalıştırma anındaki sağlayıcı fiyatlarını `ANTHROPIC_INPUT_USD_PER_MTOK` ve `ANTHROPIC_OUTPUT_USD_PER_MTOK` ortam değişkenleriyle sabitleyin; değer verilmezse maliyet dürüstçe `null` kalır.
+- Adapter her başarılı çağrıda token sayılarını, gerçek yanıt modelini, birim fiyatları, fiyat kaynağını/yürürlük tarihini ve tahmini maliyeti kaydeder. Sonnet 4.6 için 12 Mayıs 2026 Anthropic liste fiyatı varsayılan olarak sürümlenmiştir.
+- Sağlayıcı fiyatı değişirse `ANTHROPIC_INPUT_USD_PER_MTOK`, `ANTHROPIC_OUTPUT_USD_PER_MTOK` ve isteğe bağlı `ANTHROPIC_PRICING_EFFECTIVE_DATE` ile o koşunun tarifesini sabitleyin. Bilinmeyen bir modelde fiyat verilmezse maliyet `null` kalır. Gerçek fatura için sağlayıcının usage/billing kaydı esastır.
+- Eski bir koşuyu Claude'u yeniden çağırmadan fiyatlandırmak için `python -m madset_eval price-claude-run <run.json>` kullanın.
 - `outputs/claude_v1` altındaki eski örnek koşu API anahtarı olmadığı için 30/30 producer error ile bitmiştir; başarılı Claude ölçümü değildir.
 - Senaryo verileri sentetiktir. Gerçek reklam hesabına ya da platform API'sine bağlanmaz.
 - Birden fazla deneme daha fazla API çağrısı ve harcama yaratır.
+- Yargıç tutarlılığını ölçmek için mevcut ilk koşuya iki yeni koşu ekleyin: `./scripts/run_claude_judge.ps1 -Limit 30 -RepeatCount 2 -RepeatStart 2 -Out outputs/claude_judge_reliability`. Anahtar bir kez sorulur; tekrarlar ayrı `repeat_2` ve `repeat_3` klasörlerinde saklanır.
 - Anahtarın çoklu workspace gerektiriyorsa `ANTHROPIC_WORKSPACE_ID` da ayarlanmalıdır.
 
 ## Dosyalar

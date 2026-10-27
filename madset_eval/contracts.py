@@ -5,11 +5,10 @@ DATA LEAK BARRIER: generate_input strips identifiers and all gold/expectation fi
 from __future__ import annotations
 import copy, json, math
 from pathlib import Path
+from .rubric import WEIGHTS
 
 ROOT=Path(__file__).resolve().parents[1]
 DECISIONS={"ACT", "WAIT", "DIAGNOSE", "MEASURE", "MAINTAIN"}
-WEIGHTS={"data_math":20, "diagnosis":20, "evidence_uncertainty":15,
-         "strategy":15, "economics_risk":15, "actionability":10, "clarity":5}
 METRIC_KEYS={"spend", "impressions", "clicks", "leads", "appointments", "sales", "revenue", "target_cost_per_result"}
 DERIVED={"cpc", "cpl", "cpa_appointment", "cpa_sale", "ctr_pct", "roas"}
 

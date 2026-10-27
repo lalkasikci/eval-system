@@ -20,6 +20,14 @@ Demo tamamlandığında:
 - `outputs/demo/runs/*.json` — her öneri, karar, gerekçe, kritik hata, puan, model/kurallar ve süre izleri.
 - `outputs/demo/runs/*.csv` — Excel/BI için sonuç tabloları.
 
+Rubrik ve workflow arayüzünü kalıcı dosya kaydıyla açmak için:
+
+```bash
+python -m madset_eval.ui_server
+```
+
+Ardından `http://127.0.0.1:8765` adresine git. Rubrik kaydı `data/rubric.json`, `docs/QUALITY_STANDARD.md` ve ilgili manifest hash'ini birlikte günceller; yeni eval süreçleri kaydedilen ağırlık, eşik ve sürümü kullanır.
+
 ## İşletime yönelik komutlar
 
 ```bash
@@ -42,7 +50,11 @@ Kod tabanlı matematik ve kritik hata denetimleri korunurken Claude, yedi rubric
 
 Betik anahtarı görünmeyen bir giriş alanında ister, yalnızca alt Python sürecine `ANTHROPIC_API_KEY` olarak aktarır ve işlem bitince bellek/ortam değişkenini temizler. Varsayılan olarak en yeni `v3_dev` kaydındaki **tek senaryoyu** bağlantı/maliyet güvenliği için değerlendirir ve her çağrıda ilerleme gösterir. Başarılı kontrolden sonra `-Limit 30` ile 30 benzersiz senaryo çalıştırılabilir. Sonuçlar her çağrıdan sonra `outputs/claude_judge/` altında kısmi olarak saklanır; hata sonrası `-Limit 30 -Resume` yalnız tamamlanmamış senaryolardan devam eder. Claude sonucu tek başına yayın kararı değildir; insan etiketleriyle kalibrasyon yapılana kadar `provisional` kabul edilir.
 
-Tamamlanan örnek koşuda Claude Sonnet 4.6, 30 V3 geliştirme önerisinin 25'ini geçirdi (%83,33); karar türlerinin 30'u da doğru ve kritik hata sayısı sıfırdı. Ortalama puan 91,04; kullanım 57.952 girdi ve 20.395 çıktı tokenı; ortalama yargıç gecikmesi 13,89 saniyeydi. Fiyatlar sabitlenmediği için maliyet `null` kaydedildi. Ayrıntılar `docs/FINAL_REPORT.md` ve `docs/GRADER_AND_CALIBRATION.md` içindedir.
+Tamamlanan örnek koşuda Claude Sonnet 4.6, 30 V3 geliştirme önerisinin 25'ini geçirdi (%83,33); karar türlerinin 30'u da doğru ve kritik hata sayısı sıfırdı. Ortalama puan 91,04; kullanım 57.952 girdi ve 20.395 çıktı tokenı; ortalama yargıç gecikmesi 13,89 saniyeydi. 12 Mayıs 2026 Anthropic liste fiyatıyla başarılı çağrıların tahmini maliyeti `0,479781 USD` olarak kaydedildi. Ayrıntılar `docs/FINAL_REPORT.md` ve `docs/GRADER_AND_CALIBRATION.md` içindedir.
+
+Yargıç tutarlılığı için aynı 30 öneri toplam üç kez değerlendirildi. Koşu geçişleri `%83,33 / %93,33 / %90`; 27/30 senaryoda geçiş kararı oybirliğiyle aynı, ortalama ikili anlaşma `%93,33` ve Fleiss kappa `0,6625` oldu. Değişken vakalar ADV-001, ADV-003 ve ADV-038; üç koşunun çoğunluk sonucu 27/30 (%90) geçiştir. Toplam 90 yargı 173.856 girdi + 62.023 çıktı tokenı ve tahmini `1,451913 USD` kullandı. Makine-yargıç tutarlılığı ölçülmüş olsa da insan etiketlerine göre semantik doğruluk kalibrasyonu hâlâ açıktır.
+
+Her başarılı Claude çağrısı model, token sayıları, kullanılan token fiyatları, fiyat kaynağı/yürürlük tarihi ve tahmini maliyeti otomatik kaydeder. Bilinen Sonnet 4.6 fiyatı kodda sürümlenmiştir; sağlayıcı fiyatı değiştiğinde `ANTHROPIC_INPUT_USD_PER_MTOK`, `ANTHROPIC_OUTPUT_USD_PER_MTOK` ve isteğe bağlı `ANTHROPIC_PRICING_EFFECTIVE_DATE` ile o koşunun tarifesini sabitleyin. Eski bir sonucu API çağrısı yapmadan yeniden fiyatlandırmak için `python -m madset_eval price-claude-run <run.json>` kullanılır.
 
 **Holdout setini iterasyon amacıyla tekrar tekrar test etmeyin.** İlk 10 vakalık holdout ve 12 vakalık `holdout_v2` final doğrulamada kullanılmış ve tüketilmiştir. Yeni üretici/prompt sürümleri için yeni, hash ile dondurulmuş bir kör set oluşturun.
 

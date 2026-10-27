@@ -7,6 +7,8 @@ from .contracts import ROOT,generate_input,validate_expectation,load_json,valida
 from .grading import grade,hard_checks
 from .judging import merge_judgment
 from .baselines import BASELINES
+from .pricing import estimate_anthropic_cost
+from .rubric import RUBRIC_VERSION
 
 VERSIONS={'v1':('rule-baseline-1','rules-v1'), 'v2':('rule-baseline-2','rules-v2'), 'v3':('rule-baseline-3','rules-v3')}
 
@@ -139,7 +141,7 @@ def exec_run(model='v3',split='dev',trials=1,adapter=None,folder=None,save=True,
         'model_identifier':VERSIONS.get(model,(next(iter(adapter_identifier),'external/unknown'),'external'))[0],
         'model_version':VERSIONS.get(model,(next(iter(adapter_version),'external/unknown'),'external'))[0],
         'rules_version':VERSIONS.get(model,('external','external'))[1],
-        'grader_version':'offline-semantic-1.1','rubric_version':'1.1-provisional','prompt_version':'none-offline' if model!='external' else 'adapter-owned',
+        'grader_version':'offline-semantic-1.1','rubric_version':RUBRIC_VERSION,'prompt_version':'none-offline' if model!='external' else 'adapter-owned',
         'split':split,'trials_per_case':trials,'scenario_version':'1.0','adapter':adapter,
         'estimated_cost_usd':0 if model!='external' else (round(sum(known_costs),8) if len(known_costs)==len(generated) else None),
         'adapter_prompt_versions':sorted(adapter_prompt),'input_tokens':sum(x['input_tokens'] for x in generated if isinstance(x['input_tokens'],int)) or None,
@@ -214,7 +216,7 @@ def regrade_run(path,folder=None,judge_adapter=None,limit=None,progress=False,un
     result={'metadata':copy.deepcopy(run['metadata']),'results':rescored,'summary':summarize(rescored)}
     result['metadata']['regraded_from_run_id']=run['metadata']['run_id']
     result['metadata']['grader_version']='offline-semantic-1.1'
-    result['metadata']['rubric_version']='1.1-provisional'
+    result['metadata']['rubric_version']=RUBRIC_VERSION
     result['metadata']['regraded_utc']=datetime.now(timezone.utc).isoformat()
     if judge_adapter:
         judge_costs=[x.get('cost_usd') for x in judge_usage if isinstance(x.get('cost_usd'),(int,float))]
@@ -224,11 +226,96 @@ def regrade_run(path,folder=None,judge_adapter=None,limit=None,progress=False,un
         result['metadata']['judge_input_tokens']=sum(x.get('input_tokens',0) for x in judge_usage if isinstance(x.get('input_tokens'),int)) or None
         result['metadata']['judge_output_tokens']=sum(x.get('output_tokens',0) for x in judge_usage if isinstance(x.get('output_tokens'),int)) or None
         result['metadata']['estimated_judge_cost_usd']=round(sum(judge_costs),8) if len(judge_costs)==len(rescored) else None
+        result['metadata']['judge_pricing_sources']=sorted({x.get('pricing_source') for x in judge_usage if x.get('pricing_source')})
+        result['metadata']['judge_pricing_effective_dates']=sorted({x.get('pricing_effective_date') for x in judge_usage if x.get('pricing_effective_date')})
         result['metadata']['evaluation_mode']='deterministic-hard-checks+external-semantic-judge (human calibration pending)'
     if folder:
         out=destination/(source.stem+'_regraded.json')
         out.write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')
         export_csv(result,out.with_suffix('.csv'));result['file_path']=str(out)
+    return result
+
+def reprice_claude_run(path,out=None):
+    """Price saved successful Claude judgments without making another API call."""
+    source=Path(path);run=json.loads(source.read_text(encoding='utf-8'));priced=[]
+    for row in run.get('results',[]):
+        meta=row.get('judge_metadata')
+        if not isinstance(meta,dict):continue
+        model=meta.get('model_version') or meta.get('model_identifier')
+        pricing=estimate_anthropic_cost(model,meta.get('input_tokens'),meta.get('output_tokens'))
+        meta.update(pricing);priced.append(meta)
+    costs=[x.get('cost_usd') for x in priced if isinstance(x.get('cost_usd'),(int,float))]
+    metadata=run.setdefault('metadata',{})
+    metadata['estimated_judge_cost_usd']=round(sum(costs),8) if priced and len(costs)==len(priced) else None
+    metadata['judge_pricing_sources']=sorted({x.get('pricing_source') for x in priced if x.get('pricing_source')})
+    metadata['judge_pricing_effective_dates']=sorted({x.get('pricing_effective_date') for x in priced if x.get('pricing_effective_date')})
+    destination=Path(out) if out else source
+    destination.parent.mkdir(parents=True,exist_ok=True)
+    destination.write_text(json.dumps(run,ensure_ascii=False,indent=2),encoding='utf-8')
+    return {'file_path':str(destination),'priced_judgments':len(priced),'metadata':metadata}
+
+def analyze_judge_reliability(paths,out=None):
+    """Compare repeated judgments of the same saved candidate outputs."""
+    if len(paths)<2:raise ValueError('at least two judged run files are required')
+    runs=[json.loads(Path(path).read_text(encoding='utf-8')) for path in paths]
+    indexed=[]
+    for run in runs:
+        rows={row['scenario_id']:row for row in run.get('results',[])}
+        if len(rows)!=len(run.get('results',[])):raise ValueError('judge reliability expects one row per scenario')
+        indexed.append(rows)
+    ids=list(indexed[0])
+    expected=set(ids)
+    if any(set(rows)!=expected for rows in indexed[1:]):raise ValueError('judged runs must contain identical scenario IDs')
+    n=len(runs);details=[]
+    for scenario_id in ids:
+        rows=[run[scenario_id] for run in indexed]
+        passes=[bool(row['grade']['passed']) for row in rows]
+        scores=[float(row['grade']['score']) for row in rows]
+        pass_count=sum(passes);score_range=max(scores)-min(scores)
+        details.append({
+            'scenario_id':scenario_id,'passes':passes,'scores':scores,
+            'unanimous_pass_decision':len(set(passes))==1,
+            'majority_pass':pass_count>n/2,
+            'median_score':round(statistics.median(scores),2),
+            'score_range':round(score_range,2),
+            'high_score_dispersion':score_range>10,
+        })
+    pairwise=[]
+    for left in range(n):
+        for right in range(left+1,n):
+            agree=sum(indexed[left][sid]['grade']['passed']==indexed[right][sid]['grade']['passed'] for sid in ids)
+            pairwise.append({'run_a':left+1,'run_b':right+1,'agreement':round(agree/len(ids),4)})
+    observed=sum(
+        (sum(d['passes'])*(sum(d['passes'])-1)+(n-sum(d['passes']))*(n-sum(d['passes'])-1))/(n*(n-1))
+        for d in details
+    )/len(details)
+    pass_share=sum(sum(d['passes']) for d in details)/(len(details)*n)
+    expected_agreement=pass_share**2+(1-pass_share)**2
+    fleiss=None if expected_agreement==1 else round((observed-expected_agreement)/(1-expected_agreement),4)
+    costs=[run.get('metadata',{}).get('estimated_judge_cost_usd') for run in runs]
+    total_cost=round(sum(costs),8) if all(isinstance(x,(int,float)) for x in costs) else None
+    summary={
+        'runs':n,'scenarios':len(ids),'judgments':n*len(ids),
+        'run_pass_rates':[run['summary']['pass_rate'] for run in runs],
+        'run_avg_scores':[run['summary']['avg_score'] for run in runs],
+        'unanimous_pass_decisions':sum(d['unanimous_pass_decision'] for d in details),
+        'unanimous_pass_decision_rate':round(sum(d['unanimous_pass_decision'] for d in details)/len(details),4),
+        'majority_passed':sum(d['majority_pass'] for d in details),
+        'majority_pass_rate':round(sum(d['majority_pass'] for d in details)/len(details),4),
+        'pairwise_pass_agreement':pairwise,
+        'avg_pairwise_pass_agreement':round(statistics.mean(x['agreement'] for x in pairwise),4),
+        'fleiss_kappa_pass':fleiss,
+        'unstable_scenarios':[d['scenario_id'] for d in details if not d['unanimous_pass_decision']],
+        'high_score_dispersion_scenarios':[d['scenario_id'] for d in details if d['high_score_dispersion']],
+        'judge_input_tokens':sum(run.get('metadata',{}).get('judge_input_tokens',0) for run in runs),
+        'judge_output_tokens':sum(run.get('metadata',{}).get('judge_output_tokens',0) for run in runs),
+        'estimated_judge_cost_usd':total_cost,
+    }
+    result={'summary':summary,'scenarios':details,'source_files':[str(Path(path)) for path in paths]}
+    if out:
+        destination=Path(out);destination.parent.mkdir(parents=True,exist_ok=True)
+        destination.write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')
+        result['file_path']=str(destination)
     return result
 
 def summarize(records):

@@ -52,23 +52,24 @@ Not: İçerik doğruysa farklı kelimelerle anlatılması başarıdır; referans
 - Her öneri yalnızca senaryo girdisinde yer alan veya açıkça güvenilir türetilen bilgilere dayanır; dışarıdan benchmark, sektör ortalaması ve resmi API yeteneği icat edilemez.
 - Kanıtı olmayan “kesin”, “garanti”, “mutlaka”, “satışlar artacak” gibi sonuç iddiaları kabul edilmez.
 
-## 5. Puanlama rubric'i (önerilen v1 ağırlıkları)
-Her boyuta **0,1,2,3,4** verilir. Puan = Σ(ağırlık × boyut_puanı / 4). Ağırlıklar ve eşikler henüz uzman-uyumu çalışmasıyla kalibre edilmemiştir.
+## 5. Puanlama rubric'i (arayüzden yönetilen ağırlıklar)
+**Aktif sürüm:** `1.1-provisional-ui.4`
+
+Her boyuta **0,1,2,3,4** verilir. Puan = Σ(ağırlık × boyut_puanı / 4). Ağırlıklar ve eşikler uzman-uyumu çalışmasıyla kalibre edilmelidir.
 
 | Boyut | Ağırlık | 0 | 2 | 4 |
 |---|---:|---|---|---|
-| Veri ve matematik | 20 | Yanlış/uydurma | Önemli eksik veya belirsiz | Tüm iddialar doğrulanır |
-| Teşhis doğruluğu | 20 | Yanlış problem | Doğru belirti, zayıf neden ayrımı | Belirti, neden, karşı olasılıklar uygun ayrılır |
+| Veri ve matematik | 20 | Yanlış veya uydurma veri | Önemli eksik ya da belirsiz | Tüm iddialar doğrulanır |
+| Teşhis doğruluğu | 20 | Yanlış problem | Doğru belirti, zayıf neden ayrımı | Belirti, neden ve karşı olasılıklar uygun ayrılır |
 | Kanıt ve belirsizlik | 15 | Kanıtsız kesinlik | Kısmi sınır belirtme | Kanıt yeterliliği dürüst ve yerinde |
-| Stratejik uygunluk | 15 | Hedefle çelişir | Kısmi uyum | Sektör/hedef/kanala tam uygun |
-| Ticari risk ve fayda | 15 | Görünür zarara iter | Risklerden bazıları gözetilir | Harcama, kapasite, marj ve aşağı yönlü risk uygun ele alınır |
+| Stratejik uygunluk | 15 | Hedefle çelişir | Kısmi uyum | Sektör, hedef ve kanala tam uygun |
+| Ticari risk ve fayda | 15 | Görünür zarara iter | Risklerden bazıları gözetilir | Harcama, kapasite, marj ve aşağı yönlü risk ele alınır |
 | Uygulanabilirlik | 10 | Uygulanamaz | Genel öneri | Yapılabilir net sonraki adım |
-| Sadelik ve iletişim | 5 | Anlaşılmaz | Kısmen anlaşılır | Kısa, doğal, jargon açıklamalı veya jargonsuz |
+| Sadelik ve iletişim | 5 | Anlaşılmaz | Kısmen anlaşılır | Kısa, doğal ve jargonsuz |
 
-**Ara puan çıpası:** 1 = ağırlıkla başarısız, 3 = çoğunlukla doğru ama belirgin kusur var. Uygulanamaz boyutlar keyfi sıfırlanmaz; rubrik kalibrasyonu sırasında bir “N/A” politikası önceden kararlaştırılır.
+**Ara puan çıpası:** 1 = ağırlıkla başarısız, 3 = çoğunlukla doğru ama belirgin kusur var. Uygulanamaz boyutlar keyfi sıfırlanmaz; bir N/A politikası kalibrasyonda kararlaştırılır.
 
-**Geçiş:** Başlangıç operasyonel eşiği `>= 80/100` + doğru veya kabul edilebilir karar + **sıfır kritik hata** + en az `%75` senaryoya özgü kavram kapsaması + karar sınıfına uygun protokol + grounded evidence. `90+` üstün kalite işaretidir, üretime çıkış garantisi değildir. Eşik, en az iki uzmanın kalibrasyonuyla revize edilebilir; her değişiklik sürümlenir.
-
+**Geçiş:** Başlangıç operasyonel eşiği `>= 80/100` + doğru veya kabul edilebilir karar + **sıfır kritik hata** + en az `%75` senaryoya özgü kavram kapsaması + karar sınıfına uygun protokol + grounded evidence. `90+` üstün kalite işaretidir, üretime çıkış garantisi değildir. Her değişiklik sürümlenir.
 ## 6. Kritik hata katalogu (her biri hard fail)
 | Kod | Hata | Somut kırmızı çizgi |
 |---|---|---|

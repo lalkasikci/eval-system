@@ -1,6 +1,6 @@
 import unittest,tempfile,json,copy
 from pathlib import Path
-from madset_eval.runs import exec_run,compare,validate_suite,regrade_run
+from madset_eval.runs import exec_run,compare,validate_suite,regrade_run,reprice_claude_run,analyze_judge_reliability
 from madset_eval.review import export_template,analyze_review
 from madset_eval.contracts import WEIGHTS
 
@@ -69,3 +69,29 @@ class RunnerTests(unittest.TestCase):
    resumed=regrade_run(p,d,'test_runs:fake_judge',limit=3,unique_scenarios=True,resume=True)
    self.assertEqual(len(resumed['results']),3)
    self.assertEqual(len({x['scenario_id'] for x in resumed['results']}),3)
+ def test_saved_claude_run_can_be_repriced_without_api(self):
+  with tempfile.TemporaryDirectory() as d:
+   p=Path(d)/'run.json'
+   sample={'metadata':{},'results':[{'judge_metadata':{
+    'model_version':'claude-sonnet-4-6','input_tokens':57952,'output_tokens':20395,'cost_usd':None}}]}
+   p.write_text(json.dumps(sample),encoding='utf-8')
+   result=reprice_claude_run(p)
+   saved=json.loads(p.read_text(encoding='utf-8'))
+   self.assertEqual(result['priced_judgments'],1)
+   self.assertEqual(saved['metadata']['estimated_judge_cost_usd'],0.479781)
+   self.assertEqual(saved['results'][0]['judge_metadata']['pricing_source'],'anthropic-list-price-2026-05-12')
+ def test_repeated_judges_report_agreement_and_majority(self):
+  with tempfile.TemporaryDirectory() as d:
+   paths=[]
+   decisions=((True,True),(True,False),(True,False))
+   for index,values in enumerate(decisions):
+    run={'metadata':{'judge_input_tokens':10,'judge_output_tokens':5,'estimated_judge_cost_usd':0.01},
+         'summary':{'pass_rate':sum(values)/2,'avg_score':90},'results':[]}
+    for scenario,passed in zip(('A','B'),values):
+     run['results'].append({'scenario_id':scenario,'grade':{'passed':passed,'score':90 if passed else 70}})
+    path=Path(d)/f'run{index}.json';path.write_text(json.dumps(run),encoding='utf-8');paths.append(path)
+   result=analyze_judge_reliability(paths)
+   self.assertEqual(result['summary']['unanimous_pass_decision_rate'],0.5)
+   self.assertEqual(result['summary']['majority_pass_rate'],0.5)
+   self.assertEqual(result['summary']['unstable_scenarios'],['B'])
+   self.assertEqual(result['summary']['estimated_judge_cost_usd'],0.03)

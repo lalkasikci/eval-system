@@ -44,14 +44,17 @@ Başlangıç heuristiği kısa, düzgün yapılandırılmış ve doğru karar t�
 
 Bu katman insan uzman etiketleriyle henüz kalibre edilmediğinden sonuçları geçici (`provisional`) kabul edilir. Güvenilirlik iddiası için kör insan etiketlerine karşı agreement, yanlış alarm ve hata yakalama oranı ayrıca ölçülmelidir.
 
-### Ölçülen Claude koşusu
+### Ölçülen Claude koşuları ve tekrar güvenilirliği
 
 - Kapsam: 30 benzersiz geliştirme senaryosu, V3 kayıtlı çıktıları.
 - Model/prompt: `anthropic/claude-sonnet-4-6`, `madset-claude-judge-v1`.
-- Sonuç: 25/30 geçiş (%83,33), 30/30 karar doğruluğu, 91,04 ortalama puan, sıfır F01-F08/FMT.
-- Kaynak kullanımı: 57.952 girdi tokenı, 20.395 çıktı tokenı, çağrı başına ortalama 13,89 saniye.
-- Maliyet: fiyat ortam değişkenleri sabitlenmediği için `null`; sıfır olarak yorumlanmamalıdır.
+- Üç koşu: geçiş `%83,33 / %93,33 / %90`; ortalama puan `91,04 / 93,08 / 90,67`; bütün koşularda karar doğruluğu %100 ve sıfır F01-F08/FMT.
+- Geçiş kararı oybirliği: 27/30 (%90). Ortalama ikili anlaşma: %93,33. Fleiss kappa: 0,6625.
+- Değişken geçişler: ADV-001, ADV-003, ADV-038. Puan aralığı 10'u aşanlar: ADV-001, ADV-009, ADV-020.
+- Üç-yargı çoğunluğu: 27/30 (%90) geçiş; çoğunlukla kalanlar ADV-001, ADV-014 ve ADV-017.
+- Kaynak kullanımı: 173.856 girdi tokenı, 62.023 çıktı tokenı, toplam 90 yargı.
+- Maliyet: 12 Mayıs 2026 Anthropic liste fiyatıyla üç koşunun tahmini toplamı `1,451913 USD`. Hatalı/yarım kalan tekrarlar ve sağlayıcı faturasındaki vergi/krediler bu tahmine dahil değildir.
 - Başarısız vakalar: ADV-001, ADV-003, ADV-014, ADV-017, ADV-038. Baskın eksiklik, mevcut metrikleri tam kullanmayan ve somut eşik/zaman vermeyen aksiyonlardır.
 
-ADV-001 tek-vaka bağlantı kontrolünde 92,5, toplu koşuda 76,25 puan almıştır. Bu gözlem yargıç çıktısının tekrarlı çağrılarda değişebildiğini gösterir. Bu nedenle LLM yargıcı, deterministik hard-check'lerin veya insan uzlaşmasının yerine geçmez; gerektiğinde tekrarlı yargı, mutasyon kontrolleri ve insan etiketleriyle kalibre edilmelidir.
+ADV-001 üç koşuda 76,25 / 92,5 / 76,25 puan almıştır. Bu ölçüm tekrar tutarlılığını nicelleştirir, fakat yargıcın semantik olarak doğru olduğunu tek başına kanıtlamaz. LLM yargıcı deterministik hard-check'lerin veya insan uzlaşmasının yerine geçmez; insan etiketleriyle ayrıca kalibre edilmelidir.
 

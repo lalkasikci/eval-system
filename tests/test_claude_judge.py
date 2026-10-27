@@ -1,6 +1,8 @@
 import unittest
+from unittest.mock import patch
 
 from examples.claude_judge import JUDGE_TOOL, _extract_judgment
+from madset_eval.pricing import estimate_anthropic_cost
 
 
 class ClaudeJudgeResponseTests(unittest.TestCase):
@@ -34,3 +36,18 @@ class ClaudeJudgeResponseTests(unittest.TestCase):
     def test_empty_response_has_actionable_error(self):
         with self.assertRaisesRegex(ValueError, 'stop_reason'):
             _extract_judgment({'stop_reason': 'end_turn', 'content': []})
+
+    def test_default_sonnet_pricing_is_recorded(self):
+        priced = estimate_anthropic_cost('claude-sonnet-4-6', 57952, 20395)
+        self.assertEqual(priced['cost_usd'], 0.479781)
+        self.assertEqual(priced['pricing_effective_date'], '2026-05-12')
+
+    def test_price_environment_override(self):
+        with patch.dict('os.environ', {
+            'ANTHROPIC_INPUT_USD_PER_MTOK': '4',
+            'ANTHROPIC_OUTPUT_USD_PER_MTOK': '20',
+            'ANTHROPIC_PRICING_EFFECTIVE_DATE': 'test-date',
+        }, clear=False):
+            priced = estimate_anthropic_cost('claude-sonnet-4-6', 1000000, 1000000)
+        self.assertEqual(priced['cost_usd'], 24.0)
+        self.assertEqual(priced['pricing_source'], 'environment-override')

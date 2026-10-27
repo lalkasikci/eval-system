@@ -1,6 +1,6 @@
 # MADSET — Advise Eval Lab Final Raporu v1.2
 
-**Tarih:** 26 Ekim 2026  
+**Tarih:** 27 Ekim 2026
 **Kapsam:** Yalnız sentetik reklam hesabı verilerinden yazılı öneri üreten çevrimdışı eval laboratuvarı.
 
 ## 1. Yönetici özeti
@@ -58,19 +58,19 @@ Bu ölçüm küçük ve el yapımıdır. Tam Türkçe anlam doğruluğunu veya s
 
 İnsan etiketi henüz bulunmadığından uzman uyumu ve gerçek grader kalibrasyonu tamamlandı sayılamaz.
 
-Claude Sonnet 4.6 ile geliştirme setindeki 30 benzersiz V3 önerisinin tamamı ayrıca değerlendirilmiştir. Sonuç 25/30 geçiş (%83,33), 30/30 doğru karar, 91,04 ortalama puan ve sıfır kritik hata olmuştur. Beş başarısız vaka ADV-001, ADV-003, ADV-014, ADV-017 ve ADV-038'dir. Ortak sorunlar; mevcut huni ve ekonomik metriklerin yeterince kullanılmaması, hedefle sayısal karşılaştırmanın açık yazılmaması ve aksiyonların zaman/eşik bakımından fazla genel kalmasıdır. En zayıf ortalama boyut uygulanabilirliktir.
+Claude Sonnet 4.6 ile geliştirme setindeki aynı 30 benzersiz V3 önerisi üç kez değerlendirilmiştir. Koşu geçişleri %83,33 / %93,33 / %90; ortalama puanlar 91,04 / 93,08 / 90,67; bütün koşularda karar doğruluğu %100 ve kritik hata sıfırdır. 27/30 vakada geçiş kararı oybirliğiyle aynı, ortalama ikili anlaşma %93,33 ve Fleiss kappa 0,6625'tir. Değişken vakalar ADV-001, ADV-003 ve ADV-038; üç-yargı çoğunluğunda kalan vakalar ADV-001, ADV-014 ve ADV-017'dir.
 
-Bu koşu 57.952 girdi ve 20.395 çıktı tokenı kullanmış; çağrı başına ortalama yargıç gecikmesi 13,89 saniye olmuştur. Sağlayıcı fiyatları koşuya sabitlenmediğinden tahmini maliyet `null` olarak saklanmıştır; bu, maliyetin sıfır olduğu anlamına gelmez. Önceki tek-vaka kontrolde ADV-001 92,5 alırken toplu koşuda 76,25 almıştır. Sıcaklık sıfır olsa bile görülen bu yargıç değişkenliği, tek bir LLM puanının kesin gerçek sayılamayacağını gösterir. Sonuçlar insan etiketleriyle kalibre edilene kadar geçicidir (`provisional`).
+Üç koşu toplam 173.856 girdi ve 62.023 çıktı tokenı kullanmıştır. 12 Mayıs 2026 Anthropic liste fiyatıyla (girdi 3 USD/MTok, çıktı 15 USD/MTok) tahmini toplam `1,451913 USD`'dir. Bu tahmin hatalı/yarım tekrarları, vergi ve kredileri içermez; gerçek fatura sağlayıcı kaydıdır. Tekrar güvenilirliği ölçülmüş olsa da bu, semantik doğruluk kanıtı değildir; sonuçlar insan etiketleriyle kalibre edilene kadar geçicidir (`provisional`).
 
 ## 6. Maliyet ve operasyon
 
-V1/V2/V3 yerel Python kurallarıdır; üretim maliyetleri 0 USD'dir. Harici adapter gerçek model adı, model sürümü, prompt sürümü ve token kullanımını kaydedebilir. Claude yargıç koşusunda tokenlar kaydedilmiş, fakat fiyat değişkenleri sabitlenmediği için maliyet `null` kalmıştır.
+V1/V2/V3 yerel Python kurallarıdır; üretim maliyetleri 0 USD'dir. Claude adapteri her başarılı çağrıda model/prompt sürümünü, tokenları, birim fiyatları, fiyat kaynağı/yürürlük tarihini ve tahmini maliyeti kaydeder. Bilinen model fiyatları kodda sürümlenir; ortam değişkenleri koşu anındaki tarifenin bunların önüne geçmesini sağlar.
 
 Eski `outputs/claude_v1` kaydı başarılı model ölçümü değildir: API anahtarı olmadığı için 30/30 producer error oluşmuştur. Bu kayıt üç başarılı iterasyon arasında sunulmamalıdır.
 
 ## 7. Teslimat ve açık kapılar
 
-**Tamamlanan:** tek komut eval, 52 sentetik vaka, iki ayrı holdout dalgası, gold izolasyonu, şema doğrulama, yedi boyutlu rubric, sekiz kritik hata, semantik kapsama kapısı, temiz-klon satır-sonu koruması, 39 anahtarsız test, JSON şemalı Claude LLM yargıç adaptörü, 30-vakalık gerçek Claude değerlendirmesi, çağrı limiti/ilerleme/ara kayıt koruması, trial-bazlı kayıt ve karşılaştırma, yeniden puanlama, JSON/CSV/HTML raporlama, kör uzman inceleme paketi ve 15 dakikalık demo akışı.
+**Tamamlanan:** tek komut eval, 52 sentetik vaka, iki ayrı holdout dalgası, gold izolasyonu, şema doğrulama, yedi boyutlu rubric, sekiz kritik hata, semantik kapsama kapısı, temiz-klon satır-sonu koruması, 51 anahtarsız test, JSON şemalı Claude LLM yargıç adaptörü, otomatik maliyet kaydı, 90-yargılık tekrar güvenilirliği ölçümü, çağrı limiti/ilerleme/ara kayıt koruması, trial-bazlı kayıt ve karşılaştırma, yeniden puanlama, JSON/CSV/HTML raporlama, kör uzman inceleme paketi ve 15 dakikalık demo akışı.
 
 **Dış bağımlılık:** iki bağımsız uzman, hazırlanan kör CSV'yi doldurmalı; uyuşmazlıklar üçüncü değerlendirme ile kapatılmalıdır.
 

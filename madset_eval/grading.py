@@ -6,6 +6,7 @@ claims, a human (or calibrated LLM) must still review; see docs/GRADER.md.
 from __future__ import annotations
 import math,re
 from .contracts import DERIVED,METRIC_KEYS,WEIGHTS,validate_output,derived_metrics,ContractError
+from .rubric import PASS_THRESHOLD
 
 ERRORS={
  'F01':'Unsupported or fabricated numeric claim',
@@ -173,7 +174,7 @@ def grade(inp,out,gold):
         text=out['recommendation']
         s['clarity']=4 if 15<=len(text)<=260 and len(text.split())<=45 else (2 if text.strip() else 0)
     score=round(sum(s[k]*WEIGHTS[k]/4 for k in WEIGHTS),2)
-    pass_result=bool(valid and decision_ok and not issues and score>=80 and
+    pass_result=bool(valid and decision_ok and not issues and score>=PASS_THRESHOLD and
                      semantic['coverage']>=.75 and semantic['decision_protocol_ok'] and semantic['grounded_evidence'])
     return {'decision_correct':decision_ok,'expected_decisions':gold['allowed_decisions'],
         'score':score,'dimension_scores':s,'semantic':semantic,'critical_codes':[c for c,_ in issues],

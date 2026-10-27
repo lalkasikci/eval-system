@@ -9,7 +9,7 @@ Bu çalıştırma **ürün kalitesi kanıtı** değildir; uçtan uca değerlendi
 - Geliştirme: 30 senaryo; bağımsız holdout: 10 senaryo (%25).
 - Her vakada beklenen karar kümesi üretimden **önce** dosyaya yazıldı.
 - Holdout beklentileri üreticiye verilmedi; yalnız puanlama aşamasında açıldı.
-- Rubric: yedi ağırlıklı boyut (toplam 100); geçme: en az 80, kabul edilen karar, sıfır doğrulanmış kritik hata.
+- Rubric: yedi ağırlıklı boyut (toplam 100, sürüm 1.1-provisional-ui.4); geçme: en az 80, kabul edilen karar, sıfır doğrulanmış kritik hata.
 - Çıktı JSON sözleşmesi ve aritmetik kontroller deterministik; açık uçlu nitelik puanlaması **heuristic**, uzman onayı gerekir.
 
 ## 3. Üç sürümün gerçek çalıştırma sonuçları

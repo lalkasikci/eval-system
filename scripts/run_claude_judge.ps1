@@ -3,7 +3,11 @@ param(
     [string]$Out = "outputs/claude_judge",
     [ValidateRange(1, 30)]
     [int]$Limit = 1,
-    [switch]$Resume
+    [switch]$Resume,
+    [ValidateRange(1, 5)]
+    [int]$RepeatCount = 1,
+    [ValidateRange(1, 99)]
+    [int]$RepeatStart = 1
 )
 
 $ErrorActionPreference = "Stop"
@@ -21,14 +25,23 @@ $secret = Read-Host "Claude API anahtarı (ekranda görünmez)" -AsSecureString
 $pointer = [Runtime.InteropServices.Marshal]::SecureStringToBSTR($secret)
 try {
     $env:ANTHROPIC_API_KEY = [Runtime.InteropServices.Marshal]::PtrToStringBSTR($pointer)
-    $arguments = @(
-        "-m", "madset_eval", "regrade", $RunJson,
-        "--judge-adapter", "examples.claude_judge:judge",
-        "--unique-scenarios", "--limit", "$Limit", "--progress", "--out", $Out
-    )
-    if ($Resume) { $arguments += "--resume" }
-    & $python @arguments
-    if ($LASTEXITCODE -ne 0) { throw "Claude judge çalışması başarısız oldu." }
+    for ($offset = 0; $offset -lt $RepeatCount; $offset++) {
+        $repeatNumber = $RepeatStart + $offset
+        $repeatOut = if ($RepeatCount -gt 1 -or $RepeatStart -ne 1) {
+            Join-Path $Out "repeat_$repeatNumber"
+        } else {
+            $Out
+        }
+        Write-Host "Claude yargıç tekrarı $repeatNumber/$($RepeatStart + $RepeatCount - 1) -> $repeatOut"
+        $arguments = @(
+            "-m", "madset_eval", "regrade", $RunJson,
+            "--judge-adapter", "examples.claude_judge:judge",
+            "--unique-scenarios", "--limit", "$Limit", "--progress", "--out", $repeatOut
+        )
+        if ($Resume) { $arguments += "--resume" }
+        & $python @arguments
+        if ($LASTEXITCODE -ne 0) { throw "Claude judge tekrarı $repeatNumber başarısız oldu." }
+    }
 }
 finally {
     Remove-Item Env:ANTHROPIC_API_KEY -ErrorAction SilentlyContinue

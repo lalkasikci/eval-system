@@ -2,6 +2,7 @@
 from pathlib import Path
 import html,json
 from .runs import compare
+from .rubric import PASS_THRESHOLD, RUBRIC_VERSION
 
 def render_dashboard(runs,calibration,comparisons,location):
     location=Path(location);location.parent.mkdir(parents=True,exist_ok=True)
@@ -48,7 +49,7 @@ def render_report(runs,calibration,comparisons,path):
      '- Geliştirme: 30 senaryo; bağımsız holdout: 10 senaryo (%25).',
      '- Her vakada beklenen karar kümesi üretimden **önce** dosyaya yazıldı.',
      '- Holdout beklentileri üreticiye verilmedi; yalnız puanlama aşamasında açıldı.',
-     '- Rubric: yedi ağırlıklı boyut (toplam 100); geçme: en az 80, kabul edilen karar, sıfır doğrulanmış kritik hata.',
+     f'- Rubric: yedi ağırlıklı boyut (toplam 100, sürüm {RUBRIC_VERSION}); geçme: en az {PASS_THRESHOLD:g}, kabul edilen karar, sıfır doğrulanmış kritik hata.',
      '- Çıktı JSON sözleşmesi ve aritmetik kontroller deterministik; açık uçlu nitelik puanlaması **heuristic**, uzman onayı gerekir.',
      '', '## 3. Üç sürümün gerçek çalıştırma sonuçları',
      '| Set | Sürüm | Geçti | Karar doğruluğu | Kritik hata oranı | Ortalama skor |',

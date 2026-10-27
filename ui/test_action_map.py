@@ -27,4 +27,20 @@ assert next(x for x in cat if x['id']=='rewrite_greeting')['route']=='/ads/<grup
 assert next(x for x in cat if x['id']=='winning_creative_variants')['route']=='/publish/campaign?creative=<kreatif>'
 assert all(a['type']=='info' for a in cat if a['id']=='info_only')
 assert all(a['approval'] and a['readback'] for a in cat if a['type']=='write')
-print('OK: 12 eylem, 25 benzersiz finding, tüm rotalar ve güvenlik kapıları doğrulandı.')
+html=(root/'index.html').read_text(encoding='utf-8')
+assert html.count('data-view="rubric"')==2
+assert html.count('data-view="workflow"')==2
+assert html.count('data-view="scenarios"')==2
+assert 'function renderRubric()' in html
+assert 'function renderWorkflow()' in html
+assert 'function renderScenarios()' in html
+assert 'madset_ui_rubric' in html
+assert 'Ağırlıkların toplamı %100 olmalı' in html
+assert "fetch('/api/rubric'" in html
+assert "fetch('/api/eval-results'" in html
+assert "fetch('/api/scenarios/dev'" in html
+assert 'Dosyalara kaydet' in html
+assert "['F01','Uydurma veri'" in html
+assert "['F08','Ticari hedefle çelişme'" in html
+assert "['FMT','Biçim/sözleşme hatası'" in html
+print('OK: aksiyon haritası, güvenlik kapıları, Rubrik ve Workflow arayüzleri doğrulandı.')

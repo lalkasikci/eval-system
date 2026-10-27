@@ -4,13 +4,21 @@ Bu arayüz **frontend demodur**. Meta/Google API anahtarı, müşteri hesabı ve
 
 ## Aç
 
-`index.html` dosyasını tarayıcıda çift tıkla aç. İnternet, Node.js veya API anahtarı gerekmez. Mobil ve masaüstü uyumludur.
+Proje klasöründe aşağıdaki komutu çalıştır ve `http://127.0.0.1:8765` adresini aç:
+
+```powershell
+python -m madset_eval.ui_server
+```
+
+İnternet, Node.js veya API anahtarı gerekmez. Mobil ve masaüstü uyumludur. `index.html` dosyasına çift tıklayarak salt görüntüleme yapılabilir; ancak tarayıcı güvenliği nedeniyle Rubrik ekranı proje dosyalarına yalnızca yukarıdaki yerel servis üzerinden yazabilir.
 
 ## Ekranlar
 
 - **Öneriler:** 14 örnek kart, 4 etkileşim türü, filtreleme ve arama.
 - **Aksiyon Kütüphanesi:** Kullanıcının verdiği 25 finding → aksiyon haritasının eksiksiz listesi; Pause/Restart henüz hiçbir finding tarafından tetiklenmiyor.
 - **Eval Sonuçları:** Önceki laboratuvarın *yerel demo* V1/V2/V3 özeti; başka bir `SUMMARY.json` dosyası dosya seçiciyle yüklenebilir.
+- **Rubrik:** Yedi boyut, ağırlıklar, puan çıpaları, geçiş eşiği ve kritik hatalar. Kaydetme; `data/rubric.json`, `docs/QUALITY_STANDARD.md` ve manifest hash'ini birlikte günceller.
+- **Workflow:** Senaryo doğrulamadan kör doğrulamaya kadar eval akışını, Claude yargıç sınırını ve güncel güvenilirlik/maliyet özetini gösterir.
 
 ## Etkileşimler
 

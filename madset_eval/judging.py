@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from .contracts import WEIGHTS
+from .rubric import PASS_THRESHOLD
 
 
 def validate_judge_output(result):
@@ -35,7 +36,7 @@ def merge_judgment(base_grade, judgment):
         'dimension_scores': dict(scores),
         'passed': bool(
             judgment['overall_pass'] and judgment['decision_correct'] and
-            score >= 80 and not base_grade['critical_codes']
+            score >= PASS_THRESHOLD and not base_grade['critical_codes']
         ),
         'judge': {
             'provider': judgment.get('provider', 'external'),
